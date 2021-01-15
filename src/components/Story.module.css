@@ -1,0 +1,62 @@
+.storyContainer {
+    background-color: white;
+    margin: 0 auto 0 auto;
+    width: 82%;
+    height: 96.3%;
+    padding: 0 0 0 0;
+}
+
+.storyWrapper {
+    /* 왜 inline-block인가? */
+    display: inline-block;
+    margin: 6.1rem 11.4rem 0 11.4rem;
+}
+
+.storyCategory {
+    margin-bottom: 1rem;
+}
+
+.mainCategory {
+    font-family: 'kopub-dotum-medium';
+    color: #949494;
+    padding-left: 1rem;
+}
+
+.subCategory {
+    font-family: 'kopub-dotum-medium';
+    color: #000000;
+}
+
+.storyTitle {
+    font-family: 'kopub-dotum-light';
+    font-size: 3.2rem;
+}
+
+.storyDateIcon {
+    display: inline-block;
+    margin-left:1rem;
+    width: 0.8rem;
+}
+
+.storyDateIcon img {
+    width: 100%;
+    height: 100%;
+}
+
+.storyDate {
+    display: inline-block;
+    font-family: 'kopub-dotum-medium';
+    font-size: 0.93rem;
+    padding-left: 1rem;
+}
+
+.storyLocation {
+    display: inline-block;
+    font-family: 'kopub-dotum-medium';
+    font-size: 0.93rem;
+}
+
+.storyContent {
+    padding-top: 5.4rem;
+    padding-left: 1rem;
+}
