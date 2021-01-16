@@ -10,7 +10,7 @@ class Header extends Component {
                 <span className={styles.headerIcon}>인기글</span>
                 <span className={styles.headerIcon}> 내가 작성한 댓글</span >
                 <span className={styles.headerIcon}>알림</span>
-                <span className={styles.thsixIcon}>36부작</span>
+                <span className={styles.thsixIcon}><Link to="/">36부작</Link></span>
             </div >
         )
     }

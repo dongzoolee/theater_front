@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Main from './components/Main'
 import WriteStory from './components/WriteStory'
+import ReadStory from './components/ReadStory/ReadStory'
 import './App.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={Main}></Route>
         <Route exact path='/write' component={WriteStory}></Route>
+        <Route exact path='/story/:id' component={ReadStory}></Route>
       </Switch>
     </Router>
   );

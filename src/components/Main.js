@@ -1,15 +1,17 @@
 import React, { Component, Fragment } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import Header from './Header';
-import Story from './Story';
-import Comment from './Comment';
-import styles from './Story.module.css';
+import Header from './Header/Header';
+import Story from './Story/Story';
+import Comment from './Comment/Comment';
+
 class Main extends Component {
     render() {
         return (
             <>
                 <Header />
                 <Story
+                    outerColor={"#F1F1F1"}
+                    innerColor={"#FFFFFF"}
                     mainCategory={"일기"}
                     subCategory={"개발일기"}
                     storyTitle={"쉬다가세요"}
