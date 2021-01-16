@@ -91,7 +91,7 @@ class WriteStory extends Component {
                         <option value="-1">선택</option>
                         {this.state.preload.mainCategory.map((val, idx) => {
                             return (
-                                <option value={val.idx}>{val.mainCategory}</option>
+                                <option value={val.mainIdx}>{val.mainCategory}</option>
                             )
                         })}
                     </select>
@@ -99,7 +99,7 @@ class WriteStory extends Component {
                         <option value="-1">선택</option>
                         {this.state.preload.subCategory.map((val, idx) => {
                             return (
-                                <option value={val.idx}>{val.subCategory}</option>
+                                <option value={val.subIdx}>{val.subCategory}</option>
                             )
                         })}
                     </select>

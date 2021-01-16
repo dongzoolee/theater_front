@@ -44,17 +44,19 @@ class ReadStory extends Component {
         return (
             <>
                 <Header />
-                <Story
-                    outerColor={"#F1F1F1"}
-                    innerColor={"#FFFFFF"}
-                    mainCategory={this.state.mainCategory}
-                    subCategory={this.state.subCategory}
-                    storyTitle={this.state.title}
-                    storyDate={this.state.date}
-                    storyLocation={this.state.location}
-                    storyContent={[this.state.content]}
-                />
-                <Comment />
+                <div className="storyContainer">
+                    <Story
+                        outerColor={"#F1F1F1"}
+                        innerColor={"#FFFFFF"}
+                        mainCategory={this.state.mainCategory}
+                        subCategory={this.state.subCategory}
+                        storyTitle={this.state.title}
+                        storyDate={this.state.date}
+                        storyLocation={this.state.location}
+                        storyContent={[this.state.content]}
+                    />
+                    <Comment />
+                </div>
             </>
         );
     }
