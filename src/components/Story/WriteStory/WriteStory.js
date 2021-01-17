@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import Header from './Header/Header';
+import Header from '../../Header/Header';
 import styles from './WriteStory.module.css';
 import 'codemirror/lib/codemirror.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
@@ -78,7 +78,7 @@ class WriteStory extends Component {
         axios
             .post('/api/write/story', data)
             .then((res) => {
-
+                window.location.reload();
             })
             .catch((err) => { console.error(err) });
     }

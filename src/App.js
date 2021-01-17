@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Main from './components/Main'
-import WriteStory from './components/WriteStory'
-import ReadStory from './components/ReadStory/ReadStory'
+import WriteStory from './components/Story/WriteStory/WriteStory'
+import ReadStory from './components/Story/ReadStory/ReadStory'
 import './App.css';
 
 function App() {

@@ -1,8 +1,14 @@
 $def_font: "kopub-dotum-medium";
 
-.commentContainer {
+.commentContainer:first-child {
     width: 93%;
     margin: 0 auto;
+    padding: 1.2rem 0 0.9rem 2rem;
+    box-shadow: 0 0 11.9px 2.9px rgba(0,0,0,0.1);
+}
+.commentContainer{
+    width: 93%;
+    margin: 2.4rem auto 0 auto;
     padding: 1.2rem 0 0.9rem 2rem;
     box-shadow: 0 0 11.9px 2.9px rgba(0,0,0,0.1);
 }

@@ -1,11 +1,14 @@
 .commentContainer{
     margin: 5rem auto 0;
-    width: calc(100% - 22.8rem);
+    width: calc(100% - 18.5rem);
 }
 .commentCount{
     font-family: 'kopub-dotum-medium';
     font-size: 1.4rem;
     margin-bottom: 2rem;
+}
+.MainSubCommentWrapper{
+    margin-bottom: 4rem;
 }
 .SubCommentWrapper{
     border-left: 1px solid black;

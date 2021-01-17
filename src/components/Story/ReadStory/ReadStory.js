@@ -2,10 +2,10 @@ import React, { Component, Fragment } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import styles from './ReadStory.module.css';
 import axios from 'axios';
-import Header from '../Header/Header'
-import Story from '../Story/Story'
-import Comment from '../Comment/Comment'
-import '../Story.css';
+import Header from '../../Header/Header'
+import Story from '../Story'
+import Comment from '../../Comment/Comment'
+import '../../Story.css';
 
 class ReadStory extends Component {
     constructor() {
@@ -18,16 +18,18 @@ class ReadStory extends Component {
             title: "",
             date: "",
             location: "",
-            content: ""
+            content: "",
+            commentCnt: "",
+            comment: []
         }
     }
     componentDidMount = () => {
+        // GET Story
         let url = window.location.href;
         let urlSplit = url.split('/');
         axios
             .post('/api/read/story', { id: urlSplit[urlSplit.indexOf('story') + 1] })
             .then((res) => {
-                console.log(res);
                 this.setState({
                     outerColor: res.data.outerColor,
                     innerColor: res.data.innerColor,
@@ -38,6 +40,19 @@ class ReadStory extends Component {
                     location: res.data.location,
                     content: res.data.content
                 })
+            })
+        // GET Comments
+        axios
+            .post('/api/read/comment', { id: urlSplit[urlSplit.indexOf('story') + 1] })
+            .then((res) => {
+                this.setState({
+                    commentCnt: res.data.cnt,
+                    comment: res.data.comment
+                })
+                
+            })
+            .catch((err) => {
+                console.error(err);
             })
     }
     render() {
@@ -55,7 +70,10 @@ class ReadStory extends Component {
                         storyLocation={this.state.location}
                         storyContent={[this.state.content]}
                     />
-                    <Comment />
+                    <Comment
+                        commentCnt={this.state.commentCnt}
+                        comment={this.state.comment}
+                    />
                 </div>
             </>
         );

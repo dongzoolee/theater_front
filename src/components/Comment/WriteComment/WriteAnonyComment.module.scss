@@ -21,9 +21,14 @@
     // padding: 0.9rem 1.3rem 0 1.4rem;
 }
 .writer {
-    font-size: 1.1rem;
     font-family: "kopub-dotum-light";
     align-self: flex-end;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    padding: 0 0 0.2rem 0.2rem;
+    font-size: 1rem;
+    width: 9.6rem;
 }
 .date {
     font-size: 0.8rem;

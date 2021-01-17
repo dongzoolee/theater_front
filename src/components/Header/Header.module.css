@@ -4,6 +4,7 @@
     width: 82%;
     padding: 1.2% 0;
     display: flex;
+    font-size: 0.9rem;
 }
 .loginIcon{
     font-family: 'kopub-dotum-medium';
