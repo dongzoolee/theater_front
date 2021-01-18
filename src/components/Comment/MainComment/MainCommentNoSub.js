@@ -10,8 +10,8 @@ class MainComment extends Component {
     }
     openSubCommentWindow = (e) => {
         this.setState({ toggle: !this.state.toggle })
-        e.target.parentElement.parentElement.parentElement.lastElementChild.lastElementChild.classList.toggle('hide')
-        // e.target.parentElement.parentElement.parentElement.lastElementChild.classList.toggle('hide');
+        // e.target.parentElement.parentElement.parentElement.lastElementChild.lastElementChild.classList.toggle('hide')
+        e.target.parentElement.parentElement.parentElement.lastElementChild.classList.toggle('hide');
     }
     render() {
         return (
@@ -23,7 +23,7 @@ class MainComment extends Component {
                         <div className="commentWriter">{this.props.writer}</div>
                         <div className="commentDate">{this.props.date}</div>
                         <div className="sirenImgWrapper"><img src={sirenImg} /></div>
-                        <div className="writeSubComment non--draggable" onClick={(e) => this.openSubCommentWindow(e)}>{!this.state.toggle ? "답글 닫기" : "답글"}</div>
+                        <div className="writeSubComment non--draggable" onClick={(e) => this.openSubCommentWindow(e)}>{!this.state.toggle ? "답글" : "답글 닫기"}</div>
                         <div className="commentContent">{this.props.content}</div>
                     </div>
                 </div>

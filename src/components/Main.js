@@ -5,6 +5,9 @@ import Story from './Story/Story';
 import Comment from './Comment/Comment';
 
 class Main extends Component {
+    componentDidMount = () => {
+        document.querySelector('.storyContainer').style = "padding: 3.6rem 0 4rem 0;";
+    }
     render() {
         return (
             <>
@@ -13,8 +16,8 @@ class Main extends Component {
                     <Story
                         outerColor={"#F1F1F1"}
                         innerColor={"#FFFFFF"}
-                        mainCategory={"일기"}
-                        subCategory={"개발일기"}
+                        mainCategory={"메인"}
+                        subCategory={"소개"}
                         storyTitle={"쉬다가세요"}
                         storyDate={"2021년 1월 4일 오후 9시"}
                         storyLocation={"서울시 마포구"}

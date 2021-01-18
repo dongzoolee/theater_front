@@ -46,15 +46,19 @@ class WriteSubComment extends Component {
                 .catch(err => { })
         }
     }
+    componentDidMount = () => {
+        if (this.props.isHide);
+
+    }
     render() {
         return (
-            <div className={styles.container}>
+            <div className={styles.container + " " + this.props.isHide}>
                 <div className={styles.header}>
                     <input className={styles.writerAnony} maxLength="18" placeholder="이름을 입력하세요" onChange={this.onChangeEvent} />
                     <div className={styles.date}>{[new Date().getFullYear(), "년 ", new Date().getMonth() + 1, "월 ", new Date().getDate(), "일"]}</div>
                     <div className={styles.flexGrow} />
                     <div className={styles.emoji}></div>
-                    <div className={styles.commitBtn+" not--draggable"} onClick={(e) => { this.handleSubmit(e) }}>커밋</div>
+                    <div className={styles.commitBtn + " non--draggable"} onClick={(e) => { this.handleSubmit(e) }}>커밋</div>
                 </div>
                 <textarea className={styles.content} onChange={this.onChangeEvent} />
             </div>

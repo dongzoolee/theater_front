@@ -56,6 +56,11 @@ class ReadStory extends Component {
             .catch((err) => {
                 console.error(err);
             })
+        window.onload = () => {
+            document.querySelectorAll('img').forEach(ele => {
+                ele.setAttribute('draggable','false')
+            })
+        }
     }
     render() {
         return (

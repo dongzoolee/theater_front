@@ -1,21 +1,27 @@
-.commentContainer{
+.commentContainer {
     margin: 7rem auto 0;
     width: calc(100% - 16.5rem);
 }
-.commentCount{
-    font-family: 'kopub-dotum-medium';
+.commentCount {
+    font-family: "kopub-dotum-medium";
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
-.MainSubCommentWrapper{
+.MainSubCommentWrapper {
     margin-bottom: 4rem;
 }
-.SubCommentWrapper{
+.SubCommentWrapper {
     border-left: 1px solid black;
     width: 90%;
     margin-top: 1.3rem;
     margin-left: auto;
     margin-right: 2rem;
-    
+
     padding-top: 0.1rem;
+}
+.MainSubCommentContainer:first-child {
+    margin-top: 0;
+}
+.MainSubCommentContainer {
+    margin-top: 2rem;
 }

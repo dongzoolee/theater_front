@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import ReactDOM from 'react-dom';
 import styles from './SubComment.module.scss';
 import '../Comment.scss';
 import sirenImg from '../../../static/icons/siren-1.png';
@@ -14,6 +13,9 @@ class SubComment extends Component {
     openSubCommentWindow = (e) => {
         this.setState({ toggle: !this.state.toggle })
     }
+    onSirenClicked = () => {
+
+    }
     render() {
         return (
             <>
@@ -22,8 +24,8 @@ class SubComment extends Component {
                     <div className={styles.commentContentWrapper}>
                         <div className="commentWriter">{this.props.writer === '-1' ? "익명" : this.props.writer}</div>
                         <div className="commentDate">{this.props.date}</div>
-                        <div className="sirenImgWrapper"><img src={sirenImg} /></div>
-                        <div className="writeSubComment not--draggable" onClick={(e) => this.openSubCommentWindow(e)}>{!this.state.toggle ? "답글" : "답글 닫기"}</div>
+                        <div className="sirenImgWrapper" onClick={this.onSirenClicked}><img src={sirenImg} /></div>
+                        <div className="writeSubComment non--draggable" onClick={(e) => this.openSubCommentWindow(e)}>{!this.state.toggle ? "답글" : "답글 닫기"}</div>
                         <div className="commentContent">{this.props.content}</div>
                     </div>
                 </div>
