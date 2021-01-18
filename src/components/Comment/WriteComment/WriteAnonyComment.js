@@ -7,7 +7,6 @@ class WriteComment extends Component {
     constructor() {
         super();
         this.state = {
-            storyId: "",
             writer: "",
             content: ""
         }
@@ -56,7 +55,7 @@ class WriteComment extends Component {
                         <div className={styles.date}>{[new Date().getFullYear(), "년 ", new Date().getMonth() + 1, "월 ", new Date().getDate(), "일"]}</div>
                         <div className={styles.flexGrow} />
                         <div className={styles.emoji}></div>
-                        <div className={styles.commitBtn+" non--draggable"} onClick={this.handleSubmit}>커밋</div>
+                        <div className={styles.commitBtn + " non--draggable"} onClick={this.handleSubmit}>커밋</div>
                     </div>
                     <textarea className={styles.content} onChange={this.onChangeEvent} />
                 </div>

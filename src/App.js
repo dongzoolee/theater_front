@@ -11,6 +11,7 @@ function App() {
         <Route exact path='/' component={Main}></Route>
         <Route exact path='/dongzoolee' component={WriteStory}></Route>
         <Route exact path='/story/:id' component={ReadStory}></Route>
+        <Route exact path='/zora/:id' component={ReadStory}></Route>
       </Switch>
     </Router>
   );
