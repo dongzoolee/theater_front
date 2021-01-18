@@ -1,0 +1,44 @@
+$def_font: "kopub-dotum-medium";
+
+.profileImgWrapper {
+    display: inline-block;
+    width: 3.3rem;
+    height: 3.3rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.commentWriter {
+    display: inline-block;
+    font-family: $def_font;
+    font-size: 0.9rem;
+}
+.commentDate {
+    display: inline-block;
+    font-family: $def_font;
+    margin-left: 0.8rem;
+    font-size: 0.67rem;
+}
+.sirenImgWrapper {
+    display: inline-block;
+    cursor: pointer;
+    width: 1rem;
+    margin-left: 0.6rem;
+    margin-bottom: 0.1rem;
+    vertical-align: middle;
+}
+.sirenImgWrapper img {
+    width: 100%;
+    height: 100%;
+}
+.writeSubComment{
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 0.6rem;
+    font-size:0.7rem;
+}
+.commentContent {
+    font-family: $def_font;
+    margin-top: 0.2rem;
+    font-size: 0.8rem;
+    padding-left: 0.1rem;
+}

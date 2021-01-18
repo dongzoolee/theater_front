@@ -1,29 +1,11 @@
 $def_font: "kopub-dotum-medium";
 
 .commentContainer {
-    padding: 1.2rem 0 0.9rem 4.2rem;
+    padding: 1.2rem 0 0.9rem 3.4rem;
 }
-.profileImgWrapper {
-    display: inline-block;
-    width: 4.2rem;
-    height: 4.2rem;
-    border-radius: 50%;
-    overflow: hidden;
-}
-.commentName {
-    display: inline-block;
-    font-family: $def_font;
-    font-size: 1.3rem;
-}
-.commentDate {
-    display: inline-block;
-    font-family: $def_font;
-    margin-left: 1rem;
-    font-size: 0.9rem;
-}
-.commentContent {
-    font-family: $def_font;
-    margin-top: 0.2rem;
+.commentContainer:hover {
+    transform: scale(1.02);
+    transition: transform 0.4s;
 }
 .commentContentWrapper {
     display: inline-block;

@@ -1,19 +1,38 @@
 import React, { Component, Fragment } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import ReactDOM from 'react-dom';
 import styles from './SubComment.module.scss';
-import profileImg from '../../../static/userImg-2.jpg';
+import '../Comment.scss';
+import sirenImg from '../../../static/icons/siren-1.png';
+import WriteSubComment from '../WriteComment/WriteSubComment';
 
 class SubComment extends Component {
+    state = {
+        toggle: false,
+        userIcon: (Math.floor(Math.random() * 4) + 1)
+    }
+    openSubCommentWindow = (e) => {
+        this.setState({ toggle: !this.state.toggle })
+    }
     render() {
         return (
-            <div className={styles.commentContainer}>
-                <div className={styles.profileImgWrapper}><img style={{ width: '100%', height: '100%' }} src={profileImg} /></div>
-                <div className={styles.commentContentWrapper}>
-                    <div className={styles.commentName}>이동주</div>
-                    <div className={styles.commentDate}>2021년 2월 29일</div>
-                    <div className={styles.commentContent}>ㅋㅋㅋ 내용이 재밌네요 가끔 들를게요~</div>
+            <>
+                <div className={styles.commentContainer}>
+                    <div className="profileImgWrapper"><img style={{ width: '100%', height: '100%' }} src={process.env.PUBLIC_URL + '/icons/userIcon-' + this.state.userIcon + '.jpg'} /></div>
+                    <div className={styles.commentContentWrapper}>
+                        <div className="commentWriter">{this.props.writer === '-1' ? "익명" : this.props.writer}</div>
+                        <div className="commentDate">{this.props.date}</div>
+                        <div className="sirenImgWrapper"><img src={sirenImg} /></div>
+                        <div className="writeSubComment not--draggable" onClick={(e) => this.openSubCommentWindow(e)}>{!this.state.toggle ? "답글" : "답글 닫기"}</div>
+                        <div className="commentContent">{this.props.content}</div>
+                    </div>
                 </div>
-            </div>
+                {this.state.toggle && (
+                    <WriteSubComment
+                        targetMainId={this._reactInternals.key.split('_')[0]}
+                    />
+                )}
+            </>
         )
     }
 }

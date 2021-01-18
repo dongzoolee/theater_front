@@ -40,6 +40,8 @@ class ReadStory extends Component {
                     location: res.data.location,
                     content: res.data.content
                 })
+                document.getElementsByTagName('html')[0].style = "background-color: " + res.data.outerColor + ";";
+                document.getElementsByClassName('storyContainer')[0].style = "background-color: " + res.data.innerColor + ";";
             })
         // GET Comments
         axios
@@ -49,7 +51,7 @@ class ReadStory extends Component {
                     commentCnt: res.data.cnt,
                     comment: res.data.comment
                 })
-                
+
             })
             .catch((err) => {
                 console.error(err);
@@ -61,8 +63,8 @@ class ReadStory extends Component {
                 <Header />
                 <div className="storyContainer">
                     <Story
-                        outerColor={"#F1F1F1"}
-                        innerColor={"#FFFFFF"}
+                        outerColor={this.state.outerColor}
+                        innerColor={this.state.innerColor}
                         mainCategory={this.state.mainCategory}
                         subCategory={this.state.subCategory}
                         storyTitle={this.state.title}

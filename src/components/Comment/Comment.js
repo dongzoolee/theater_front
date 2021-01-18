@@ -4,6 +4,7 @@ import styles from './Comment.module.scss';
 import WriteAnonyComment from './WriteComment/WriteAnonyComment';
 import SubComment from './SubComment/SubComment';
 import MainComment from './MainComment/MainComment';
+import WriteSubComment from './WriteComment/WriteSubComment';
 import axios from 'axios';
 
 class Comment extends Component {
@@ -35,18 +36,105 @@ class Comment extends Component {
             <div className={styles.commentContainer}>
                 <div className={styles.commentCount}>댓글 {this.state.commentCnt}개</div>
                 <div className={styles.MainSubCommentWrapper}>
-                    {this.state.comment.map((val, idx) => {
-                        return (
-                            <>
-                                <MainComment
-                                    writer={val.writer == '-1' ? '익명' : val.writer}
-                                    date={val.date}
-                                    content={val.content} />
-                                {/* <div className={styles.SubCommentWrapper}>
-                                    <SubComment />
-                                </div> */}
-                            </>
-                        );
+                    {this.state.comment.map((val, idx, elem) => {
+
+                        { // idx == 0 전처리
+                            if (!idx) {
+                                if (!val.subContent) {
+                                    return (
+                                        <>
+                                            <MainComment
+                                                key={val.mainIdx}
+                                                writer={val.mainWriter == '-1' ? '익명' : val.mainWriter}
+                                                date={val.mainDate}
+                                                content={val.mainContent} />
+                                            <div className={styles.SubCommentWrapper + " hide"}>
+                                                <WriteSubComment
+                                                    targetMainId={val.mainIdx}
+                                                />
+                                            </div>
+                                        </>
+                                    );
+                                } else {
+                                    return (
+                                        <>
+                                            <MainComment
+                                                key={val.mainIdx}
+                                                writer={val.mainWriter == '-1' ? '익명' : val.mainWriter}
+                                                date={val.mainDate}
+                                                content={val.mainContent} />
+                                            <div className={styles.SubCommentWrapper}>
+                                                {elem.filter(val1 => val.commentId === val1.commentId).reverse().map((val2, idx2) => {
+                                                    return (
+                                                        <SubComment
+                                                            key={val.mainIdx + "_" + val2.subIdx}
+                                                            writer={val2.subWriter}
+                                                            date={val2.subDate}
+                                                            content={val2.subContent} />
+                                                    );
+                                                })}
+                                            </div>
+                                        </>
+                                    );
+                                }
+                            }
+                            // 답글 없는 댓글
+                            else if (!val.subContent)
+                                return (
+                                    <>
+                                        <MainComment
+                                            key={val.mainIdx}
+                                            writer={val.mainWriter == '-1' ? '익명' : val.mainWriter}
+                                            date={val.mainDate}
+                                            content={val.mainContent} />
+                                        <div className={styles.SubCommentWrapper + " hide"}>
+                                            <WriteSubComment
+                                                targetMainId={val.mainIdx}
+                                            />
+                                        </div>
+                                    </>
+                                );
+                            // idx == 0은 아닌 답글 있는 댓글
+                            else if (val.commentId !== elem[idx - 1].commentId) {
+                                return (
+                                    <>
+                                        <MainComment
+                                            key={val.mainIdx}
+                                            writer={val.mainWriter == '-1' ? '익명' : val.mainWriter}
+                                            date={val.mainDate}
+                                            content={val.mainContent} />
+                                        <div className={styles.SubCommentWrapper}>
+                                            {elem.filter(val1 => val.commentId === val1.commentId).map((val2, idx2) => {
+                                                return (
+                                                    <SubComment
+                                                        key={val.mainIdx + "_" + val2.subIdx}
+                                                        writer={val2.subWriter}
+                                                        date={val2.subDate}
+                                                        content={val2.subContent} />
+                                                );
+                                            })}
+                                        </div>
+                                    </>
+                                );
+                            } else if (val.commentId !== elem[idx - 1].commentId) {
+                                return (
+                                    <>
+                                        <MainComment
+                                            key={val.mainIdx}
+                                            writer={val.mainWriter == '-1' ? '익명' : val.mainWriter}
+                                            date={val.mainDate}
+                                            content={val.mainContent} />
+                                        <div className={styles.SubCommentWrapper}>
+                                            <SubComment
+                                                key={val.mainIdx + "_" + val.subIdx}
+                                                writer={val.subWriter}
+                                                date={val.subDate}
+                                                content={val.subContent} />
+                                        </div>
+                                    </>
+                                );
+                            }
+                        }
                     })}
                 </div>
                 <WriteAnonyComment />

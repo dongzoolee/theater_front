@@ -2,14 +2,10 @@ import React, { Component, Fragment } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import styles from './Story.module.css';
 import '../Story.css';
-import storyLocationIcon from '../../static/location-1.png';
+import storyLocationIcon from '../../static/icons/location-1.png';
 import Comment from '../Comment/Comment';
 
 class Story extends Component {
-    componentDidMount() {
-        document.getElementById('root').style = "background-color: " + this.props.outerColor + ";";
-        document.getElementsByClassName('storyContainer')[0].style = "background-color: " + this.props.innerColor + ";";
-    }
     render() {
         return (
             <div className={styles.storyWrapper}>

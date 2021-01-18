@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path='/' component={Main}></Route>
-        <Route exact path='/write' component={WriteStory}></Route>
+        <Route exact path='/dongzoolee' component={WriteStory}></Route>
         <Route exact path='/story/:id' component={ReadStory}></Route>
       </Switch>
     </Router>

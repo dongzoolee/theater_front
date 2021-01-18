@@ -3,40 +3,22 @@ $def_font: "kopub-dotum-medium";
 .commentContainer:first-child {
     width: 93%;
     margin: 0 auto;
-    padding: 1.2rem 0 0.9rem 2rem;
-    box-shadow: 0 0 11.9px 2.9px rgba(0,0,0,0.1);
+    padding: 1.2rem 0 0.9rem 1.6rem;
+    box-shadow: 0 0 11.9px 2.9px rgba(0, 0, 0, 0.1);
 }
-.commentContainer{
+.commentContainer {
     width: 93%;
-    margin: 2.4rem auto 0 auto;
-    padding: 1.2rem 0 0.9rem 2rem;
-    box-shadow: 0 0 11.9px 2.9px rgba(0,0,0,0.1);
+    margin: 2rem auto 0 auto;
+    padding: 1.2rem 0 0.9rem 1.6rem;
+    box-shadow: 0 0 11.9px 2.9px rgba(0, 0, 0, 0.1);
 }
-.profileImgWrapper {
-    display: inline-block;
-    width: 4.2rem;
-    height: 4.2rem;
-    border-radius: 50%;
-    overflow: hidden;
+.commentContainer:hover {
+    transform: scale(1.015);
+    transition: transform 0.4s;
 }
-.commentName{
-    display: inline-block;
-    font-family: $def_font;
-    font-size: 1.3rem;
-}
-.commentDate{
-    display:inline-block;
-    font-family: $def_font;
-    margin-left: 1rem;
-    font-size: 0.9rem;
-}
-.commentContent{
-    font-family: $def_font;
-    margin-top: 0.2rem;
-}
-.commentContentWrapper{
+.commentContentWrapper {
     display: inline-block;
     vertical-align: top;
-    margin-top: 0.3rem;
-    margin-left: 2rem;
+    margin-top: 0.1rem;
+    margin-left: 1.7rem;
 }
