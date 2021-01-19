@@ -16,7 +16,7 @@ class Comment extends Component {
             comment: [],
         }
     }
-    componentDidMount = () => {
+    componentDidMount() {
         let url = window.location.href;
         let urlSplit = url.split('/');
         axios

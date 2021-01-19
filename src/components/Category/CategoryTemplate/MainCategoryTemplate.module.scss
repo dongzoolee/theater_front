@@ -14,6 +14,7 @@ hr {
     border: none;
 }
 .CategoryInfo {
+    text-align: right;
     margin-top: 1.7rem;
 }
 $mainCatSize: 0.9rem;
@@ -36,6 +37,10 @@ $mainCatSize: 0.9rem;
 .SubCategoryWrapper {
     margin-top: 2.6rem;
     text-align: right;
+}
+.SubCategoryHeader{
+    font-family: "kopub-dotum-bold";
+    color: #643900;
 }
 .SubCategory:first-child {
     margin-top: unset;

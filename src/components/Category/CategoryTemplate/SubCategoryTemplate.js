@@ -11,7 +11,7 @@ class SubCategoryTemplate extends Component {
     state = {
         content: []
     }
-    componentDidMount = () => {
+    componentDidMount() {
         const URLParams = new URLSearchParams(window.location.href.substring(window.location.href.indexOf('?')));
         const data = {
             mainCategory: this.props.mainCategory,
@@ -47,8 +47,8 @@ class SubCategoryTemplate extends Component {
         return (
             <div className={styles.Container}>
                 <div className={styles.CategoryInfo}>
-                    <div className={styles.MainCategory}>{this.props.mainCategory === "장소" ? <Link to='/장소'><img src={storyLocationIcon} /></Link> : <Link to={'/' + this.props.mainCategory}>{this.props.mainCategory}</Link>}&nbsp;&nbsp;/&nbsp;</div>
-                    <a href='?page=1'><div className={styles.SubCategory}>{this.props.subCategory}</div></a>
+                    <div className={styles.MainCategory + " non--draggable"}>{this.props.mainCategory === "장소" ? <Link to='/장소'><img src={storyLocationIcon} /></Link> : <Link to={'/' + this.props.mainCategory}>{this.props.mainCategory}</Link>}&nbsp;&nbsp;/&nbsp;</div>
+                    <a href='?page=1'><div className={styles.SubCategory + " non--draggable"}>{this.props.subCategory}</div></a>
                 </div>
                 <hr />
                 <div className={styles.StoryComponentWrapper}>

@@ -46,7 +46,7 @@ class WriteSubComment extends Component {
                 .catch(err => { })
         }
     }
-    componentDidMount = () => {
+    componentDidMount() {
         if (this.props.isHide);
 
     }

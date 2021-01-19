@@ -23,7 +23,7 @@ class ReadStory extends Component {
             comment: []
         }
     }
-    componentDidMount = () => {
+    componentDidMount() {
         // GET Story
         axios
             .post('/api/read/story', { id: this.props.match.params.id })

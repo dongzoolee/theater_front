@@ -8,7 +8,7 @@ class LocationList extends Component {
     state = {
         locationList: []
     }
-    componentDidMount = () => {
+    componentDidMount() {
         const URLParams = new URLSearchParams(window.location.href.substring(window.location.href.indexOf('?')));
         const data = {
             location: this.props.match.params.location,

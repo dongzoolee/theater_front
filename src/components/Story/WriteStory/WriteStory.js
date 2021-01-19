@@ -25,7 +25,7 @@ class WriteStory extends Component {
             }
         }
     }
-    componentDidMount = () => {
+    componentDidMount() {
         // get Main Categories
         console.log(this.state)
         axios

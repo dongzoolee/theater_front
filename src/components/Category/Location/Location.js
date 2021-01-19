@@ -10,7 +10,7 @@ class Location extends Component {
         content: [],
         contentCnt: ""
     }
-    componentDidMount = () => {
+    componentDidMount() {
         const URLParams = new URLSearchParams(window.location.href.substring(window.location.href.indexOf('?')));
         const data = {
             location: this.props.match.params.location,

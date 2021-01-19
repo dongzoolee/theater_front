@@ -12,7 +12,7 @@ class SubCategory extends Component {
         content: [],
         contentCnt: ""
     }
-    componentDidMount = () => {
+    componentDidMount() {
         const URLParams = new URLSearchParams(window.location.href.substring(window.location.href.indexOf('?')));
         const data = {
             mainCategory: this.props.match.params.mainCategory,

@@ -5,7 +5,7 @@ import Story from './Story/Story';
 import Comment from './Comment/Comment';
 
 class Main extends Component {
-    componentDidMount = () => {
+    componentDidMount() {
         document.querySelector('.storyContainer').style = "padding: 3.6rem 0 4rem 0;";
     }
     render() {

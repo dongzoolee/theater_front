@@ -26,9 +26,8 @@ $grey: #979797;
 }
 .SearchBox {
     font-family: $def_font;
-    padding-left: 0.8rem;
-    width: 10.4rem;
-
+    padding: 0 2.2rem 0.3rem 0.8rem;
+    width: 8.2rem;
     outline: none;
     border: none;
     border-bottom: 1px solid $grey;
@@ -36,7 +35,7 @@ $grey: #979797;
 .SearchIcon {
     position: absolute;
     right: 0.8rem;
-    top: 0.1rem;
+    top: 0.2rem;
     width: 0.9rem;
 }
 .SearchIcon img {

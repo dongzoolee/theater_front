@@ -25,12 +25,13 @@ class MainCategoryTemplate extends Component {
         return (
             <div className={styles.Container}>
                 <div className={styles.CategoryInfo}>
-                    <a href='?page=1'><div className={styles.MainCategory}>{this.props.mainCategory}</div></a>
-                    <div className={styles.SlashCategory}>&nbsp;&nbsp;/&nbsp;</div>
+                    <a href='?page=1'><div className={styles.MainCategory + " non--draggable"}>{this.props.mainCategory}</div></a>
+                    <div className={styles.SlashCategory + " non--draggable"}>&nbsp;&nbsp;/&nbsp;</div>
                     <div className={styles.SubCategoryWrapper}>
-                        {this.props.subCategory.map(val => {
+                        <div className={styles.SubCategoryHeader + " non--draggable"}>서브 카테고리</div>
+                        {this.props.subCategory.map((val, idx) => {
                             return (
-                                <Link to={'/' + this.props.mainCategory + '/' + val.subCategory}><div className={styles.SubCategory}>{val.subCategory}</div></Link>
+                                <Link to={'/' + this.props.mainCategory + '/' + val.subCategory}><div className={styles.SubCategory + " non--draggable"} style={{ 'color': 'rgba(109, 109, 109, ' + (this.props.subCategory.length - idx) / this.props.subCategory.length + ')' }}>{val.subCategory}</div></Link>
                             )
                         })}
                     </div>
@@ -51,7 +52,7 @@ class MainCategoryTemplate extends Component {
                     })}
                     <PaginationFooter />
                 </div>
-            </div>
+            </div >
         )
     }
 }
