@@ -25,10 +25,8 @@ class ReadStory extends Component {
     }
     componentDidMount = () => {
         // GET Story
-        let url = window.location.href;
-        let urlSplit = url.split('/');
         axios
-            .post('/api/read/story', { id: urlSplit[urlSplit.indexOf('story') + 1] })
+            .post('/api/read/story', { id: this.props.match.params.id })
             .then((res) => {
                 this.setState({
                     outerColor: res.data.outerColor,
@@ -45,7 +43,7 @@ class ReadStory extends Component {
             })
         // GET Comments
         axios
-            .post('/api/read/comment', { id: urlSplit[urlSplit.indexOf('story') + 1] })
+            .post('/api/read/comment', { id: this.props.match.params.id })
             .then((res) => {
                 this.setState({
                     commentCnt: res.data.cnt,
