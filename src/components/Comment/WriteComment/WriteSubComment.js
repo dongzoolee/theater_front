@@ -1,5 +1,4 @@
-import React, { Component, Fragment } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
 import styles from './WriteSubComment.module.scss';
 import axios from 'axios';
 

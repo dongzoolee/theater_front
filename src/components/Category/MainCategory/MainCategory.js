@@ -1,5 +1,4 @@
-import React, { Component, Fragment } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
 import Header from '../../Header/Header'
 import styles from './MainCategory.module.scss';
 import MainCategoryTemplate from '../CategoryTemplate/MainCategoryTemplate';

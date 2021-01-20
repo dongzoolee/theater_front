@@ -9,16 +9,17 @@ import LocationList from './components/Category/Location/LocationList';
 import './App.css';
 
 function App() {
+  
   return (
     <Router>
       <Switch>
         <Route exact path='/' component={Main} />
+        <Route exact path='/dongzoolee' component={WriteStory} />
         <Route exact path='/장소' component={LocationList} />
         <Route exact path='/장소/:location' component={Location} />
         <Route exact path='/story/:id' component={ReadStory} />
         <Route exact path='/:mainCategory' component={MainCategory} />
         <Route exact path='/:mainCategory/:subCategory' component={SubCategory} />
-        <Route exact path='/dongzoolee' component={WriteStory} />
       </Switch>
     </Router>
   );

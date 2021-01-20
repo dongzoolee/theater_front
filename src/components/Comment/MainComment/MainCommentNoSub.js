@@ -1,5 +1,4 @@
-import React, { Component, Fragment } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
 import styles from './MainComment.module.scss';
 import '../Comment.scss';
 import sirenImg from '../../../static/icons/siren-1.png';
@@ -18,11 +17,11 @@ class MainComment extends Component {
             <>
 
                 <div className={styles.commentContainer}>
-                    <div className="profileImgWrapper"><img style={{ width: '100%', height: '100%' }} src={'/icons/userIcon-' + this.state.userIcon + '.jpg'} draggable="false" /></div>
+                    <div className="profileImgWrapper"><img alt="user profile" style={{ width: '100%', height: '100%' }} src={'/icons/userIcon-' + this.state.userIcon + '.jpg'} draggable="false" /></div>
                     <div className={styles.commentContentWrapper}>
                         <div className="commentWriter">{this.props.writer}</div>
                         <div className="commentDate">{this.props.date}</div>
-                        <div className="sirenImgWrapper"><img src={sirenImg} /></div>
+                        <div className="sirenImgWrapper"><img alt="report comment" src={sirenImg} /></div>
                         <div className="writeSubComment non--draggable" onClick={(e) => this.openSubCommentWindow(e)}>{!this.state.toggle ? "답글" : "답글 닫기"}</div>
                         <div className="commentContent">{this.props.content}</div>
                     </div>

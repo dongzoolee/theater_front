@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import Header from '../../Header/Header';
 import styles from './WriteStory.module.css';
 import 'codemirror/lib/codemirror.css';

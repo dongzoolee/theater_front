@@ -1,7 +1,6 @@
 import axios from 'axios';
-import React, { Component, Fragment } from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import Header from '../../Header/Header'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './SubCategoryTemplate.module.scss';
 import StoryComponent from './StoryComponent';
 import PaginationFooter from '../PaginationFooter/PaginationFooter';
@@ -47,7 +46,7 @@ class SubCategoryTemplate extends Component {
         return (
             <div className={styles.Container}>
                 <div className={styles.CategoryInfo}>
-                    <div className={styles.MainCategory + " non--draggable"}>{this.props.mainCategory === "장소" ? <Link to='/장소'><img src={storyLocationIcon} /></Link> : <Link to={'/' + this.props.mainCategory}>{this.props.mainCategory}</Link>}&nbsp;&nbsp;/&nbsp;</div>
+                    <div className={styles.MainCategory + " non--draggable"}>{this.props.mainCategory === "장소" ? <Link to='/장소'><img alt="LocationIcon" src={storyLocationIcon} /></Link> : <Link to={'/' + this.props.mainCategory}>{this.props.mainCategory}</Link>}&nbsp;&nbsp;/&nbsp;</div>
                     <a href='?page=1'><div className={styles.SubCategory + " non--draggable"}>{this.props.subCategory}</div></a>
                 </div>
                 <hr />

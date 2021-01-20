@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { Component, Fragment } from 'react';
-import { Link, withRouter } from 'react-router-dom';
 import Header from '../../Header/Header'
 import styles from './Location.module.scss';
 import SubCategoryTemplate from '../CategoryTemplate/SubCategoryTemplate';

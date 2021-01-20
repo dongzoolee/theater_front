@@ -1,11 +1,8 @@
-import axios from 'axios';
-import React, { Component, Fragment } from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import Header from '../../Header/Header'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './MainCategoryTemplate.module.scss';
 import StoryComponent from './StoryComponent';
 import PaginationFooter from '../PaginationFooter/PaginationFooter';
-import storyLocationIcon from '../../../static/icons/location-1.png';
 
 class MainCategoryTemplate extends Component {
     getTextElement = (s) => {

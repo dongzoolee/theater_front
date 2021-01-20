@@ -1,6 +1,5 @@
 import axios from 'axios';
-import React, { Component, Fragment } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
 import Header from '../../Header/Header'
 import styles from './Location.module.scss';
 
@@ -9,11 +8,6 @@ class LocationList extends Component {
         locationList: []
     }
     componentDidMount() {
-        const URLParams = new URLSearchParams(window.location.href.substring(window.location.href.indexOf('?')));
-        const data = {
-            location: this.props.match.params.location,
-            page: URLParams.get('page')
-        }
         axios
             .get('/api/read/distinctlocation')
             .then(res => {

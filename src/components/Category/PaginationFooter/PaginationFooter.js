@@ -1,6 +1,4 @@
-import axios from 'axios';
-import React, { Component, Fragment } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
 import styles from './PaginationFooter.module.scss';
 
 class PaginationFooter extends Component {
@@ -8,10 +6,11 @@ class PaginationFooter extends Component {
         content: []
     }
     searchContent = (e) => {
-        console.log(e)
-        if (e.keyCode === 13) {
-            window.location.href = "?search=" + e.target.value;
-        }
+        if (e.type === "click" || e.keyCode === 13)
+            if (document.querySelector(".searchBoxInput").value.trim() !== "") {
+                window.location.href = "?search=" + document.querySelector(".searchBoxInput").value.trim();
+            } else
+                alert('검색어를 입력해주세요')
     }
     URLParams = new URLSearchParams(window.location.href.substring(window.location.href.indexOf('?')));
     render() {
@@ -25,9 +24,9 @@ class PaginationFooter extends Component {
                     <a href={this.URLParams.get('search') ? "?search=" + this.URLParams.get('search') + "&page=5" : "?page=5"}><div className={styles.PageNumber + " non--draggable"}>5</div></a>
                 </div>
                 <div className={styles.SearchBoxWrapper}>
-                    <input className={styles.SearchBox} onKeyUp={e => this.searchContent(e)} />
+                    <input className={styles.SearchBox + " searchBoxInput"} onKeyUp={e => this.searchContent(e)} />
                     <div className={styles.SearchIcon} onClick={this.searchContent}>
-                        <img src="/icons/search-1.png" />
+                        <img src="/icons/search-1.png" alt="searchIcon" />
                     </div>
                 </div>
             </div>

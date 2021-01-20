@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import styles from './ReadStory.module.css';
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../../Header/Header'
 import Story from '../Story'
