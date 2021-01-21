@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './SubCategoryTemplate.module.scss';
 import StoryComponent from './StoryComponent';
-import PaginationFooter from '../PaginationFooter/PaginationFooter';
+import PaginationFooter from '../../PaginationFooter/PaginationFooter';
 import storyLocationIcon from '../../../static/icons/location-1.png';
 
 class SubCategoryTemplate extends Component {

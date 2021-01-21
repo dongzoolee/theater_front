@@ -25,20 +25,28 @@ class ReadStory extends Component {
     componentDidMount() {
         // GET Story
         axios
-            .post('/api/read/story', { id: this.props.match.params.id })
-            .then((res) => {
-                this.setState({
-                    outerColor: res.data.outerColor,
-                    innerColor: res.data.innerColor,
-                    mainCategory: res.data.mainCategory,
-                    subCategory: res.data.subCategory,
-                    title: res.data.title,
-                    date: res.data.date,
-                    location: res.data.location,
-                    content: res.data.content
-                })
-                document.getElementsByTagName('html')[0].style = "background-color: " + res.data.outerColor + ";";
-                document.getElementsByClassName('storyContainer')[0].style = "background-color: " + res.data.innerColor + ";";
+            .get('https://api.ipify.org?format=json')
+            .then(res => {
+                axios
+                    .post('/api/read/story',
+                        {
+                            id: this.props.match.params.id,
+                            ip: res.data.ip
+                        })
+                    .then((res) => {
+                        this.setState({
+                            outerColor: res.data.outerColor,
+                            innerColor: res.data.innerColor,
+                            mainCategory: res.data.mainCategory,
+                            subCategory: res.data.subCategory,
+                            title: res.data.title,
+                            date: res.data.date,
+                            location: res.data.location,
+                            content: res.data.content
+                        })
+                        document.getElementsByTagName('html')[0].style = "background-color: " + res.data.outerColor + ";";
+                        document.getElementsByClassName('storyContainer')[0].style = "background-color: " + res.data.innerColor + ";";
+                    })
             })
         // GET Comments
         axios
@@ -55,7 +63,8 @@ class ReadStory extends Component {
             })
         window.onload = () => {
             document.querySelectorAll('img').forEach(ele => {
-                ele.setAttribute('draggable','false')
+                ele.setAttribute('draggable', 'false')
+                ele.style = "max-width:100%;";
             })
         }
     }

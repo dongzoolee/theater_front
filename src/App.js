@@ -6,6 +6,7 @@ import SubCategory from './components/Category/SubCategory/SubCategory';
 import MainCategory from './components/Category/MainCategory/MainCategory';
 import Location from './components/Category/Location/Location';
 import LocationList from './components/Category/Location/LocationList';
+import StoryLine from './components/StoryLine/StoryLine';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path='/' component={Main} />
+        <Route exact path='/storyline' component={StoryLine} />
         <Route exact path='/dongzoolee' component={WriteStory} />
         <Route exact path='/장소' component={LocationList} />
         <Route exact path='/장소/:location' component={Location} />

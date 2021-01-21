@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './MainCategoryTemplate.module.scss';
 import StoryComponent from './StoryComponent';
-import PaginationFooter from '../PaginationFooter/PaginationFooter';
+import PaginationFooter from '../../PaginationFooter/PaginationFooter';
 
 class MainCategoryTemplate extends Component {
     getTextElement = (s) => {

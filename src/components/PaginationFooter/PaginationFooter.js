@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './PaginationFooter.module.scss';
+import SearchBox from '../SearchBox/SearchBox';
 
 class PaginationFooter extends Component {
     state = {
@@ -23,12 +24,7 @@ class PaginationFooter extends Component {
                     <a href={this.URLParams.get('search') ? "?search=" + this.URLParams.get('search') + "&page=4" : "?page=4"}><div className={styles.PageNumber + " non--draggable"}>4</div></a>
                     <a href={this.URLParams.get('search') ? "?search=" + this.URLParams.get('search') + "&page=5" : "?page=5"}><div className={styles.PageNumber + " non--draggable"}>5</div></a>
                 </div>
-                <div className={styles.SearchBoxWrapper}>
-                    <input className={styles.SearchBox + " searchBoxInput"} onKeyUp={e => this.searchContent(e)} />
-                    <div className={styles.SearchIcon} onClick={this.searchContent}>
-                        <img src="/icons/search-1.png" alt="searchIcon" />
-                    </div>
-                </div>
+                <SearchBox />
             </div>
         )
     }
