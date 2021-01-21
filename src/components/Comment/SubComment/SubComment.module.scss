@@ -2,10 +2,10 @@ $def_font: "kopub-dotum-medium";
 
 .commentContainer {
     padding: 1.2rem 0 0.9rem 3.4rem;
-}
-.commentContainer:hover {
-    transform: scale(1.02);
-    transition: transform 0.4s;
+    &:hover {
+        transform: scale(1.02);
+        transition: transform 0.4s;
+    }
 }
 .commentContentWrapper {
     display: inline-block;

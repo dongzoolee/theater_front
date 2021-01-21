@@ -25,7 +25,7 @@ class MainCategoryTemplate extends Component {
                     <a href='?page=1'><div className={styles.MainCategory + " non--draggable"}>{this.props.mainCategory}</div></a>
                     <div className={styles.SlashCategory + " non--draggable"}>&nbsp;&nbsp;/&nbsp;</div>
                     <div className={styles.SubCategoryWrapper}>
-                        <div className={styles.SubCategoryHeader + " non--draggable"}>서브 카테고리</div>
+                        <div className={styles.SubCategoryHeader + " non--draggable"}>서브 스토리라인</div>
                         {this.props.subCategory.map((val, idx) => {
                             return (
                                 <Link to={'/' + this.props.mainCategory + '/' + val.subCategory}><div className={styles.SubCategory + " non--draggable"} style={{ 'color': 'rgba(109, 109, 109, ' + (this.props.subCategory.length - idx) / this.props.subCategory.length + ')' }}>{val.subCategory}</div></Link>

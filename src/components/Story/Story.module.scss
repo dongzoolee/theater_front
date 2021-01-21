@@ -2,7 +2,7 @@
 .storyWrapper {
     /* 왜 inline-block인가? */
     /* display: inline-block; */
-    margin: 0 auto 0 auto;
+    margin: 0 auto 4rem auto;
     width: calc(100% - 16.5rem);
 }
 
@@ -20,9 +20,9 @@
 .subCategory {
     font-family: 'kopub-dotum-medium';
     color: #000000;
-}
-.subCategory:hover {
-    border-bottom: 1px solid rgba(151, 151, 151, 0.7);
+    &:hover {
+        border-bottom: 1px solid rgba(151, 151, 151, 0.7);
+    }
 }
 .storyTitle {
     font-family: 'kopub-dotum-light';

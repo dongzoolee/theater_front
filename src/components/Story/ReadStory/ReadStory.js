@@ -5,6 +5,7 @@ import Header from '../../Header/Header'
 import Story from '../Story'
 import Comment from '../../Comment/Comment'
 import '../../Story.css';
+import AdfitWebComponent from 'react-adfit-web-component'
 
 class ReadStory extends Component {
     constructor() {
@@ -25,28 +26,23 @@ class ReadStory extends Component {
     componentDidMount() {
         // GET Story
         axios
-            .get('https://api.ipify.org?format=json')
-            .then(res => {
-                axios
-                    .post('/api/read/story',
-                        {
-                            id: this.props.match.params.id,
-                            ip: res.data.ip
-                        })
-                    .then((res) => {
-                        this.setState({
-                            outerColor: res.data.outerColor,
-                            innerColor: res.data.innerColor,
-                            mainCategory: res.data.mainCategory,
-                            subCategory: res.data.subCategory,
-                            title: res.data.title,
-                            date: res.data.date,
-                            location: res.data.location,
-                            content: res.data.content
-                        })
-                        document.getElementsByTagName('html')[0].style = "background-color: " + res.data.outerColor + ";";
-                        document.getElementsByClassName('storyContainer')[0].style = "background-color: " + res.data.innerColor + ";";
-                    })
+            .post('/api/read/story',
+                {
+                    id: this.props.match.params.id
+                })
+            .then((res) => {
+                this.setState({
+                    outerColor: res.data.outerColor,
+                    innerColor: res.data.innerColor,
+                    mainCategory: res.data.mainCategory,
+                    subCategory: res.data.subCategory,
+                    title: res.data.title,
+                    date: res.data.date,
+                    location: res.data.location,
+                    content: res.data.content
+                })
+                document.getElementsByTagName('html')[0].style = "background-color: " + res.data.outerColor + ";";
+                document.getElementsByClassName('storyContainer')[0].style = "background-color: " + res.data.innerColor + ";";
             })
         // GET Comments
         axios
@@ -64,7 +60,7 @@ class ReadStory extends Component {
         window.onload = () => {
             document.querySelectorAll('img').forEach(ele => {
                 ele.setAttribute('draggable', 'false')
-                ele.style = "max-width:100%;";
+                ele.style.maxWidth="100%";
             })
         }
     }
@@ -82,6 +78,9 @@ class ReadStory extends Component {
                         storyDate={this.state.date}
                         storyLocation={this.state.location}
                         storyContent={[this.state.content]}
+                    />
+                    <AdfitWebComponent
+                        adUnit="DAN-zrThBYMLPyPfF7zx"
                     />
                     <Comment
                         commentCnt={this.state.commentCnt}

@@ -1,5 +1,5 @@
 .commentContainer {
-    margin: 7rem auto 0;
+    margin: 5rem auto 0;
     width: calc(100% - 16.5rem);
 }
 .commentCount {
@@ -19,9 +19,9 @@
 
     padding-top: 0.1rem;
 }
-.MainSubCommentContainer:first-child {
-    margin-top: 0;
-}
 .MainSubCommentContainer {
     margin-top: 2rem;
+    &:first-child {
+        margin-top: 0;
+    }
 }

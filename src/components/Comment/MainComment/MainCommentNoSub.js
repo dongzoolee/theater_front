@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './MainComment.module.scss';
 import '../Comment.scss';
 import sirenImg from '../../../static/icons/siren-1.png';
+import axios from 'axios';
 
 class MainComment extends Component {
     state = {
@@ -12,6 +13,13 @@ class MainComment extends Component {
         // e.target.parentElement.parentElement.parentElement.lastElementChild.lastElementChild.classList.toggle('hide')
         e.target.parentElement.parentElement.parentElement.lastElementChild.classList.toggle('hide');
     }
+    reportComment = (e) => {
+        if (window.confirm('댓글을 신고하시겠습니까?'))
+            axios
+                .post('/api/report/comment', { key: this._reactInternals.key })
+                .then(alert('신고가 정상적으로 처리되었습니다'))
+                .catch(console.error)
+    }
     render() {
         return (
             <>
@@ -21,7 +29,7 @@ class MainComment extends Component {
                     <div className={styles.commentContentWrapper}>
                         <div className="commentWriter">{this.props.writer}</div>
                         <div className="commentDate">{this.props.date}</div>
-                        <div className="sirenImgWrapper"><img alt="report comment" src={sirenImg} /></div>
+                        <div className="sirenImgWrapper" onClick={this.reportComment}><img alt="report comment" src={sirenImg} /></div>
                         <div className="writeSubComment non--draggable" onClick={(e) => this.openSubCommentWindow(e)}>{!this.state.toggle ? "답글" : "답글 닫기"}</div>
                         <div className="commentContent">{this.props.content}</div>
                     </div>

@@ -23,9 +23,9 @@ $mainCatSize: 0.9rem;
     display: inline-block;
     font-size: 1.7rem;
     padding: 0 0.3rem;
-}
-.MainCategory:hover {
-    border-bottom: 1px solid rgba(151, 151, 151, 0.7);
+    &:hover {
+        border-bottom: 1px solid rgba(151, 151, 151, 0.7);
+    }
 }
 .SlashCategory {
     font-family: $def_font;
@@ -38,17 +38,17 @@ $mainCatSize: 0.9rem;
     margin-top: 2.6rem;
     text-align: right;
 }
-.SubCategoryHeader{
+.SubCategoryHeader {
     font-family: "kopub-dotum-bold";
     color: #643900;
-}
-.SubCategory:first-child {
-    margin-top: unset;
 }
 .SubCategory {
     margin-top: 0.6rem;
     font-family: "kopub-dotum-bold";
     color: #8f8f8f;
+    &:first-child {
+        margin-top: unset;
+    }
 }
 .StoryComponentWrapper {
     width: 70%;

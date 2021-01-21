@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Story.module.css';
+import styles from './Story.module.scss';
 import '../Story.css';
 import storyLocationIcon from '../../static/icons/location-1.png';
 

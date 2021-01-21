@@ -8,7 +8,7 @@ class Header extends Component {
             <><div className="pace--loader"></div>
                 <div className={styles.header}>
                     <span className={styles.loginIcon + " non--draggable"}><Link to="/storyline">스토리 라인</Link></span>
-                    <span className={styles.headerIcon + " non--draggable"}>인기글</span>
+                    <span className={styles.headerIcon + " non--draggable"}><Link to="/hot">인기글</Link></span>
                     <span className={styles.headerIcon + " non--draggable"}> 내가 작성한 댓글</span >
                     <span className={styles.headerIcon + " non--draggable"}>알림</span>
                     <span className={styles.thsixIcon + " non--draggable"}><a href="/">36부작</a></span>

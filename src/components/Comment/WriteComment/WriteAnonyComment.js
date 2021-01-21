@@ -11,10 +11,14 @@ class WriteComment extends Component {
         }
     }
     onChangeEvent = (e) => {
-        this.setState({
-            writer: e.target.value,
-            content: e.target.value
-        })
+        if (e.target.tagName === "INPUT")
+            this.setState({
+                writer: e.target.value
+            })
+        else if(e.target.tagName === "TEXTAREA")
+            this.setState({
+                content: e.target.value
+            })
     }
     handleSubmit = () => {
         let url = window.location.href;

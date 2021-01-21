@@ -8,6 +8,7 @@
   <meta name="google-site-verification" content="qiXBbChY8W5yYn625qU5Jl8LO3jX1RGi08agVlwldpo" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="컴퓨터공학과 학부생의 낙서장" />
+  <script data-ad-client="ca-pub-7011418110198372" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D9E43P52RG"></script>
   <script>
@@ -20,9 +21,9 @@
   <!--DESCRIPTION OVERRIDE-->
   <!--<meta name="description" content="" data-react-helmet="true" />-->
   <!--OPENGRAPH-->
-  <link rel="canonical" href="" data-react-helmet="true" />
+  <link rel="canonical" href="this.props.url" data-react-helmet="true" />
   <meta property="og:type" content="article" data-react-helmet="true" />
-  <meta property="og:url" content="" data-react-helmet="true" />
+  <meta property="og:url" content="this.props.url" data-react-helmet="true" />
   <meta property="og:site_name" content="36부작" data-react-helmet="true" />
   <meta property="og:title" content="this.props.storyTitle" data-react-helmet="true" />
   <meta name="by" content="dongzoolee" data-react-helmet="true" />
@@ -43,11 +44,11 @@
         "@type": "BlogPosting",
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://blog.soga.ng"
+          "@id": "this.props.url"
         },
-        "headline": "안녕하세요! 제목입니다",
-        "description": "내용입니다!",
-        "image": "https://image",  
+        "headline": "this.props.storyTitle",
+        "description": "this.props.storyContent",
+        "image": "this.props.imageUrl",  
         "author": {
           "@type": "Person",
           "name": "dongzoolee"
@@ -97,6 +98,8 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+  <!-- Kakao Adfit -->
+  
 </body>
 
 </html>
