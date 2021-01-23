@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import Header from '../Header/Header'
 import { Link } from 'react-router-dom';
 import styles from './StoryLine.module.scss';
@@ -32,8 +33,8 @@ class StoryLine extends Component {
 
             })
             .catch(err => console.log(err))
-        window.onload = () =>
-            document.querySelector('.kakao_ad_area').style.margin = "7rem auto 0 auto";
+    }
+    componentDidUpdate() {
     }
     render() {
         return (
@@ -125,7 +126,7 @@ class StoryLine extends Component {
                                                     </Link>
                                                 </th>
                                             )
-                                        else return(<></>);
+                                        else return (<></>);
                                     })}
                                 </tr>
                             </tbody>
@@ -139,4 +140,4 @@ class StoryLine extends Component {
         )
     }
 }
-export default StoryLine;
+export default withRouter(StoryLine);

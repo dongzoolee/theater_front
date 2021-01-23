@@ -9,13 +9,14 @@ import LocationList from './components/Category/Location/LocationList';
 import StoryLine from './components/StoryLine/StoryLine';
 import HotStory from './components/HotStory/HotStory';
 import './App.css';
+import AdfitWebComponent from 'react-adfit-web-component'
 
 function App() {
   
   return (
     <Router>
       <Switch>
-        <Route exact path='/' component={Main} />
+        <Route exact path='/' component={StoryLine} />
         <Route exact path='/hot' component={HotStory} />
         <Route exact path='/storyline' component={StoryLine} />
         <Route exact path='/dongzoolee' component={WriteStory} />
