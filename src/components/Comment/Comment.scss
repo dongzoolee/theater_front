@@ -7,6 +7,9 @@ $def_font: "kopub-dotum-medium";
     border-radius: 50%;
     overflow: hidden;
 }
+.WriterDateWrapper {
+    display: flex;
+}
 .commentWriter {
     display: inline-block;
     font-family: $def_font;
@@ -16,7 +19,7 @@ $def_font: "kopub-dotum-medium";
     display: inline-block;
     font-family: $def_font;
     margin-left: 0.8rem;
-    font-size: 0.67rem;
+    font-size: 0.57rem;
 }
 .sirenImgWrapper {
     display: inline-block;
@@ -30,15 +33,21 @@ $def_font: "kopub-dotum-medium";
         height: 100%;
     }
 }
-.writeSubComment{
+.writeSubComment {
     display: inline-block;
     cursor: pointer;
     margin-left: 0.6rem;
-    font-size:0.7rem;
+    font-size: 0.7rem;
 }
 .commentContent {
     font-family: $def_font;
     margin-top: 0.2rem;
     font-size: 0.8rem;
     padding-left: 0.1rem;
+    word-break: break-all;
+}
+@media (max-width: 600px) {
+    .SubCommentWrapper {
+        
+    }
 }

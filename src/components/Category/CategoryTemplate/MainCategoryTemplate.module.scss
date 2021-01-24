@@ -33,6 +33,7 @@ $mainCatSize: 0.9rem;
     vertical-align: text-bottom;
     color: $grey;
     margin-bottom: 0.2rem;
+    margin-left: -0.3vw;
 }
 .SubCategoryWrapper {
     margin-top: 2.6rem;
@@ -52,4 +53,39 @@ $mainCatSize: 0.9rem;
 }
 .StoryComponentWrapper {
     width: 70%;
+}
+.MobileCategoryInfo {
+    display: none;
+}
+@media (max-width: 1570px) {
+    hr {
+        margin: 0 3.7vw 0 2.6vw;
+    }
+}
+@media(max-width:400px){
+    .StoryComponentWrapper {
+        padding: 0 2.3vw;
+    }
+}
+@media (max-width: 830px) {
+    .StoryComponentWrapper {
+        // 안자
+        width:unset;
+        padding: 0 1rem;
+    }
+}
+@media (max-width: 1000px) {
+    .Container {
+        display: block;
+    }
+    .StoryComponentWrapper{
+        margin:0 auto;
+    }
+    .CategoryInfo,
+    hr {
+        display: none;
+    }
+    .MobileCategoryInfo {
+        display: block;
+    }
 }

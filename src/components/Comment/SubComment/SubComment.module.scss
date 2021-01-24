@@ -1,5 +1,8 @@
 $def_font: "kopub-dotum-medium";
-
+.profileImgWrapper {
+    width: 2.8rem !important;
+    height: 2.8rem !important;
+}
 .commentContainer {
     padding: 1.2rem 0 0.9rem 3.4rem;
     &:hover {
@@ -12,4 +15,27 @@ $def_font: "kopub-dotum-medium";
     vertical-align: top;
     margin-top: 0.3rem;
     margin-left: 2rem;
+    width: calc(100% - 8rem);
+}
+.SirenWriteSubWrapper {
+    margin-left: auto;
+}
+.SirenWriteSubWrapperForMobile {
+    display: none;
+    text-align: right;
+}
+@media (max-width: 730px) {
+    .commentContainer {
+        padding: 1.2rem 1.2rem 0.9rem 1.6rem;
+    }
+    .commentContentWrapper {
+        margin-left: 1.3rem;
+        width: calc(100% - 5.6rem);
+    }
+    .SirenWriteSubWrapper {
+        display: none;
+    }
+    .SirenWriteSubWrapperForMobile {
+        display: block;
+    }
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './MainCategoryTemplate.module.scss';
 import StoryComponent from './StoryComponent';
 import PaginationFooter from '../../PaginationFooter/PaginationFooter';
-
+import MobileCategoryInfo from './MobileCategoryInfo';
 class MainCategoryTemplate extends Component {
     getTextElement = (s) => {
         let span = document.createElement('span');
@@ -34,6 +34,12 @@ class MainCategoryTemplate extends Component {
                     </div>
                 </div>
                 <hr />
+                <div className={styles.MobileCategoryInfo}>
+                    <MobileCategoryInfo
+                        mainCategory={this.props.mainCategory}
+                        subCategory={this.props.subCategory}
+                    />
+                </div>
                 <div className={styles.StoryComponentWrapper}>
                     {this.props.content.map(val => {
                         return (

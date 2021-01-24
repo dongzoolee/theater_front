@@ -71,3 +71,8 @@
     font-size: 0.9rem;
     font-family: 'kopub-dotum-light';
 }
+@media (max-width: 477px) {
+    .date {
+        display: none;
+    }
+}

@@ -1,0 +1,27 @@
+.ContentWrapper {
+    margin: 1rem auto 0 auto;
+    width: 88%;
+    font-size: 1.4rem;
+    display: flex;
+    flex-wrap:wrap;
+    // justify-content: space-evenly;
+}
+.StoryLineTitle {
+    font-family: "kopub-dotum-medium";
+    text-align: left;
+    color: #414141;
+    font-size: 2.4rem;
+    font-weight: normal;
+}
+.StoryLineContentWrapper{
+    margin: 2vw;
+}
+.StoryLineContent {
+    font-family: "kopub-dotum-medium";
+    text-align: left;
+    color: #414141;
+    // font-size: 0.72rem;
+    font-size: 0.7rem;
+    font-weight: normal;
+    margin-top: -0.5rem;
+}

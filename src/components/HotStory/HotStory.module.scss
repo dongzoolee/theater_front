@@ -5,14 +5,21 @@
     width: 77.5%;
     height: 6.1rem;
     line-height: 5.8rem;
-    margin:0 auto;
+    margin: 0 auto;
     padding-top: 0.7rem;
 
     text-align: center;
-    font-family: 'kopub-dotum-bold';
+    font-family: "kopub-dotum-bold";
     font-size: 1rem;
 }
 .StoryComponentWrapper {
     width: 77.5%;
     margin: 0 auto;
+}
+@media (max-width: 840px) {
+    .StoryComponentWrapper {
+        // width: 95%;
+        width: unset;
+        padding: 0 1rem;
+    }
 }

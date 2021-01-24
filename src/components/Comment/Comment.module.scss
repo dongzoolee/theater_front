@@ -4,7 +4,7 @@
 }
 .commentCount {
     font-family: "kopub-dotum-medium";
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
 }
 .MainSubCommentWrapper {
@@ -16,12 +16,26 @@
     margin-top: 1.3rem;
     margin-left: auto;
     margin-right: 2rem;
-
     padding-top: 0.1rem;
 }
 .MainSubCommentContainer {
     margin-top: 2rem;
     &:first-child {
         margin-top: 0;
+    }
+}
+@media (max-width: 1100px) {
+    .commentContainer {
+        width: calc(100% - 18vw);
+    }
+}
+// @media (max-width: 600px) {
+@media (max-width: 730px) {
+    .commentContainer {
+        width: 88%;
+        margin: 0 auto;
+    }
+    .SubCommentWrapper {
+        margin-right: 0rem;
     }
 }

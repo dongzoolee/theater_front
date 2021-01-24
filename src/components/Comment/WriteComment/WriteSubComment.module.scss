@@ -44,7 +44,7 @@
 .emoji {
 }
 .commitBtn {
-    font-family: 'kopub-dotum-medium';
+    font-family: "kopub-dotum-medium";
     padding: 0.1rem 0.9rem;
     font-size: 0.8rem;
     border-radius: 0.4rem;
@@ -61,5 +61,16 @@
     box-sizing: border-box;
     outline: none;
     font-size: 0.8rem;
-    font-family: 'kopub-dotum-light';
+    font-family: "kopub-dotum-light";
+}
+@media (max-width: 730px) {
+    .container {
+        width: calc(96% - 2.9rem);
+        margin-left: 1.6rem;
+    }
+}
+@media (max-width: 530px) {
+    .date {
+        display: none;
+    }
 }

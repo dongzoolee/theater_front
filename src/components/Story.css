@@ -22,3 +22,15 @@ a {
     height: 2px;
     transform: translate3d(50%, 0, 0);
 }
+@media (max-width: 1353px) {
+    .storyContainer {
+        width: 88%;
+    }
+}
+@media (max-width: 600px) {
+    .storyContainer {
+        width: 93%;
+        /* padding: 19vw 0 4rem 0; */
+        padding: 14vw 0 4rem 0;
+    }
+}

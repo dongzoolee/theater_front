@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import styles from './StoryLine.module.scss';
 import axios from 'axios';
 import AdfitWebComponent from 'react-adfit-web-component'
+import MobileContentWrapper from './MobileContentWrapper/MobileContentWrapper';
 
 class StoryLine extends Component {
     state = {
@@ -30,18 +31,24 @@ class StoryLine extends Component {
                 this.setState({
                     content: res.data
                 })
-
             })
             .catch(err => console.log(err))
+        document.querySelector('.header').style.width = "89%";
+        document.querySelector('.header').style.maxWidth = "2300px";
     }
     componentDidUpdate() {
     }
     render() {
         return (
             <>
-                <Header />
+                <Header
+                    isStoryLine={true}
+                />
                 <div className={"storyContainer " + styles.MainCategoryWrapper}>
                     <div className={styles.Header + " non--draggable"}>스토리 라인</div>
+                    <div className={styles.MobileContentWrapper}>
+                        <MobileContentWrapper />
+                    </div>
                     <div className={styles.ContentWrapper}>
                         <table>
                             <tbody>
@@ -84,13 +91,23 @@ class StoryLine extends Component {
                                     {this.state.content.map((val, idx) => {
                                         if (idx === 0)
                                             return (
+
                                                 <th className={styles.StoryLineStoryTh} key={idx}>
                                                     <Link to={"/story/" + val.idx}>
                                                         <div className={styles.BigContainer}>
-                                                            <div className={styles.BigImg}><img src={this.getImgSrc(val.content)} alt={""} /></div>
-                                                            <div className={styles.BigTitle}>{val.title}</div>
-                                                            <div className={styles.BigDate}>{val.date}</div>
-                                                            <div className={styles.BigContent}>{this.getTextElement(val.content).length >= 60 ? this.getTextElement(val.content).substring(0, 60) : this.getTextElement(val.content)}</div>
+                                                            {this.getImgSrc(val.content) ?
+                                                                <>
+                                                                    <div className={styles.BigImg}><img src={this.getImgSrc(val.content)} alt={""} /></div>
+                                                                    <div className={styles.BigTitle}>{val.title}</div>
+                                                                    <div className={styles.BigDate}>{val.date}</div>
+                                                                    <div className={styles.BigContent}>{this.getTextElement(val.content).length >= 60 ? this.getTextElement(val.content).substring(0, 60) : this.getTextElement(val.content)}</div>
+                                                                </> :
+                                                                <>
+                                                                    <div className={styles.BigTitle}>{val.title}</div>
+                                                                    <div className={styles.BigDate}>{val.date}</div>
+                                                                    <div className={styles.BigContent}>{this.getTextElement(val.content).length >= 60 ? this.getTextElement(val.content).substring(0, 120) : this.getTextElement(val.content)}</div>
+                                                                </>
+                                                            }
                                                         </div>
                                                     </Link>
                                                 </th>
@@ -132,9 +149,9 @@ class StoryLine extends Component {
                             </tbody>
                         </table>
                     </div>
-                    <AdfitWebComponent
+                    {/* <AdfitWebComponent
                         adUnit="DAN-zrThBYMLPyPfF7zx"
-                    />
+                    /> */}
                 </div>
             </>
         )

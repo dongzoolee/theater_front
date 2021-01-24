@@ -1,9 +1,9 @@
 $def_font: "kopub-dotum-medium";
 
 .commentContainer {
-    width: 93%;
+    width: calc(100% - 3.2rem);
     margin: 0 auto 0 auto;
-    padding: 1.2rem 0 0.9rem 1.6rem;
+    padding: 1.2rem 1.6rem 0.9rem 1.6rem;
     box-shadow: 0 0 11.9px 2.9px rgba(0, 0, 0, 0.1);
     &:first-child {
         margin: 0 auto;
@@ -18,4 +18,20 @@ $def_font: "kopub-dotum-medium";
     vertical-align: top;
     margin-top: 0.1rem;
     margin-left: 1.7rem;
+    width: calc(100% - 5.7rem);
+}
+.SirenWriteSubWrapper {
+    margin-left: auto;
+}
+.SirenWriteSubWrapperForMobile {
+    display: none;
+    text-align: right;
+}
+@media (max-width: 730px) {
+    .SirenWriteSubWrapper {
+        display: none;
+    }
+    .SirenWriteSubWrapperForMobile {
+        display: block;
+    }
 }

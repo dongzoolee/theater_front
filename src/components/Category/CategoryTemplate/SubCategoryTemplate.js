@@ -5,6 +5,7 @@ import styles from './SubCategoryTemplate.module.scss';
 import StoryComponent from './StoryComponent';
 import PaginationFooter from '../../PaginationFooter/PaginationFooter';
 import storyLocationIcon from '../../../static/icons/location-1.png';
+import MobileCategoryInfo from './MobileCategoryInfo';
 
 class SubCategoryTemplate extends Component {
     state = {
@@ -50,6 +51,12 @@ class SubCategoryTemplate extends Component {
                     <a href='?page=1'><div className={styles.SubCategory + " non--draggable"}>{this.props.subCategory}</div></a>
                 </div>
                 <hr />
+                <div className={styles.MobileCategoryInfo}>
+                    <MobileCategoryInfo
+                        mainCategory={this.props.mainCategory}
+                        subCategory={this.props.subCategory}
+                    />
+                </div>
                 <div className={styles.StoryComponentWrapper}>
                     {this.props.content.map(val => {
                         return (

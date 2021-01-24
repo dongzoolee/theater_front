@@ -1,0 +1,32 @@
+$def_font: "kopub-dotum-medium";
+$mainCatSize: 0.9rem;
+
+.CategoryInfo {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+.MainCategory {
+    font-family: $def_font;
+    display: inline-block;
+    font-size: 1.7rem;
+    padding: 0 0.3rem;
+    &:hover {
+        border-bottom: 1px solid rgba(151, 151, 151, 0.7);
+    }
+}
+.SubCategoryWrapper {
+    margin-top: 2vw;
+}
+.SubCategoryHeader {
+    font-family: "kopub-dotum-bold";
+}
+.SubCategoryContent {
+    display: flex;
+    justify-content: space-evenly;
+}
+@media (max-width: 830px) {
+    .CategoryInfo {
+        width: 85%;
+    }
+}

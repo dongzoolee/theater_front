@@ -10,3 +10,7 @@
     font-family: 'kopub-dotum-medium';
     src: url('./KoPubWorld-Dotum-Medium.woff') format('woff');
 }
+@font-face{
+    font-family: 'firacode-reg';
+    src: url('./FiraCode-Regular.woff') format('woff');
+}

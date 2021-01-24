@@ -99,9 +99,9 @@ class ReadStory extends Component {
                         storyLocation={this.state.location}
                         storyContent={[this.state.content]}
                     />
-                    {this.state.toShowAd ? <AdfitWebComponent
+                    {/* {this.state.toShowAd ? <AdfitWebComponent
                         adUnit="DAN-zrThBYMLPyPfF7zx"
-                    /> : ""}
+                    /> : ""} */}
                     <Comment
                         commentCnt={this.state.commentCnt}
                         comment={this.state.comment}

@@ -4,6 +4,7 @@ import '../Comment.scss';
 import sirenImg from '../../../static/icons/siren-1.png';
 import WriteSubComment from '../WriteComment/WriteSubComment';
 import axios from 'axios';
+import SirenWriteSubWrapper from '../SirenWriteSubWrapper/SirenWriteSubWrapper';
 
 class SubComment extends Component {
     state = {
@@ -24,13 +25,26 @@ class SubComment extends Component {
         return (
             <>
                 <div className={styles.commentContainer}>
-                    <div className="profileImgWrapper"><img alt="user profile" style={{ width: '100%', height: '100%' }} src={process.env.PUBLIC_URL + '/icons/userIcon-' + this.state.userIcon + '.jpg'} /></div>
+                    <div className={"profileImgWrapper " + styles.profileImgWrapper}><img alt="user profile" style={{ width: '100%', height: '100%' }} src={process.env.PUBLIC_URL + '/icons/userIcon-' + this.state.userIcon + '.jpg'} /></div>
                     <div className={styles.commentContentWrapper}>
-                        <div className="commentWriter">{this.props.writer === '-1' ? "익명" : this.props.writer}</div>
-                        <div className="commentDate">{this.props.date}</div>
-                        <div className="sirenImgWrapper" onClick={this.reportComment}><img alt="report comment" src={sirenImg} /></div>
-                        <div className="writeSubComment non--draggable" onClick={(e) => this.openSubCommentWindow(e)}>{!this.state.toggle ? "답글" : "답글 닫기"}</div>
+                        <div className="WriterDateWrapper">
+                            <div className="commentWriter">{this.props.writer.length >= 18 ? this.props.writer.substring(0, 10) + "..." : this.props.writer}</div>
+                            <div className={styles.SirenWriteSubWrapper}>
+                                <SirenWriteSubWrapper
+                                    hasSubComment={this.props.hasSubComment}
+                                    parentClass={this.props.parentClass}
+                                    key={this._reactInternals.key}
+                                    date={this.props.date}
+                                />
+                            </div>
+                        </div>
                         <div className="commentContent">{this.props.content}</div>
+                    </div>
+                    <div className={styles.SirenWriteSubWrapperForMobile}>
+                        <SirenWriteSubWrapper
+                            key={this._reactInternals.key}
+                            date={this.props.date}
+                        />
                     </div>
                 </div>
                 {this.state.toggle && (
