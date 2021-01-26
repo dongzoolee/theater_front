@@ -15,6 +15,7 @@
     "jsdom": "^16.4.0",
     "mysql2": "^2.2.5",
     "node-sass": "^4.14.1",
+    "pace-progressbar": "^1.0.9",
     "path": "^0.12.7",
     "react": "^17.0.1",
     "react-adfit-web-component": "^1.0.2",

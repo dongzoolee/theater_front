@@ -42,6 +42,8 @@ class SubComment extends Component {
                     </div>
                     <div className={styles.SirenWriteSubWrapperForMobile}>
                         <SirenWriteSubWrapper
+                            hasSubComment={this.props.hasSubComment}
+                            parentClass={this.props.parentClass}
                             key={this._reactInternals.key}
                             date={this.props.date}
                         />

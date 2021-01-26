@@ -3,8 +3,18 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import HeaderRouter from './HeaderRouter/HeaderRouter';
 import './Header.scss';
+import 'pace-progressbar';
+import 'pace-progressbar/themes/yellow/pace-theme-minimal.css';
 
 class Header extends Component {
+    paceOptions = {
+        ajax: false, // disabled
+        document: false, // disabled
+        eventLag: false, // disabled
+        elements: {
+            selectors: ['.pace--loader']
+        }
+    };
     state = {
         menuBarOn: false
     }
@@ -22,7 +32,7 @@ class Header extends Component {
     }
     render() {
         return (
-            <><div className="pace--loader"></div>
+            <>
                 <div className={"header"}>
                     {this.state.menuBarOn ? "" :
                         <>

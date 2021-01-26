@@ -25,12 +25,14 @@ class MainComment extends Component {
                             </div>
                         </div>
                         <div className="commentContent">{this.props.content}</div>
-                        <div className={styles.SirenWriteSubWrapperForMobile}>
-                            <SirenWriteSubWrapper
-                                key={this._reactInternals.key}
-                                date={this.props.date}
-                            />
-                        </div>
+                    </div>
+                    <div className={styles.SirenWriteSubWrapperForMobile}>
+                        <SirenWriteSubWrapper
+                            hasSubComment={this.props.hasSubComment}
+                            parentClass={this.props.parentClass}
+                            key={this._reactInternals.key}
+                            date={this.props.date}
+                        />
                     </div>
                 </div>
             </>

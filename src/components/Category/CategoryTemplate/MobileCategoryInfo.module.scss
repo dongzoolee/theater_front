@@ -16,14 +16,44 @@ $mainCatSize: 0.9rem;
     }
 }
 .SubCategoryWrapper {
-    margin-top: 2vw;
+    margin-top: 0.3vw;
 }
 .SubCategoryHeader {
     font-family: "kopub-dotum-bold";
+    font-size: 0.9rem;
+    color: #643900;
 }
 .SubCategoryContent {
     display: flex;
     justify-content: space-evenly;
+}
+.Arrow {
+    display: none;
+    img {
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+        margin-bottom: 0.2rem;
+    }
+}
+.flip {
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+.hide {
+    display: none;
+}
+@media (max-width: 1000px) {
+    .Arrow {
+        display: inline-block;
+        width: 0.5rem;
+        margin-left: 0.5rem;
+        position: absolute;
+    }
 }
 @media (max-width: 830px) {
     .CategoryInfo {

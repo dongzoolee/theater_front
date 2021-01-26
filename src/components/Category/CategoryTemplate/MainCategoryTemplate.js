@@ -28,7 +28,7 @@ class MainCategoryTemplate extends Component {
                         <div className={styles.SubCategoryHeader + " non--draggable"}>서브 스토리라인</div>
                         {this.props.subCategory.map((val, idx) => {
                             return (
-                                <Link to={'/' + this.props.mainCategory + '/' + val.subCategory}><div className={styles.SubCategory + " non--draggable"} style={{ 'color': 'rgba(109, 109, 109, ' + (this.props.subCategory.length - idx) / this.props.subCategory.length + ')' }}>{val.subCategory}</div></Link>
+                                <Link to={'/' + this.props.mainCategory + '/' + val.subCategory}><div className={styles.SubCategory + " non--draggable"} style={{ 'color': 'rgba(109, 109, 109, ' + (this.props.subCategory.length - idx) / (this.props.subCategory.length + 1) + ')' }}>{val.subCategory}</div></Link>
                             )
                         })}
                     </div>

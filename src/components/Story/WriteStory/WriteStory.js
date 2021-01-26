@@ -119,6 +119,7 @@ class WriteStory extends Component {
                         initialEditType="markdown"
                         ref={this.editorRef}
                         onChange={this.handleUpdate}
+                        
                     />
                     <button >임시저장</button>
                     <button onClick={this.handleSubmit}>제출</button>
