@@ -13,6 +13,13 @@ class Story extends Component {
     else
       return null;
   }
+  componentDidUpdate() {
+    document.querySelector('.' + styles.storyContent).querySelectorAll('a').forEach(ele => {
+      ele.style.textDecoration='underline';
+      ele.style.color='#5656D8';
+      ele.style.fontFamily='kopub-dotum-bold';
+    })
+  }
   render() {
     return (
       <div className={styles.storyWrapper}>
