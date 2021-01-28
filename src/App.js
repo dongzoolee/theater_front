@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Main from './components/Main'
 import WriteStory from './components/Story/WriteStory/WriteStory'
 import ReadStory from './components/Story/ReadStory/ReadStory'
 import SubCategory from './components/Category/SubCategory/SubCategory';
@@ -9,7 +8,6 @@ import LocationList from './components/Category/Location/LocationList';
 import StoryLine from './components/StoryLine/StoryLine';
 import HotStory from './components/HotStory/HotStory';
 import './App.css';
-import AdfitWebComponent from 'react-adfit-web-component'
 
 function App() {
   

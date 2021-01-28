@@ -33,7 +33,7 @@ class Comment extends Component {
         return (
             <div className={styles.commentContainer}>
                 <div className={styles.commentCount}>댓글 {this.state.commentCnt}개</div>
-                <div className={styles.MainSubCommentWrapper}>
+                <div className={styles.MainSubCommentWrapper} id="comments">
                     {this.state.comment.map((val, idx, elem) => {
                         // idx == 0 && 답글 잇는 댓글 전처리 
                         if (!idx && val.subContent) {

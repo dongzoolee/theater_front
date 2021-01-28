@@ -19,7 +19,7 @@ class MobileCategoryInfo extends Component {
                     <div className={styles.SubCategoryWrapper}>
                         <div className={styles.SubCategoryHeader + " non--draggable"} onClick={this.toggleSubCategoryBox}>
                             {typeof (this.props.subCategory) === "object" ? "서브 스토리라인" : this.props.subCategory}
-                            <div className={styles.Arrow}>{typeof (this.props.subCategory) === "object" ? <img className={styles.flip} src="/icons/arrow-1.png" /> : ""}</div></div>
+                            <div className={styles.Arrow}>{typeof (this.props.subCategory) === "object" ? <img className={styles.flip} src="/icons/arrow-1.png" alt="arrow" /> : ""}</div></div>
                         <div className={styles.SubCategoryContent + " " + styles.hide}>
                             {typeof (this.props.subCategory) === "object" ? this.props.subCategory.map((val, idx) => {
                                 return (

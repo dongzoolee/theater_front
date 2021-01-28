@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styles from './SubComment.module.scss';
 import '../Comment.scss';
-import sirenImg from '../../../static/icons/siren-1.png';
 import WriteSubComment from '../WriteComment/WriteSubComment';
 import axios from 'axios';
 import SirenWriteSubWrapper from '../SirenWriteSubWrapper/SirenWriteSubWrapper';

@@ -6,6 +6,7 @@ import Story from '../Story'
 import Comment from '../../Comment/Comment'
 import '../../Story.css';
 import AdfitWebComponent from 'react-adfit-web-component'
+import Footer from '../../Footer/Footer'
 
 class ReadStory extends Component {
     constructor() {
@@ -107,6 +108,7 @@ class ReadStory extends Component {
                         comment={this.state.comment}
                     />
                 </div>
+                <Footer />
             </>
         );
     }

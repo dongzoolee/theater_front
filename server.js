@@ -3,6 +3,7 @@ const app = express();
 const port = process.env.PORT || 2501;
 const path = require('path');
 const fs = require('fs')
+const rss = require('rss');
 const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
@@ -17,7 +18,15 @@ const connection = mysql2.createPool({
 });
 app.use(cors());
 app.use(express.static(path.resolve(__dirname, './build')));
-
+// __dirname 여기까지의 주소
+app.get('/rss', (req, res) => {
+  const filePath = path.resolve(__dirname, './build/rss.xml');
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) return console.log(err);
+    res.set('Content-Type', 'text/xml');
+    res.end(data);
+  })
+})
 app.get('/story/:id', (request, response) => {
   const filePath = path.resolve(__dirname, './build', 'index.html');
   let url = request.url.split('/');
@@ -39,8 +48,6 @@ app.get('/story/:id', (request, response) => {
         data = data.replace(/this.props.imageUrl/g, 'https://blog.soga.ng' + getImgSrc(result[0].content) === null ? "" : getImgSrc(result[0].content));
 
         response.setHeader("Access-Control-Allow-Origin", "*");
-        response.setHeader('Access-Control-Allow-Methods', '*');
-        response.setHeader("Access-Control-Allow-Headers", "*");
         response.send(data);
       });
   })
@@ -51,6 +58,10 @@ app.get('*', function (request, response) {
     if (err) {
       return console.log(err);
     }
+    data = data.replace(/this.props.storyTitle/g, '36부작');
+    data = data.replace(/this.props.url/g, 'https://blog.soga.ng' + request.url);
+    data = data.replace(/this.props.storyContent/g, '컴퓨터공학과 학부생의 낙서장');
+
     response.setHeader("Access-Control-Allow-Origin", "*");
     response.send(data);
   });

@@ -1,0 +1,1983 @@
+<rss version="2.0">
+    <channel>
+        <title>36부작</title>
+        <link>https://blog.soga.ng</link>
+        <description>컴퓨터공학과 학부생의 낙서장</description>
+        <language>ko</language>
+        <pubDate>Wed, 27 Jan 2021 23:07:43 +0900</pubDate>
+        <generator>soga.ng</generator>
+        <ttl>300</ttl>
+        <managingEditor>dongzoolee</managingEditor>
+
+        <item>
+            <title>fatal: refusing to merge unrelated histories</title>
+            <link>https://blog.soga.ng/story/35</link>
+            <description>
+                <p>
+                    <code data-backticks="1">fatal: refusing to merge unrelated histories</code>
+                    <br />
+                    <strong>git pull</strong>
+                    명령어를 입력했더니 위의 오류가 떴다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    Github 상에 존재하는 내 레파지토리의 기록과 내가 올리려는 컨텐츠에 대한 기록에 겹치는 부분이 존재하지 않을 때, git이 두 기록을
+                    <code data-backticks="1">unrelated histories</code>
+                    로 인식하여
+                    <strong>pull</strong>
+                    을 막는 것이다.
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                </p>
+                <p>
+                    <code data-backticks="1">git pull origin main</code>
+                    을
+                    <br />
+                    <code data-backticks="1">git pull origin main --allow-unrelated-histories</code>
+                    로 대신 입력하면
+                    <strong>pull</strong>
+                    이 진행된다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                    <br />
+                    관련이 없는 두 기록을 같은 기록으로 허용해 달라는 소리 같다.
+                </p>
+            </description>
+            <category>배움</category>
+            <category>git</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/35</guid>
+            <comments>https://blog.soga.ng/story/35#comments</comments>
+            <pubDate>THU, 28 JAN 2021 02:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>Todo</title>
+            <link>https://blog.soga.ng/story/34</link>
+            <description>
+                <h3>현재 제출 버튼을 누르면 서버로 페이지 데이터가 전달되게 되어있다.</h3>
+                <p>
+                    이럴 경우 문제는
+                    <strong>필수 항목을 채우지 않은 채로</strong>
+                    제출 버튼을 눌러도 데이터가 서버에 저장된다는 것이다.
+                </p>
+                <h3>한 가지 폼에 대한 여러번의 제출을 어떻게 처리할 것인가?</h3>
+                <p>지금은 그냥 다 저장하고 뜨게 되어 있다.</p>
+                <h3>구글에 제출한 익스텐션 승인 받으면 수정하기..</h3>
+                <ul>
+                    <li>아이콘 고화질로 변경</li>
+                    <li>조금 고친 익스텐션으로 패키지 수정</li>
+                </ul>
+            </description>
+            <category>보물창고</category>
+            <category>Pomp</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/34</guid>
+            <comments>https://blog.soga.ng/story/34#comments</comments>
+            <pubDate>WED, 27 JAN 2021 15:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>빙고판 확정판 !</title>
+            <link>https://blog.soga.ng/story/33</link>
+            <description>
+                <img src="/story/33/final_sgcs_bingo.png " width="500" data-tomark-pass="" />
+                <p>
+                    그냥
+                    <br />
+                    학교의 간지를 살려서
+                    <br />
+                    뽀짝한 이미지를 없엔 디자인을 했다
+                </p>
+                <p>새내기들한텐 학교 뽕 디자인이 맞지 !</p>
+            </description>
+            <category>낙서</category>
+            <category>낙서장</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/33</guid>
+            <comments>https://blog.soga.ng/story/33#comments</comments>
+            <pubDate>WED, 27 JAN 2021 14:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>잠시 접었던 앱을 다시</title>
+            <link>https://blog.soga.ng/story/32</link>
+            <description>
+                <p>시작해보려고 한다.</p>
+                <p>카프카를 도입해보기 위해서는, 많은 개발 환경 및 플랫폼이 있어야 한다고 판단했고,</p>
+                <p>안드로이드 프론트만 잡으면 백엔드 실력은 웹과 같은 맥락이지 않을까..라고 생각했다.</p>
+                <p>아니 그냥 카프카 사용하는 환경을 하나 더 늘려보고 싶은 마음이 제일 크다.</p>
+                <p>내일부터 달려보자</p>
+            </description>
+            <category>일기</category>
+            <category>개발낙서</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/32</guid>
+            <comments>https://blog.soga.ng/story/32#comments</comments>
+            <pubDate>WED, 27 JAN 2021 03:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>docker로 kafka 설치부터 cmak 설치까지</title>
+            <link>https://blog.soga.ng/story/31</link>
+            <description>
+                <h3>0. docker-compose</h3>
+                <p>docker 사용을 쉽게 해주는 docker-compose를 이용하여 구축을 진행한다.</p>
+                <p>
+                    먼저 유저 디렉토리에
+                    <code data-backticks="1">docker-compose.yml</code>
+                    를 저장할 폴더를 생성한다.
+                    <br />
+                    <img src="/story/31/1.jpg" width="400" data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <strong>kafka</strong>
+                    가 메세지 큐의 역할을 할 때,
+                    <strong>zookeeper</strong>
+                    라는 프로그램이 메세지 큐로 들어오는 메세지들을 관리하는 역할을 담당해주어 성공적으로 메세지가 전송된다.
+                    <br />
+                    <br data-tomark-pass="" />
+                </p>
+                <p>
+                    우리는
+                    <strong>kafka, zookeeper</strong>
+                    를 이용하여 메세지를 처리할 것이고,
+                    <br />
+                    둘의 데이터 처리를 시각적으로 확인하기 위해
+                    <strong>cmak</strong>
+                    이라는 프로그램을 이용할 것이다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    ~/docker_kafka/
+                    <strong>docker-compose.yml</strong>
+                </p>
+                <pre class="lang-yml">
+                    <code data-language="yml">version: "3.2"
+   networks:
+     kafka_net: # 세 서비스를 하나의 네트워크로 묶어줌
+   
+   services:
+     zookeeper:
+       image: zookeeper:3.5.8 # cmak을 이용하려면 3.5.x 이상의 버전을 사용해야 한다.
+       container_name: zookeeper
+       ports:
+         - "2181:2181"
+       networks:
+         - kafka_net # 세 서비스를 하나의 네트워크로 묶어줌
+   
+     kafka:
+       image: wurstmeister/kafka:2.12-2.0.1 # 유명하길래 이용해본다
+       container_name: kafka    
+       environment:
+         JMX_PORT: 9093 # JMX(Java Management Extension)를 사용할 포트 지정
+         KAFKA_JMX_OPTS: -Dcom.sun.management.jmxremote=true 
+                         -Dcom.sun.management.jmxremote.authenticate=false 
+                         -Dcom.sun.management.jmxremote.ssl=false 
+                         -Djava.rmi.server.hostname={카프카 컨테이너의 아이피 주소} 
+                         -Dcom.sun.management.jmxremote.rmi.port=9393 
+                         -Djava.net.preferIPv4Stack=true
+         KAFKA_BROKER_ID: 1
+         KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://{서버 아이피 주소 or localhost}:9092
+         KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+         KAFKA_ADVERTISED_HOST_NAME: {서버 아이피 주소 or localhost}
+         KAFKA_ADVERTISED_PORT: 9092
+         KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181 # zookeeper 컨테이너 이름과 포트를 명시한다
+       volumes:
+         - /var/run/docker.sock:/var/run/docker.sock
+       ports:
+         - "9092:9092"
+         - "9093:9093" # 컨테이너 내부에서 이용하는 JMX 포트를 밖으로 빼와봤다
+       depends_on:
+         - zookeeper # zookeeper가 시작된 후에 kafka 실행
+       networks:
+         - kafka_net # 세 서비스를 하나의 네트워크로 묶어줌
+   
+     kafka_manager:
+       image: hlebalbau/kafka-manager:stable
+       ports:
+         - "9000:9000"
+       depends_on:
+         - kafka
+         - zookeeper
+       environment:
+         ZK_HOSTS: "zookeeper:2181" # zookeeper 컨테이너 이름과 포트를 명시한다
+         APPLICATION_SECRET: "random-secret"
+       networks:
+         - kafka_net # 세 서비스를 하나의 네트워크로 묶어줌
+   
+   </code>
+                </pre>
+                <p>
+                    이미지를 사전에 설치해놓을 필요없이, 실행시 알아서 이미지를 다운로드 받는다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                    <br />
+                    kafka 컨테이너 설정에서 아래 두 줄은 필수가 아니다.
+                    <br />
+                    하지만 추후에 JMX를 이용할 예정이라면 꼭 설정에 포함시키자.
+                    <br />
+                    아니 그냥 cmak에서 에러메세지를 보고 싶지 않다면
+                    <br />
+                    그냥 포함시키자.
+                </p>
+                <pre class="lang-yml">
+                    <code data-language="yml">      JMX_PORT: 9093 # JMX(Java Management Extension)를 사용할 포트 지정
+         KAFKA_JMX_OPTS: -Dcom.sun.management.jmxremote=true 
+                         -Dcom.sun.management.jmxremote.authenticate=false 
+                         -Dcom.sun.management.jmxremote.ssl=false 
+                         -Djava.rmi.server.hostname={카프카 컨테이너의 아이피 주소} 
+                         -Dcom.sun.management.jmxremote.rmi.port=9393 
+                         -Djava.net.preferIPv4Stack=true
+   </code>
+                </pre>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                    <br />
+                    ~/docker_kafka 디렉토리에서
+                    <code data-backticks="1">docker-compose up</code>
+                    을 타이핑해주면,
+                    <br />
+                    <img src="/story/31/2.jpg" width="500/" data-tomark-pass="" />
+                    <br />
+                    구동이 아주 잘 되는 모습이다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    {서버 아이피}:9000에서 cmak이 실제로 작동하는 모습을 볼 수 있다.
+                    <br />
+                    <img src="/story/31/3.jpg" width="500/" data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    Add Cluster 메뉴에서
+                    <strong>docker-compose.yml</strong>
+                    에 등록한 zookeeper 정보를 그대로 기입한다.
+                    <br />
+                    <img src="/story/31/4.jpg" width="600/" data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    kafka가 등록이 완료되었다.
+                    <br />
+                    <img src="/story/31/5.jpg" width="600/" data-tomark-pass="" />
+                </p>
+            </description>
+            <category>배움</category>
+            <category>linux</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/31</guid>
+            <comments>https://blog.soga.ng/story/31#comments</comments>
+            <pubDate>TUE, 26 JAN 2021 18:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>0. 형 이거 해보자</title>
+            <link>https://blog.soga.ng/story/30</link>
+            <description>
+                <h3>2020년 11월 30일</h3>
+                <img src="/story/30/1.png" width="400" data-tomark-pass="" />
+                <p>
+                    효규가 갑자기 정부 해커톤을 들고 왔다.
+                    <br />
+                    재밌는건 팀원이 "현재 박건 나" 라고 말하고 있는데
+                    <br />
+                    효규는 개발을 하지 않고,
+                    <br />
+                    건이도 개발을 하지 않던 상태였다.
+                </p>
+                <p>그래서 "어떻게 뭘 만드려는 거지????" 라는 생각이 들었다.</p>
+                <p>어쩌면 걍 나를 납치해가려는 소리 같기도 했는데</p>
+                <p>솔직히 말해서 저 때는 그냥 한다 해놓고 나중에 흐지부지 될 줄 알았다.</p>
+                <p>
+                    왜냐면 해커톤 날짜가 시험기간과 겹쳤기 때문이다.
+                    <br />
+                    그냥 겹친 것도 아니고, 이산구조랑 미적분 시험 직전에 시행되는 해커톤이였기 때문에,
+                    <br />
+                    다들 말로만 한다고 할 줄 알았다.
+                    <br />
+                    <br data-tomark-pass="" />
+                </p>
+                <h3>맞다 말로만 한다고 했다</h3>
+                <p>
+                    결국 나 혼자 개발했다.
+                    <br />
+                    뭐 어쩔 수 없는 것이기도 했고, 예상한 결과였기 때문에 그리 놀랍진 않았다.
+                </p>
+                <blockquote>
+                    <p>나 혼자 개발 하니까 2주면 되겠지ㅜ?</p>
+                </blockquote>
+                <p>
+                    라는 생각으로 개발을 시작했다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                </p>
+                <h3>개발을 시작하기 이전에</h3>
+                <p>
+                    그래서 어떤 해커톤이였는데?
+                    <br />
+                    <a href="http://civichack.or.kr">끝장개발대회!</a>
+                    (놀랍게도 정부 사이트가 ssl을 지원하지 않는다!)
+                    <br />
+                    <strong>코로나 우울증을 극복할 수 있는 플랫폼을 개발하는 것</strong>
+                    이 이번 제 4회 대회의 목표였다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                </p>
+                <h3>우리의 개발 테마</h3>
+                <p>
+                    아무 생각도 없던 때에, 건이가 의견을 냈다.
+                    <br />
+                    나중에 코로나가 끝났을 때 확인해볼 수 있는 타임캡슐을 묻자는 것이였다.
+                </p>
+                <p>
+                    이게 무슨 소리냐?
+                    <br />
+                    타임캡슐 안에 추억이 담긴 이미지나 동영상을 담아 놓고, 나중에 코로나가 끝났을 때 이 일들을(사진 속 추억들을) 할 수 있기를 소망하는 마음으로 캡슐을 묻으면
+                </p>
+                <blockquote>
+                    <p>아 코로나가 끝나면 이런 것들을 할 수 있을거야!!</p>
+                </blockquote>
+                <p>라는 마음이 가지면서 우울증을 극복해 나갈 수 있을 것이라는 것이였다.</p>
+                <p>그리고 코로나가 끝나고 캡슐을 열어보면</p>
+                <blockquote>
+                    <p>아 그 땐 그랬었지....</p>
+                </blockquote>
+                <p>와 같은 추억팔이를 할 수 있다는 것이였다.</p>
+                <p>
+                    상당히 창의적이라고 느꼈다 . . .
+                    <br />
+                    도대체 어디서 이런 생각을 해왔을까. . 생각을 해봤는데
+                </p>
+            </description>
+            <category>보물창고</category>
+            <category>tco</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/30</guid>
+            <comments>https://blog.soga.ng/story/30#comments</comments>
+            <pubDate>TUE, 26 JAN 2021 02:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>4. 스토리 라인</title>
+            <link>https://blog.soga.ng/story/27</link>
+            <description>
+                <p>
+                    블로그의 스토리들을 분류해주는 기준이 필요했다.
+                    <br />
+                    그 네가지 기준을 나한테 중요한 순서대로 나열을 해보려고 한다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                    <br />
+                    일단 블로그를 만들게 된 이유의 제일 큰 비중을 차지하는
+                    <strong>보물창고</strong>
+                    <br />
+                    <img src="/story/27/1.jpg" width="800" data-tomark-pass="" />
+                    <br />
+                    지금까지 프로젝트를 통해 개발한 것들을 한 곳에 정리하는 곳이다.
+                    <br />
+                    진심으로 소중하게 생각해서
+                    <strong>보물창고</strong>
+                    라고 이름을 지었다.
+                </p>
+                <p>
+                    저 프로젝트들 하나하나를 진행하면서 느낀 감정들과 얻은 것들이 앞으로의 개발생활에도 분명히 도움이 될 것이라고 확신하기에 더 값지게 느껴지는 것 같다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    그리고 서브 스토리라인에
+                    <a href="https://leed.at">리드앳</a>
+                    이 없는데,
+                    <br />
+                    많은 시간을 들이고, 많은 것들을 배우게 해준 작업물은 맞지만
+                    <br />
+                    프로젝트는 아니였다.
+                    <br />
+                    개발을 처음 시작한 새내기의 마음으로 누구에게 잘 만들어진? 사이트를 빨리 보여주고 싶었던 작업물이다. 지금 가지는 마음가짐이나 앞으로 가질 태도에 맞지 않다고 생각해서
+                    <br />
+                    그냥 서버에 고이 모셔 놓을 생각이다. 후기를 작성히기에도 너무 늦기도 했고,,
+                    <br />
+                    (또 반응형까지 완벽 구현이 되지 않으면 공개할만한 작업물이라고 생각하지 않는다)
+                </p>
+                <p>
+                    그래도 추억이 많이 담긴 사이트라서 쪽팔려도 깃허브에서 내리고 싶은 마음은 없다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    컴퓨터 관련해서 배운 점들을 기록하는 곳이다.
+                    <br />
+                    <img src="/story/27/3.jpg" width="800" data-tomark-pass="" />
+                    <br />
+                    다들 깃허브에 TodayILearned 레파지토리를 만들어서 올려 놓고는 하는데
+                    <br />
+                    전에 부터 블로그에 기록을 남겨 놓고 싶었기 때문에 나는 블로그에 올려 놓으려 한다.
+                </p>
+                <p>대신 코드가 자주 올라가는 만큼, 코드블럭 스타일을 조금 더 깔끔한 것으로 대체해야겠다는 생각은 많이 하고 있다.</p>
+                <p>
+                    <a href="https://leed.at/diary">일기장</a>
+                    이랑 바탕화면
+                    <strong>LINUX</strong>
+                    폴더에 배운 점들이 많이 기록되어 있는데, 두 곳에 기록해놓은 것들이 개발할 때 도움이 많이 되었다.
+                    <br />
+                    (여기
+                    <strong>배움</strong>
+                    으로 DB를 이전하는 작업을 언제 날 잡고 해야한다..)
+                </p>
+                <p>
+                    앞으로도 계속 개발 관련해서 배운 점들은 꾸준히 업로드 해보려고 한다.
+                    <br />
+                    단점은 나 말고 다른 사람도 이해할 수 있도록 글을 작성하지 못한다는 점인데,,,
+                    <br />
+                    블로그를 운영하면서 조금씩 개선해야 겠다ㅜ
+                </p>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    다음은
+                    <strong>낙서</strong>
+                    다
+                    <br />
+                    <img src="/story/27/2.jpg" width="800" data-tomark-pass="" />
+                    <br />
+                    뭐 가볍게 디자인한 것들을 올리는 곳 뿐만 아니라 진짜 낙서를 올릴 예정이다,
+                </p>
+                <p>
+                    아이디어가 떠오르면 바로바로 노트북에 기록해 놓기 위해서 타블렛을 샀다.
+                    <br />
+                    생각은 많은데
+                    <del>그걸 정리해 놓지 않으면</del>
+                    낙서조차도 남겨 놓지 않아서 후에 후회한 때가 많았다.
+                </p>
+                <p>
+                    보통 음악을 들을 때 디자인이던 개발 아이템이던 발상이 잘 떠오르는 편이다.
+                    <br />
+                    그럴 때
+                    <strong>windows whiteboard</strong>
+                    에 낙서를 남겨놓는다.
+                </p>
+                <p>
+                    게을러서 여기에 얼마나 자주 업로드를 시킬지는 모르겠다
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    일상의 일기를 작성하는 곳이다.
+                    <br />
+                    <img src="/story/27/4.jpg" width="800" data-tomark-pass="" />
+                    <br />
+                    뭐 개발하다가 갑자기 드는 생각을 그냥 던지고 오는 곳이기도 하고
+                    <br />
+                    오늘 하루 느낀 점을 한마디 툭 던지고 오는 곳이기도 하다.
+                </p>
+                <p>
+                    다들 일기라고 하면 몇 줄이나 쓰는지 모르겠지만
+                    <br />
+                    스토리 라인 페이지에서 언급했던 것처럼
+                    <br />
+                    <img src="/story/27/5.jpg" width="400" data-tomark-pass="" />
+                    <br />
+                    최소한의 노력을 들이는 곳이다 ㅇㅇ
+                    <br />
+                    일기 길게 안쓸거다~
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                    <br />
+                    ㅂㅇ~
+                </p>
+            </description>
+            <category>보물창고</category>
+            <category>36부작</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/27</guid>
+            <comments>https://blog.soga.ng/story/27#comments</comments>
+            <pubDate>SUN, 24 JAN 2021 21:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>어이 박건</title>
+            <link>https://blog.soga.ng/story/29</link>
+            <description>
+                <p>
+                    어이 박건..
+                    <br />
+                    미미짱이랑 같이 있으니까
+                    <br />
+                    행복하냐구..
+                </p>
+                본인의 요청으로 삭제된 이미지입니다 . . . . .
+                <img src="/story/29/10.jpg" width="500" data-tomark-pass="" />
+            </description>
+            <category>일기</category>
+            <category>일상생활</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/29</guid>
+            <comments>https://blog.soga.ng/story/29#comments</comments>
+            <pubDate>TUE, 26 JAN 2021 02:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>3. 댓글 창 만들기</title>
+            <link>https://blog.soga.ng/story/26</link>
+            <description>
+                <p>
+                    이번 제목은 간단하게 '댓글 창 만들기'다.
+                    <br />
+                    이 '댓글 창' 때문에 뚝배기가 다섯 번은 깨진 것 같다.
+                </p>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br />
+                    간단해 보이지만 나에겐 간단하지 않았다.
+                    <br />
+                    진짜 5일 이상 댓글 창을 어떻게 제작할 지 고민을 많이 했다.
+                </p>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br />
+                    몇 분만에 만들어낸 댓글창은 아래 사진과 같다.
+                    <br />
+                    <img src="/story/26/1.jpg" width="800" data-tomark-pass="" />
+                </p>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    티스토리는 아래와 같은 디자인을 취하고 있다.
+                    <br />
+                    <img src="/story/26/2.jpg" width="800" data-tomark-pass="" />
+                </p>
+                <p>
+                    나는 애초에 글이 보여지는 영역 자체가 사이드 회색 바를 제외하고는 화면의 많은 부분을 차지한다.
+                    <br />
+                    그런데 티스토리는 헤더를 왼쪽에 취함으로써 글의 영역을 좁게 만들어 놓았다.
+                    <br />
+                    댓글창을 이에 맞추어 디자인해도 허전하지 않게, 글의 너비에 일치하게 만들 수 있다.
+                </p>
+                <p>
+                    하지만 내 사이트의 경우, 넓은 글의 영역에 댓글 창을 맞추어 설계하면
+                    <br />
+                    무엇인가 오른쪽이 비어있는 심심한 느낌을 지울 수가 없었다.
+                </p>
+                <p>저 심심함, 허전함을 해결하기 위해 4일 동안 계속 고민 했다.</p>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                </p>
+                <h3>5일간 고민을 마친 후</h3>
+                <p>
+                    <img src="https://cdn.dribbble.com/users/180062/screenshots/6409133/thursday__14__4x.png?compress=1&amp;resize=1000x750" width="500" style="float:left;" data-tomark-pass="" />
+                    <img src="https://cdn.dribbble.com/users/14190/screenshots/4945645/comment-s.png?compress=1&amp;resize=800x600" width="500" data-tomark-pass="" />
+                </p>
+                <p>이 두가지 사진에서 최종 영감을 얻었다.</p>
+                <p>
+                    첫번째 사진에서는 댓글마다의 구분을
+                    <strong>shadow</strong>
+                    로 주는 게 인상 깊었고,
+                    <br />
+                    두번째 사진에서는 댓글의 대댓글을 나열할 때
+                    <strong>부모댓글의 연장선</strong>
+                    으로 선이 쭉 내려오는게 이뻐보였다.
+                </p>
+                <p>
+                    두 이미지에서 종합한 내 댓글 창은 이렇게 만들어졌다!
+                    <br />
+                    <img src="/story/26/3.jpg" width="800" data-tomark-pass="" />
+                    <br />
+                    지금은 저기에
+                    <strong>대댓글 달기 창</strong>
+                    과 마우스 올리면 살짝 확대되는 효과가 추가되었다.
+                    <br />
+                    (보물창고 suapc.kr편에서도 확인해볼 수 있다)
+                    <br />
+                    또 내가 개인적으로 설레는 기능인 새로고침 할 때마다 댓글단 사람의 프로필 사진이 변경되는 기능도 추가되어있다! !
+                </p>
+                <p>
+                    <br data-tomark-pass="" />
+                </p>
+                <h4>댓글 좋아요 버튼은 구현 안하시나요?</h4>
+                <p>
+                    할겁니다 할건데,
+                    <br />
+                    36부작에서 어떤 기능으로 자리잡게 할지 구상중입니다.
+                    <br />
+                    그냥 하트만 누르고 하트를 누른 사람의 수를 보여주는 것만으로는 조금 아쉬워서요.
+                </p>
+                <h4>커밋 옆에 이모티콘 버튼은 왜 없죠?</h4>
+                <p>
+                    할겁니다 할건데,
+                    <br />
+                    저기에 넣을 이모티콘의 저작권 때문에 고민중입니다.
+                    <br />
+                    슬랙에 blob 추가하듯이 그냥 해도 되려나?
+                    <br />
+                    상업적인 목적으로 사용하는 것도 아닌데,, 등을
+                    <br />
+                    고민중에 있습니다.
+                </p>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                </p>
+                <h2>CONTRIBUTERS</h2>
+                <blockquote>
+                    <p>김도현 : '댓글달기' 버튼 =&gt; '커밋' 버튼</p>
+                    <p>홍재령 : 댓글 하트 아이콘 리디자인</p>
+                </blockquote>
+            </description>
+            <category>보물창고</category>
+            <category>36부작</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/26</guid>
+            <comments>https://blog.soga.ng/story/26#comments</comments>
+            <pubDate>FRI, 22 JAN 2021 16:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>git에서 파일 제거하기</title>
+            <link>https://blog.soga.ng/story/28</link>
+            <description>
+                <p>// .idea/modules.xml 파일 삭제</p>
+                <pre class="lang-shell">
+                    <code data-language="shell">$ git rm --cached .idea/modules.xml
+   </code>
+                </pre>
+                <p>// .idea 폴더 하위의 모든 파일 삭제</p>
+                <pre class="lang-shell">
+                    <code data-language="shell">$ git rm --cached -r .idea/
+   </code>
+                </pre>
+                <p>하고 commit push</p>
+            </description>
+            <category>배움</category>
+            <category>git</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/28</guid>
+            <comments>https://blog.soga.ng/story/28#comments</comments>
+            <pubDate>MON, 25 JAN 2021 14:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>1. 초안을 짜보자</title>
+            <link>https://blog.soga.ng/story/25</link>
+            <description>
+                <p>
+                    PS를 하는데 깃헙도 들락날락한다?
+                    <br />
+                    마자씁니다를 모르는 사람은 드물거다.
+                </p>
+                <p>
+                    내 솔브드 티어는 쪽팔리니 링크로 대체한다
+                    <br />
+                    <a href="https://github.com/mazassumnida/mazassumnida">https://github.com/mazassumnida/mazassumnida</a>
+                </p>
+                <p>
+                    이 프로젝트의 형제(?) 느낌으로 보면 될 것 같다.
+                    <br />
+                    마자씁니다 프로젝트를 기획한 사람이 아니라서 내가 구상한 프로젝트는 아니고 남수연이 제안한 프로젝트다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                </p>
+                <h3>1</h3>
+                <p>
+                    우리는 일단 디자인에 들어갔다.
+                    <br />
+                    사실상 구현은 handle을 get으로 보내주면 서버에서 svg 이미지를 return 해주는 간단한 형식으로 이루어졌기 때문에 디자인이 85%를 차지한 프로젝트였다.
+                </p>
+                <img src="/story/25/1.jpg" width="700px" data-tomark-pass="" />
+                <br />
+                초창기 디자인이다. 3번 -&gt; 4번 -&gt; 5번 순서로 구상을 해봣던 것 같다.
+                <p>
+                    3번은 얇은 글씨체로 버려졌던 것 같다.
+                    <br />
+                    코포는 조금 두꺼운 맛이 있어야 했다.
+                </p>
+                <p>4번도 나쁘지 않지만 그냥 디자인이 끌리는 맛이 없어서 버려졌다.</p>
+                <p>
+                    5번이 내 마음에 딱 맞는 깔끔한 디자인이였다.
+                    <br />
+                    하지만 폐기할 수 밖에 없었다.
+                </p>
+                <ul>
+                    <li>코드포스 핸들이 KANGHYOGUE보다 길면 어떡할건데</li>
+                    <li>maxRank가 Master가 아니라 International Grandmaster면 어떡할건데</li>
+                </ul>
+                <p>최소한 저 상자길이의 핸들까지도 커버할 수 있는 높은 범용성의 디자인을 구상해내야했다.</p>
+                <p>그리고 인터넷 창 배경이 이미 흰색이라, 배경색을 채워 넣어야 뭔가 조금 심심한 맛을 채울 수 있을 것 같다고 우리 둘 다 느꼈다.</p>
+            </description>
+            <category>보물창고</category>
+            <category>maza-cofo</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/25</guid>
+            <comments>https://blog.soga.ng/story/25#comments</comments>
+            <pubDate>FRI, 22 JAN 2021 11:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>0. 고갱님들 </title>
+            <link>https://blog.soga.ng/story/24</link>
+            <description>
+                <h4>1. 박재형 선배님</h4>
+                <p>
+                    ICPC 선배님이시다. 군 복무 중이셔서 뵌적은 없지만
+                    <br />
+                    이용해주셔서 감사합니다 선배님
+                    <br />
+                    <img src="/story/24/1.jpg" width="400px" data-tomark-pass="" />
+                </p>
+                <h4>2. 이윤제 선배님</h4>
+                <p>
+                    라선배님이랑 같은 팀이셨던 블랙위젤 선배님이시다.
+                    <br />
+                    이용해주셔서 감사합니다 선배님
+                    <br />
+                    <img src="/story/24/2.jpg" width="400px" data-tomark-pass="" />
+                </p>
+                <h4>3. 도현티비</h4>
+                <p>
+                    나름 자랑스러운 왜틀봇 개발자시다.
+                    <br />
+                    잔디밭 관리 좀 자주 해주세요
+                    <br />
+                    <img src="/story/24/3.jpg" width="400px" data-tomark-pass="" />
+                </p>
+                <h4>4. 강원과고 고갱님</h4>
+                <p>
+                    고갱님 감사합니다.
+                    <br />
+                    <img src="/story/24/4.jpg" width="400px" data-tomark-pass="" />
+                </p>
+                <h4>5. 카이스트 이종서 선배님</h4>
+                <p>
+                    신촌연합 관련 일로 연락을 드린 기억이 좀 있다.
+                    <br />
+                    연락을 드릴 때마다 정말 친절한 답변을 받은 기억이 있다.
+                    <br />
+                    이용 감사합니다.
+                    <br />
+                    <img src="/story/24/5.jpg" width="400px" data-tomark-pass="" />
+                </p>
+                <h4>6. 잘못된 사용 예를 보여주신 고객님</h4>
+                <p>
+                    README에 ?id={handle} 형식으로 사용해달라고 적어놓았는데
+                    <br />
+                    정말 정직하게 {} 안에 핸들을 적어주셨다 ...
+                    <br />
+                    작동하는 것도 신기
+                    <br />
+                    <img src="/story/24/6.jpg" width="400px" data-tomark-pass="" />
+                </p>
+                <h4>7. 정휘님</h4>
+                <p>
+                    뭐 말해 뭐하냐
+                    <br />
+                    PS계에서는 선린출신 고3(이제 졸업이겟지)으로 유명하다
+                    <br />
+                    나랑 연관된 많은 대회의 검수진 혹은 출제자로 자주 등장하신다
+                    <br />
+                    선린답게 가끔 개발도 하시는 것 같다
+                    <br />
+                    <img src="/story/24/7.jpg" width="400px" data-tomark-pass="" />
+                </p>
+                <h4>8. 중앙대 고갱님</h4>
+                <p>
+                    누군지는 잘 모르지만 ps를 확실히 사랑하시는 것 같은 냄새를 풍기시는 분이다..
+                    <br />
+                    이용에 감사드립니다
+                    <br />
+                    <img src="/story/24/8.jpg" width="400px" data-tomark-pass="" />
+                </p>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                    <br />
+                    0편이 고객조사인 이유는
+                    <br />
+                    가볍게 어떤 프로젝트였는지를 소개하기 이전에 다들 잘 사용하고 있나 정리를 좀 해보고 싶었다
+                    <br />
+                    내 손으로 직접 디자인하고 코드를 짠 프로젝트였기 때문에 애정이 많이 가는 것이 사실이다.
+                </p>
+                <p>1편을 들어가기 전에 아이디어를 제시하고, 함께 디자인하고, 결정적으로 저 배경색을 찾아내는데에 기여도가 높은 수연이한테 고맙다는 말을 전합니당</p>
+            </description>
+            <category>보물창고</category>
+            <category>maza-cofo</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/24</guid>
+            <comments>https://blog.soga.ng/story/24#comments</comments>
+            <pubDate>FRI, 22 JAN 2021 11:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>0. welcome to react</title>
+            <link>https://blog.soga.ng/story/23</link>
+            <description>
+                <h3>2020년 12월 24일</h3>
+                <p>
+                    ICPC Sinchon 홈페이지 제작 프로젝트에 투입됐다.
+                    <br />
+                    아니 제대로 말하면 수연이한테 하고 싶다고 말했다.
+                </p>
+                <blockquote>
+                    <p>
+                        동 : "야 나 리액트 모르는데 css로 커버가능?"
+                        <br />
+                        남 : "ㅇㅇ"
+                    </p>
+                </blockquote>
+                <p>
+                    저 대화로 바로 프로젝트에 들어갔다.
+                    <br />
+                    마침 시험이 전날에 끝나기도 했고
+                    <br />
+                    리액트라는 현재 제일 트렌디한 프레임워크에 대한 신기함도 있었다.
+                </p>
+                <p>
+                    남수연한테 저 말을 건게 리액트 공부 딱 2시간 한 뒤였는데
+                    <br />
+                    지금 생각해보면 무슨 자신감으로 저런 말을 했나 싶기도 하다.
+                    <br />
+                    (css에 대한 나름의 자신감이 있었을지도)
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <img src="/story/23/1.jpg" width="700px" data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    그 날 바로 시작한 작업이다.
+                    <br />
+                    사실 자칫하면 너무 심심해져버릴 수 있는 메인 페이지를 장식해준 학교 로고 wrapper가 이 날 구현됐다.
+                    <br />
+                    <img src="/story/23/2.jpg" width="300px" data-tomark-pass="" />
+                    <br />
+                    남수연의 포토샵 디자인을 전달받았고 나는 구현만 진행했다.
+                    <br />
+                    뼛 속까지
+                    <strong>position:absolute</strong>
+                    충인 나는 또 앱솔루트로 해당 디자인을 구현했다.
+                </p>
+                <p>
+                    사실 absolute는 이럴 때만 써야되는데 막 중앙정렬에도 absolute를 사용하는 나쁜 습관이 있다.
+                    <br />
+                    혼자 공부하고 혼자 프로젝트한 폐해다.
+                </p>
+                <p>
+                    이번 suapc 홈페이지 제작 프로젝트로
+                    <strong>flex</strong>
+                    에 대해 배우고 absolute를 사용하고 싶을 때
+                    <br />
+                    한 번 더 생각해서 flex로 구현하는 것을 먼저 시도해보는 습관이 생겼다.
+                    <br />
+                    (남수연 감사 / 리리 감사)
+                </p>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br />
+                    학교 로고에 마우스를 올리면 살짝 확대되는 효과가 나타나는데,
+                    <br />
+                    9월쯤
+                    <a href="https://leed.at/leed/shop/leedShop.php">https://leed.at/leed/shop/leedShop.php</a>
+                    에 구현한 상품에 마우스를 올리면 나타나는 이벤트를 그대로 가져와서 사용했다.
+                </p>
+                <p>
+                    그냥 여기에도 적용하면 이쁠 것 같아서 가져왔다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                </p>
+                <h3>2020년 12월 25일</h3>
+                <p>
+                    <img src="/story/23/3.jpg" width="300px" style="float:left;" data-tomark-pass="" />
+                    와.. 뭐가 많다 그죠?
+                    <br />
+                    앞으로 나올 커밋들에 비하면 아무 것도 아닙니다허
+                    <br />
+                    누가봐도 명예의 전당을 짜고 있다는 것을 알 수 있다.
+                </p>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    명예의 전당 디자인 초안도 가져와 봤다.
+                    <br />
+                    <img src="/story/23/4.jpg" width="800px" data-tomark-pass="" />
+                    <br />
+                    많이 이쁘다고 생각하진 않지만 내가 만든 디자인이라서 더 정이간다,,
+                    <br />
+                    그림자를 넣은 HALL OF FAME은 SUAPC 페이지와의 디자인 통일성 때문에 사라졌고,
+                    <br />
+                    밑의 스터디에 기여한 사람들을 적는 부분은 계속 유지했다.
+                    <br />
+                    이건 내가 만들고를 떠나서, 깔끔하게 잘 뽑았다고 생각한다. 걍 깔끔하자너?
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                </p>
+                <img src="/story/23/5.jpg" width="800px" data-tomark-pass="" />
+                <p>
+                    그래서 최종적으로 이런 디자인이 나오긴 했는데
+                    <br />
+                    고급 모의고사는 항상 없어서 첫 화면이 간지가 안난다;;
+                    <br />
+                    빽빽히 차있는 간지가 있는건데 . .
+                    <br />
+                    스터디 정렬 순서를 초-중-고로 변경하는 것도 좋겠다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                </p>
+                <h3>endl</h3>
+                <p>
+                    이 날은 크리스마스였다.
+                    <br />
+                    디자인 / 개발하다가 하루를 다 보냈다.
+                    <br />
+                    어쩌면 이런 대학생활도 나쁘지 않을 지도?
+                </p>
+                <p>
+                    다시 한 번 느끼는 거지만 확실히 디자인에 미친놈이구나 싶다.
+                    <br />
+                    디자인만 시작하면 (분명 창작의 고통이 있지만)
+                    <br />
+                    행복하다. 더 깔끔하게 다듬어 보고 싶고, 더 나만의 방식으로 표현해보고 싶어한다.
+                    <br />
+                    조금 더 대중에게 먹히는 디자인을 하는 사람이 되고 싶고
+                    <br />
+                    그게 나의 디자인 방식으로도 가능하게 되는 날이 왔으면 좋겠다는 생각을 많이 한다.
+                </p>
+                <p>다음 글은 12월 26일부터의 작업에 대해 서술한다.</p>
+            </description>
+            <category>보물창고</category>
+            <category>suapc.kr</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/23</guid>
+            <comments>https://blog.soga.ng/story/23#comments</comments>
+            <pubDate>FRI, 22 JAN 2021 03:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>string의 모든 line-break(엔터) 지우기</title>
+            <link>https://blog.soga.ng/story/22</link>
+            <description>
+                <pre>
+                    <code>cont1 = cont1.replace(/(\r\n|\n|\r)/gm, "");
+   </code>
+                </pre>
+            </description>
+            <category>배움</category>
+            <category>js</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/22</guid>
+            <comments>https://blog.soga.ng/story/22#comments</comments>
+            <pubDate>FRI, 22 JAN 2021 00:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>float 끝내기</title>
+            <link>https://blog.soga.ng/story/20</link>
+            <description>
+                <p>
+                    이거 하나로 float 속성은 마무리 가능할 듯
+                    <br />
+                    <a href="https://codepen.io/eond/pen/WQNvjo">https://codepen.io/eond/pen/WQNvjo</a>
+                </p>
+                <p>물론</p>
+                <pre>
+                    <code>clear: both;
+   </code>
+                </pre>
+                <p>도 중요하다!</p>
+            </description>
+            <category>배움</category>
+            <category>css</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/20</guid>
+            <comments>https://blog.soga.ng/story/20#comments</comments>
+            <pubDate>THU, 21 JAN 2021 13:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>파일 디렉토리 명 변경</title>
+            <link>https://blog.soga.ng/story/21</link>
+            <description>
+                <pre>
+                    <code>mv /home/user/oldname /home/user/newname
+   </code>
+                </pre>
+            </description>
+            <category>배움</category>
+            <category>linux</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/21</guid>
+            <comments>https://blog.soga.ng/story/21#comments</comments>
+            <pubDate>THU, 21 JAN 2021 16:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>후.. 후배님</title>
+            <link>https://blog.soga.ng/story/19</link>
+            <description>
+                <img src="/story/19/1.jpg" width="750" data-tomark-pass="" />
+                선생님으로 모실 후배님이 들어오셨다
+                <p>같이 해 혼자 하지 말고</p>
+            </description>
+            <category>일기</category>
+            <category>개발낙서</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/19</guid>
+            <comments>https://blog.soga.ng/story/19#comments</comments>
+            <pubDate>THU, 21 JAN 2021 11:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>AUTO INCREMENT 초기화</title>
+            <link>https://blog.soga.ng/story/16</link>
+            <description>
+                <pre>
+                    <code>ALTER TABLE bullitin AUTO_INCREMENT=1;
+   SET @cnt = 0;
+   UPDATE bullitin SET bullitin.idx =@cnt:=@cnt+1;
+   </code>
+                </pre>
+            </description>
+            <category>배움</category>
+            <category>sql</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/16</guid>
+            <comments>https://blog.soga.ng/story/16#comments</comments>
+            <pubDate>THU, 21 JAN 2021 11:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>20 어서가고 21 어서오고</title>
+            <link>https://blog.soga.ng/story/14</link>
+            <description>
+                <p>
+                    본인이 무엇을 좋아하는 지도
+                    <br />
+                    본인이 무엇을 잘하는 지도 모르는 새내기들에게
+                    <br />
+                    개발 혹은 코딩이라는 장벽을 낮춰주고 싶다.
+                </p>
+
+                <p>
+                    코로나 때문인지, 후배를 챙길 마음이 없는 선배 때문인지는 모르겠지만
+   (지환이형한테 고맙다는 소리)
+                    <br />
+                    개발을 맛보게 해준 선배가 없다는 점은 작년의 큰 아쉬움이였다.
+                </p>
+
+                <p>올해는 그런 일이 없도록 내가 좀 뛰어야겠다.</p>
+
+                <pre>
+                    <code>나처럼 돌고 돌아 개발하지 않고 더 빠르게 잘하는 친구가 있겠지
+   
+   나보다 더 진득하게 붙잡고 있는 애들이 있겠지
+   
+   어쩌면 같이 해커톤에 나갈 실력이 될 친구들이 있겠지
+   
+   </code>
+                </pre>
+
+                <img src="/story/14/1.jpg" width="800px" data-tomark-pass="" />
+
+                <p>
+                    <del>내가 쓴 댓글 40개</del>
+                </p>
+
+            </description>
+            <category>일기</category>
+            <category>일상생활</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/14</guid>
+            <comments>https://blog.soga.ng/story/14#comments</comments>
+            <pubDate>THU, 21 JAN 2021 01:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>2개 테이블 COUNT의 SUM</title>
+            <link>https://blog.soga.ng/story/17</link>
+            <description>
+                <pre class="lang-sql">
+                    <code data-language="sql">SELECT ( SELECT COUNT(*) FROM TABLE1 ) 
+        + ( SELECT COUNT(*) FROM TABLE2 ) 
+   </code>
+                </pre>
+            </description>
+            <category>배움</category>
+            <category>sql</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/17</guid>
+            <comments>https://blog.soga.ng/story/17#comments</comments>
+            <pubDate>THU, 21 JAN 2021 11:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>하나의 branch만 clone </title>
+            <link>https://blog.soga.ng/story/18</link>
+            <description>
+                <pre class="lang-git">
+                    <code data-language="git">git clone -b {branch_name} --single-branch {저장소 URL}
+   </code>
+                </pre>
+            </description>
+            <category>배움</category>
+            <category>git</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/18</guid>
+            <comments>https://blog.soga.ng/story/18#comments</comments>
+            <pubDate>THU, 21 JAN 2021 11:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>2. 확실해야 하는 목표</title>
+            <link>https://blog.soga.ng/story/15</link>
+            <description>
+                <p>
+                    블로그를 직접 디자인하고, 직접 설계하고, 직접 디버깅한다.
+                    <br />
+                    (친한)친구가 그랬다.
+                </p>
+                <blockquote>
+                    <p>야 ㅋㅋ 블로그 이미 있는 거 왜 만듦</p>
+                </blockquote>
+                <p>
+                    저 말을 뒤집을 무언가가 준비되지 않았었다.
+                    <br />
+                    그 날 집에 와서 생각했고 진짜 쌩구현으로 만들기 위해서 원칙을 세웠다.
+                    <br data-tomark-pass="" />
+                </p>
+                <h2>1. 다른 블로그에 비해 기능이 뒤쳐지지 않을 것</h2>
+                <p>
+                    로그인을 구현하려 했으나,
+                    <strong>나의 영화관</strong>
+                    이라는 컨셉을 선택하고 불필요하다고 느꼈다.
+                    <br />
+                    완전 익명 댓글로 구현하거나,
+                    <br />
+                    같은 아이피로는 같은 닉네임만 사용하도록 구현하거나
+                    <br />
+                    둘 중 하나로 정할 생각이다.
+                </p>
+                <h2>2. 섬세할 것</h2>
+                <p>
+                    1번과 같은 맥락이다.
+                    <br />
+                    대기업의 경력자들이 만든 블로그는 섬세하다.
+                </p>
+                <ul>
+                    <li>"이거 여백이 조금 모자란데?"</li>
+                    <li>"이거 검색창 조금만 더 패딩을 줬으면 좋았겠다"</li>
+                    <li>"이거 좋아요 버튼 눌렀는데 왜 색깔 안바껴?"</li>
+                    <li>"이거 엔터키 안누르면 반영 안 돼?"</li>
+                </ul>
+                <p>
+                    등의 일은 없어야 한다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br />
+                    또한
+                </p>
+                <ul>
+                    <li>모든 섬세한 부분에는 내 디자인 철학이 반영되도록 한다.</li>
+                    <li>
+                        모든 아이콘은 직접 제작하여 디자인을 구성한다.
+                        <br />
+                        (좋아요 아이콘은 이화여대 홍재령 누님이 선물해준거다 예외!)
+                    </li>
+                </ul>
+                <h2>3. 독창적일 것</h2>
+                <p>
+                    <strong>컨셉이 영화관</strong>
+                    인 것이 다가 아니라, 다른 블로그에 비해 차별화된
+                    <strong>36부작</strong>
+                    만의 특성이 있어야 한다.
+                    <br />
+                    사실 그 것 때문에 기성 블로그를 이용하지 않은 것 일텐데
+                </p>
+                <h4>1) 스토리 라인을 통한 스토리 구성</h4>
+                <p>
+                    카테고리라는 단어보다, 이 블로그의 게시글을 가리키는
+                    <strong>스토리</strong>
+                    라는 단어를 이용하여
+                </p>
+                <pre>
+                    <code>메인 카테고리 =&gt; 스토리 라인   
+   서브 카테고리 =&gt; 서브 스토리라인
+   </code>
+                </pre>
+                <p>라고 명칭을 정했다.</p>
+                <h4>2) 글쓴 장소를 스토리에 포함시킨다</h4>
+                <p>
+                    거리두기로 장소가 옥수 내 집으로 제한되지만
+                    <br />
+                    나중에는 꽤나 큰 기능으로 자리잡지 않을까 생각된다.
+                    <br />
+                    시간대와 더불어 해당 스토리의 전체적인 분위기도 잡아줄 것으로 기대한다.
+                </p>
+                <h4>3) 글쓴 시간의 분, 초를 표시하지 않는다</h4>
+                <p>
+                    서버 상으로는 제대로 된 시간이 저장되지만 블로그 자체가 깔끔하고 미니멀한 컨셉을 유지하고 있는 만큼
+                    <br />
+                    <strong>년/월/일/시간</strong>
+                    까지만 보여주는 것을 스토리 컨셉으로 잡았다.
+                    <br />
+                    글쓴 장소와 더불어 해당 스토리의 전체적인 분위기를 잡아줄 것으로 기대한다.
+                </p>
+                <h4>4) 불필요한 로그인 기능을 제거하고, 같은 아이피는 같은 접속으로 간주한다.</h4>
+                <p>
+                    없어진다면 제일 빨리 없어질 수도 있는 기능이다.
+                    <br />
+                    로그인이 없다는 점에서 제일 편할 수도, 로그인이 없기 때문에 불편할 수도 있는 기능이기 때문
+                </p>
+                <h4>5) 스토리마다 블로그 테투리 색을 커스텀 할 수 있다.</h4>
+                <p>
+                    스토리를 업로드 할 때 해당 게시글을 보고 있을 때의 블로그 테투리 색을 정할 수 있게 해놓았다.
+                    <br />
+                    해당 스토리에 맞는 분위기의 색을 정할 수 있다.
+                </p>
+                <h2>4. SEO를 완벽하게 적용할 것</h2>
+                <p>
+                    물론 seo에는 페이징 순위?라고 해서 도메인 별로 검색결과의 순위가 나뉘어 있지만,
+                    <br />
+                    (티스토리, velog, github.io가 항상 검색결과 상위에 있는 이유)
+                    <br />
+                    Open Graph의 원칙을 지키면 구글이 원하는 SEO를 적용할 수 있을 것이다.
+                </p>
+                <p>
+                    더 있겠지만 피곤하다
+                    <br />
+                    마무리 작업 하러 떠납니다
+                </p>
+            </description>
+            <category>보물창고</category>
+            <category>36부작</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/15</guid>
+            <comments>https://blog.soga.ng/story/15#comments</comments>
+            <pubDate>THU, 21 JAN 2021 02:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>0. 블로그를 하드코딩한다고?</title>
+            <link>https://blog.soga.ng/story/12</link>
+            <description>
+                <h3>9월</h3>
+                <p>
+                    늘어난 개발의 기록들. 어딘가에 저장할 필요성을 느꼈다.
+                    <br />
+                    하지만 그 어딘가를 확정짓지 못하고 차곡차곡 머리 속에, db 속에 쌓아놨다.
+                </p>
+                <blockquote>
+                    <p>그냥 티스토리에 때려박지 왜 ㅋㅋ</p>
+                </blockquote>
+                <p>
+                    생각해보니까 맞는 말이다.
+                    <br />
+                    개발 관련 모르는 거는 티스토리 선에서 많이 나오고, 구글에서 검색도 잘 되고 좋다.
+                </p>
+                <p>
+                    근데 맘에 안들었다 ㅋㅋㅋ 디자인 때문인지 다 티스토리 해서 그런지,, 기억은 안난다.
+                    <br />
+                    그렇게 db에 데이터가 쌓여갔다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                </p>
+                <h3>12월</h3>
+                <p>
+                    진짜 이젠 오버플로우가 발생했다.
+                    <br />
+                    https://leed.at/diary
+                    <br />
+                    여기에 자료들이 분류되지 않은 채로 산더미채 쌓여있는 걸 확인한 나는 다시 블로그를 만들기로 결심한다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                </p>
+                <h3>12월 말</h3>
+                <p>
+                    기말고사가 끝나고 https://suapc.kr 프로젝트에 투입됐다.
+                    <br />
+                    (저 사이트의 90%는 내 디자인 취향이 반영됐다...)
+                    <br />
+                    (늦게 투입된 주제에 디자인을 막 바꿔서 연주한테.... 미안했다)
+                    <br />
+                    어쨋든, 저걸 하면서 더 많은 걸 느끼고, 생긴 감정들을 기록하고 싶었다.
+                    <br />
+                    다시 블로그를 만들기로 결심한다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                </p>
+                <h3>1월 5일</h3>
+                <p>
+                    블로그를 만들기로 결심했다.
+                    <br />
+                    그리고 사이트들을 쭉 둘러보던 중 갑자기 한가지 키워드가 머리에 스쳐 지나갔다.
+                </p>
+                <blockquote>
+                    <p>영화관? Theater?</p>
+                </blockquote>
+                <p>
+                    영화관 컨셉의 블로그가 만들고 싶어졌다.
+                    <br />
+                    바로 xd를 켜고 디자인에 들어갔다.
+                    <br />
+                    <img src="/story/12/1.jpg" width="900px" style="max-width:100%;" data-tomark-pass="" />
+                    <br />
+                    스토리에 들어가면 볼 수 있는 허전한 버전의 글 형식이다.
+                    <br />
+                    이렇게 디자인을 빠르게 마쳐놓고 다른 프로젝트에 투입됐다.
+                    <br />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                </p>
+                <h3>1월 14일</h3>
+                <p>
+                    그 다른 프로젝트에도 끝이 보였고, 그 프로젝트를 하면서 느낀 감정들을 도저히 잃고 싶지 않았다.
+                    <br />
+                    어딘가에 기록이라도 해두지 않으면 나중에 후회할 것이라는 생각이 몰아 닥쳤다.
+                    <br />
+                    심지어 이번엔
+                    <strong>포트를 세 개</strong>
+                    나 사용한 (react, node*2)
+                    <strong>매우 큰 빅 프로젝트</strong>
+                    였다 !
+                </p>
+                <p>바로 xd를 켜고 세부 디자인에 들어갔다.</p>
+            </description>
+            <category>보물창고</category>
+            <category>36부작</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/12</guid>
+            <comments>https://blog.soga.ng/story/12#comments</comments>
+            <pubDate>THU, 21 JAN 2021 00:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>1. 고맙다 김경근</title>
+            <link>https://blog.soga.ng/story/13</link>
+            <description>
+                <h5>들어가기 전에</h5>
+                <h2>왜 자꾸 소제목을 다냐고 물어보지 말아주라</h2>
+                <p>
+                    seo 공부 중이다.. seo에서 소제목(h태그) 많이(잘) 써야 된대...
+                    <br />
+                    평생 글 쓰는 걸 싫어하던 놈이 글 쓰기 힘든가보다.. 생각해줘
+                </p>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                </p>
+                <h2>어떤 프레임워크를 사용할 예정입니까?</h2>
+                <p>
+                    저는 디자인 시작할 때부터 node와 react를 함께 이용할 생각이였습니다.
+                    <br />
+                    이유는 다음과 같습니다.
+                </p>
+                <h4>1. 나는 백엔드를 php와 node 밖에 할 줄 모른다.</h4>
+                <p>
+                    php,,, 내 중학교 때부터의 동경의 대상이였다.
+                    <br />
+                    js를 공부하면서 php도 같이 공부를 했는데
+                    <br />
+                    사실 공부하면서도 알았다^!^ 죽은 언어라는 것을
+                    <br />
+                    무슨 방문하는 사이트마다 php의 보안 취약성에 대해서 비판한다.
+                </p>
+                <blockquote>
+                    <p>알겠다고 알겠는데</p>
+                </blockquote>
+                <p>
+                    뭐 어쩌라고; 나 중학교 때부터의 동경의 대상이였다고;
+                    <br />
+                    신기했다고;
+                </p>
+                <p>
+                    그런데 이젠 놓아줄 때도 됐다. 욕을 하도 먹어서 이젠 놓아주려고 한다.
+                    <br />
+                    그래도 추억이 담긴 언어니까 깃허브 메인에 장식해놓았다.
+                </p>
+                <p>
+                    아니 한 마디만 더 할게요.
+                    <br />
+                    Sogang ICPC Team 홈페이지 php 라고
+                    <br />
+                    나 php 공부 안 했으면 학회 홈페이지 인수인계도 못 받아!
+                    <br />
+                    <del>물론 더 이상 보수할 부분이 없는 홈페이지임</del>
+                </p>
+                <p>
+                    <strong>=&gt; 그래서 일단 자동적으로 백엔드는 노드를 사용하기로 되었다.</strong>
+                </p>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                </p>
+                <h4>2. react ! react ! react ! react !</h4>
+                <p>
+                    나는 어떤 놈이냐면
+                    <br />
+                    콩인데 껍질이 딴딴한 콩이다. 안은 텅 비어있는
+                    <br />
+                    이게 무슨 소리냐면
+                </p>
+                <p>
+                    하도 개념보다가 개념 탈출하고 실전에 뛰어 들어가서
+                    <br />
+                    실전에서 어떻게 해야할 지는 빠르게 감을 잡는다그런데,
+                    <br />
+                    그 나머지 개념을 소홀히 한 것 때문에 앞으로 찾아올 개념부실증이 두렵다
+                </p>
+                <p>
+                    리액트도 마찬가지다.
+                    <br />
+                    리액트 책 두 시간 보고
+                    <br />
+                    <a href="suapc.kr">suapc.kr</a>
+                    랑 pomp 프로젝트에 투입됐다.
+                    <br />
+                    진짜 리액트만큼은
+                    <strong>껍질만 있는 콩</strong>
+                    상태이다.
+                </p>
+                <p>이게 너무 두렵고 빨리 블로그를 끝내서 개념을 볼 생각이다.</p>
+                <p>
+                    <strong>
+                        =&gt; 일단 간지나니까, 요즘 제일 핫한 프레임워크니까 프론트엔드는 리액트를 사용하기로
+                        <del>되었다.</del>
+                        마음대로 결정했다.
+                    </strong>
+                </p>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                    <br data-tomark-pass="" />
+                </p>
+                <h2>고맙다 김경근 !</h2>
+                <p>
+                    일단 node + react를 사용한다는 자체만으로 막막한데,
+                    <br />
+                    pomp 프로젝트에서 경근이 형이 둘 간 통신을 구현하는 것을 보면서 많이 배웠다.
+                    <br />
+                    고맙다 김경근 ! 고맙다 김경근 ! 고맙다 김경근 ! 고맙다 김경근 ! 고맙다 김경근 ! 고맙다 김경근 !
+                </p>
+            </description>
+            <category>보물창고</category>
+            <category>36부작</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/13</guid>
+            <comments>https://blog.soga.ng/story/13#comments</comments>
+            <pubDate>THU, 21 JAN 2021 01:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>window.onload vs componentDidMount</title>
+            <link>https://blog.soga.ng/story/10</link>
+            <description>
+                <h3>1</h3>
+                <pre>
+                    <code>    componentDidMount = () =&gt; {
+           window.onload = () =&gt; {
+               document.querySelectorAll('img').forEach(ele =&gt; {
+                   ele.setAttribute('draggable','false')
+               })
+           }
+       }
+   </code>
+                </pre>
+                <h3>2</h3>
+                <pre>
+                    <code>    componentDidMount = () =&gt; {
+           document.querySelectorAll('img').forEach(ele =&gt; {
+               ele.setAttribute('draggable','false')
+           })
+       }
+   </code>
+                </pre>
+                <p>
+                    <br data-tomark-pass="" />
+                </p>
+                <p>
+                    이 사이트 이미지에는
+                    <strong>nondraggable</strong>
+                    속성이 적용되어 있다.
+                    <br />
+                    <br />
+                    글을 작성할 때 부터 적용하기는 힘들고, 페이지가 로딩될 때 적용되면 좋겠다고 생각했다.
+                    <br />
+                    처음엔
+                    <strong>2</strong>
+                    번을 이용하려고 했지만,
+                    <strong>componentDidMount</strong>
+                    는
+                    <strong>window.onload</strong>
+                    와 전혀다른 특성을 가지고 있었다.
+                </p>
+                <p>
+                    <strong>컴포넌트가 만들어지고 첫 렌더링을 다 마친 후 실행되는 메소드</strong>
+                    라고 남수연 스승님이 써놓으셨다
+                    <br />
+                    <br />
+                    다시 말해서
+                    <strong>Component Fully Mounted</strong>
+                    는 아닌거다.
+                    <br />
+                    (이 첫 렌더링이라는게 정확히 어떤 시기를 말하는 건지는 몰겟음)
+                </p>
+                <p>
+                    <strong>window.onload</strong>
+                    가
+                    <strong>Component Fully Mounted</strong>
+                    의 예시가 될 것 같다.
+                    <br />
+                    모든 렌더링을 마친 상태로, 이 때
+                    <strong>img</strong>
+                    에 대한
+                    <strong>forEach</strong>
+                    문을 돌리면 모든
+                    <strong>img</strong>
+                    태그가 잘 뽑혀 나온다.
+                </p>
+            </description>
+            <category>배움</category>
+            <category>react</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/10</guid>
+            <comments>https://blog.soga.ng/story/10#comments</comments>
+            <pubDate>MON, 18 JAN 2021 19:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>피곤하다 코딩은</title>
+            <link>https://blog.soga.ng/story/11</link>
+            <description>
+                <p>뭐</p>
+                <p>
+                    매 번 새롭고 재밌을 뿐
+                    <br />
+                    눈이 피곤하다고
+                </p>
+            </description>
+            <category>일기</category>
+            <category>개발낙서</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/11</guid>
+            <comments>https://blog.soga.ng/story/11#comments</comments>
+            <pubDate>WED, 20 JAN 2021 18:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>그럼 Component에서 key값 어떻게 가져올래</title>
+            <link>https://blog.soga.ng/story/9</link>
+            <description>
+                <pre>
+                    <code>console.log(this)
+   </code>
+                </pre>
+                <p>를 찍어보면 재밌는 게 숨어있다.</p>
+                <img src="https://blog.soga.ng/story/9/1.png" data-tomark-pass="" />
+                <p>
+                    넵
+                    <strong>_reactInternals</strong>
+                    에 key값이 숨어 있습니다
+                </p>
+            </description>
+            <category>배움</category>
+            <category>react</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/9</guid>
+            <comments>https://blog.soga.ng/story/9#comments</comments>
+            <pubDate>MON, 18 JAN 2021 16:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>state의 보안취약성</title>
+            <link>https://blog.soga.ng/story/7</link>
+            <description>
+                <p>
+                    어제부터 리액트 익스텐션을 깔고 작업중이다.
+                    <br />
+                    익스텐션을 깐 이후에 안 보이던 것들이 보이기 시작한다.
+                </p>
+                <img src="https://blog.soga.ng/story/7/1.png" style="width:700px" data-tomark-pass="" />
+                <p>
+                    state가 서버상에 보관되는 Component 내에서의 저장공간으로 인식하고 있었는데,
+                    <br />
+                    react extension에서도 수정 가능한 변수? 였다.
+                </p>
+                <p>우리가 html에서 radio의 value를 임의로 수정해서 보낼 수 있듯이, state도 마찬가지였다.</p>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br />
+                    혹시 리액트에서 값의 임의 수정을 방지해줄까? 하고 ip 값을 임의로 변경한 후 댓글을 달아봤다.
+                    <br />
+                    <img src="https://blog.soga.ng/story/7/2.png" style="width:700px" data-tomark-pass="" />
+                    <br />
+                    해킹당했다.
+                </p>
+                <p>비공개 게시글에 나도 모르게 댓글이 달리는.. 현상이 발생할 수도 있겠다 싶었다.</p>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br />
+                    소스 수정 전
+                </p>
+                <pre class="lang-js">
+                    <code data-language="js">constructor() {
+           super();
+           this.state = {
+               storyId: "",
+               writer: "",
+               content: "",
+               ip: ""
+           }
+       }
+       componentDidMount = () =&gt; {
+           let url = window.location.href;
+           let urlSplit = url.split('/');
+           this.setState({
+               storyId: urlSplit[urlSplit.indexOf('story') + 1]
+           })
+           axios
+               .get('https://api.ipify.org?format=json')
+               .then(res =&gt; {
+                   console.log(res)
+                   this.setState({
+                       ip: res.data.ip
+                   })
+               })
+               .catch(err =&gt; { })
+       }
+   </code>
+                </pre>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br />
+                    소스 수정 후 // 전송할 때 ip, storyId 일괄처리
+                </p>
+                <pre class="lang-js">
+                    <code data-language="js">handleSubmit = () =&gt; {
+           let url = window.location.href;
+           let urlSplit = url.split('/');
+           const data = {
+               storyId: urlSplit[urlSplit.indexOf('story') + 1],
+               writer: this.state.writer,
+               content: this.state.content,
+           };
+   
+               axios
+                   .get('https://api.ipify.org?format=json')
+                   .then(res =&gt; {
+                       data.ip = res.data.ip;
+                       axios
+                           .post('/api/write/anonycomment', data)
+                           .then((res) =&gt; {
+                               window.location.reload();
+                           })
+                           .catch((err) =&gt; { console.error(err) });
+                   })
+                   .catch(err =&gt; { })
+       }
+   </code>
+                </pre>
+            </description>
+            <category>배움</category>
+            <category>react</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/7</guid>
+            <comments>https://blog.soga.ng/story/7#comments</comments>
+            <pubDate>MON, 18 JAN 2021 13:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>react key 활용해서 댓글 / 답글 구현하기</title>
+            <link>https://blog.soga.ng/story/8</link>
+            <description>
+                <p>
+                    <img src="https://blog.soga.ng/story/8/1.png" style="width:700px; max-width:100%;" data-tomark-pass="" />
+                    <br />
+                    이거 어떻게 구현할래
+                    <br />
+                    밑에 답글 차곡차곡 쌓이는 거는 어떻게 할래?
+                    <br />
+                    답글이 달리면 부모 댓글의 자식으로 차곡차곡 쌓여야한다.
+                </p>
+                <p>답글을 업로드 할 때, 서버에 해당 답글의 부모가 누구인지 함께 전달해 주어야한다.</p>
+                <p>
+                    <br data-tomark-pass="" />
+                </p>
+                <h3>1</h3>
+                <p>나는 map할 때 각 element들에 주는 key값을 사용하여 부모를 구별하기로 했다.</p>
+                <p>
+                    부모 comment에는 key값을 주고, 이미 달린 답글의 key에는 "부모key_자식key"를 주면
+                    <br />
+                    자식key가 필요할때는 split해서 [1]에 접근하면 되고, 부모key가 필요할 때는 split해서 [0]에 접근하면 된다고 판단했다.
+                </p>
+                <pre class="lang-js">
+                    <code data-language="js">&lt;MainComment
+       key={idx} /&gt;
+       {elem.filter(val1 =&gt; val.commentId ===   val1.commentId).map((val2, idx2) =&gt; {
+           return (
+               &lt;SubComment
+                   key={idx + "_" + idx2} /&gt;
+           );
+       })}
+   </code>
+                </pre>
+                <p>좋은 발상이다. 근데 문제점이 생겼다.</p>
+                <p>
+                    저 idx를 가지고 DB에서 부모를 찾을 방법이 없다.
+                    <br />
+                    아니 있지만, story에 해당하는 comment를 다 SELECT 하고 거기서 다시 idx에 해당하는 위치의 데이터를 찾아야 하기 때문에 비효율적인 방법이다.
+                </p>
+                <p>
+                    <br data-tomark-pass="" />
+                </p>
+                <h3>2</h3>
+                <p>그러면 DB에서 사용하는 PRIMARY KEY를 부모와 자식의 key로 이용하면 어떨까?</p>
+                <p>
+                    부모 key : mainComment 테이블의 PRIMARY KEY인 mainIdx
+                    <br />
+                    자식 key : 부모key_subComment 테이블의 PRIMARY KEY인 subIdx
+                </p>
+                <p>단어 두개 정도만 추가하고 문제가 해결되었다.</p>
+                <pre class="lang-js">
+                    <code data-language="js">&lt;MainComment
+       key={val.mainIdx} /&gt;
+       {elem.filter(val1 =&gt; val.commentId ===   val1.commentId).map((val2, idx2) =&gt; {
+           return (
+               &lt;SubComment
+                   key={val.mainIdx + "_" + val2.subIdx} /&gt;
+           );
+       })}
+   </code>
+                </pre>
+                <p>
+                    <br data-tomark-pass="" />
+                    <br />
+                    구현하러 간다.
+                </p>
+                <br />
+                <br />
+                잘 반영된 모습이다.
+                <br />
+                <img src="https://blog.soga.ng/story/8/2.png" style="width:300px;" data-tomark-pass="" />
+            </description>
+            <category>배움</category>
+            <category>react</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/8</guid>
+            <comments>https://blog.soga.ng/story/8#comments</comments>
+            <pubDate>MON, 18 JAN 2021 14:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>텍스트 아무리 연타해도 드래그 효과 안나타나게</title>
+            <link>https://blog.soga.ng/story/6</link>
+            <description>
+                <p>
+                    텍스트 아무리 클릭해도 드래그 효과 안나타남
+                    <br />
+                    <code data-backticks="1">.not--draggable {</code>
+                    <br />
+                    <code data-backticks="1">  -ms-user-select: none;</code>
+                    <br />
+                    <code data-backticks="1">   -moz-user-select: -moz-none;</code>
+                    <br />
+                    <code data-backticks="1">  -khtml-user-select: none;</code>
+                    <br />
+                    <code data-backticks="1">  -webkit-user-select: none;</code>
+                    <br />
+                    <code data-backticks="1">   user-select: none;</code>
+                    <br />
+                    <code data-backticks="1"> }</code>
+                </p>
+            </description>
+            <category>배움</category>
+            <category>css</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/6</guid>
+            <comments>https://blog.soga.ng/story/6#comments</comments>
+            <pubDate>MON, 18 JAN 2021 11:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>맞다 그 뭐냐 그</title>
+            <link>https://blog.soga.ng/story/4</link>
+            <description>
+                <p>
+                    어제 만든 빙고판 바낌
+                    <br />
+                    <img src="https://leed.at/react_/react/src/static/story/4/sgcs_bingo.png" style="width:400px;" data-tomark-pass="" />
+                </p>
+                <p>
+                    재령이 누나가 이대 빙고판을 보여줬는데
+                    <br />
+                    <img src="https://leed.at/react_/react/src/static/story/4/ewha_bingo.png" style="width:400px;" data-tomark-pass="" />
+                    <br />
+                    이거 흰색 배경이 더 이쁜 거 같아서 바꿨다 걍
+                </p>
+                <p>
+                    <del>폐기된</del>
+                    장난친 몇 개도 같이 첨부함 ㅜ
+                    <br />
+                    <img src="https://leed.at/react_/react/src/static/story/4/sgcs1_bingo.png" style="width:200px;" data-tomark-pass="" />
+                    <img src="https://leed.at/react_/react/src/static/story/4/sgcs2_bingo.png" style="width:200px;" data-tomark-pass="" />
+                </p>
+            </description>
+            <category>낙서</category>
+            <category>낙서장</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/4</guid>
+            <comments>https://blog.soga.ng/story/4#comments</comments>
+            <pubDate>SUN, 17 JAN 2021 15:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>SQL JOIN을 알아보자 !</title>
+            <link>https://blog.soga.ng/story/5</link>
+            <description>
+                <img src="https://t1.daumcdn.net/cfile/tistory/2163EF4758D9A40D12" data-tomark-pass="" />
+                알아보았다 !
+            </description>
+            <category>배움</category>
+            <category>sql</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/5</guid>
+            <comments>https://blog.soga.ng/story/5#comments</comments>
+            <pubDate>MON, 18 JAN 2021 02:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>중급 마감 한시간 남음 흐ㅜ</title>
+            <link>https://blog.soga.ng/story/3</link>
+            <description>
+                <p style="width: 620px;">
+                    <img src="https://leed.at/react_/react/src/static/story/3/sgcs_bingo.png" alt="bingo_sgcs" style="width:400px;" />
+                </p>
+                <p>중급 마감 1시간 남아서 디자인이 더 땡긴다</p>
+            </description>
+            <category>낙서</category>
+            <category>낙서장</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/3</guid>
+            <comments>https://blog.soga.ng/story/3#comments</comments>
+            <pubDate>SAT, 16 JAN 2021 18:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>쉬다가세요</title>
+            <link>https://blog.soga.ng/story/1</link>
+            <description>
+                <p>
+                    어서오세요
+                    <br />
+                    모두가 쉬어갈 수 있는 블로그를 만들었습니다.
+                </p>
+                <p>
+                    기본적으로 익명댓글 작성이 가능합니다.
+                    <br />
+                    로그인 하시면 본인의 댓글에 대한 답글 알림을 받아보실 수 있으며,
+                    <br />
+                    본인이 작성한 댓글을 한 곳에서 모아보실 수 있습니다.
+                </p>
+                <p>다시 한 번 반갑습니다.</p>
+            </description>
+            <category>일기</category>
+            <category>일상생활</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/1</guid>
+            <comments>https://blog.soga.ng/story/1#comments</comments>
+            <pubDate>SAT, 16 JAN 2021 02:56:48 +0900</pubDate>
+        </item>
+
+        <item>
+            <title>21 새내기용 피피티 템플릿 만듦</title>
+            <link>https://blog.soga.ng/story/2</link>
+            <description>
+                <p>
+                    <img src="https://leed.at/react_/react/src/static/story/2/1.png" alt="메인 1번" style="width: 710px;" />
+                </p>
+                <p>이거랑</p>
+                <p>
+                    <img src="https://leed.at/react_/react/src/static/story/2/2.png" alt="메인 2번" style="width: 710px;" />
+                </p>
+                <p>이거 중에 고민했는데, 2번이 더 이쁘지 않냐</p>
+                <p>
+                    원래 깔끔한 디자인을 선호하는 사람이라
+                    <br />
+                    피피티도 깔끔하게 뽑는 걸 좋아한다. 약간 발표용?
+                </p>
+                <p>새맞단 ppt 담당이 이쁘게 사용해주길 ,,</p>
+                <p>
+                    (물론 저 알바트로스 사진은 만든게 아니라
+                    <a href="https://www.sogang.ac.kr/intro/symbol/s_emblem.html" style="color:#b30000;">홈페이지</a>
+                    에서 갖고온겁니당)
+                </p>
+            </description>
+            <category>낙서</category>
+            <category>낙서장</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/2</guid>
+            <comments>https://blog.soga.ng/story/2#comments</comments>
+            <pubDate>SAT, 16 JAN 2021 18:56:48 +0900</pubDate>
+        </item>
+
+    </channel>
+</rss>

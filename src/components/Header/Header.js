@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import HeaderRouter from './HeaderRouter/HeaderRouter';
 import './Header.scss';
@@ -37,7 +36,7 @@ class Header extends Component {
                     {this.state.menuBarOn ? "" :
                         <>
                             <div className={styles.menuBar} onClick={this.OpenMenuBar}>
-                                <img src="/icons/menuBar-1.png" />
+                                <img src="/icons/menuBar-1.png" alt="mobile-menu-bar"/>
                             </div>
                         </>
                     }
