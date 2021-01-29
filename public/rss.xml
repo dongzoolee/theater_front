@@ -1978,6 +1978,71 @@
             <comments>https://blog.soga.ng/story/2#comments</comments>
             <pubDate>SAT, 16 JAN 2021 18:56:48 +0900</pubDate>
         </item>
-
+        <item>
+            <title>[docker] ubuntu docker volume 위치</title>
+            <link>https://blog.soga.ng/story/36</link>
+            <description>
+                <p>도커의 volume에는 두 가지가 있다.<br />
+                    <br data-tomark-pass="" /></p>
+                    <h3>첫번째로</h3>
+                    <p>container 내부의 폴더를 도커 밖 로컬 폴더에서도 접근 및 수정할 수 있도록 해주는 기능이다.</p>
+                    <pre class="lang-docker"><code data-language="docker">version: "3.2"
+                    
+                    services:
+                      mazacofo-1.1:
+                        image: mazacofo-1.1
+                        container_name: mazacofo-1.1
+                        restart: always
+                        ports:
+                          - "2021:2021"
+                        volumes:
+                          - /var/www/html/node:/home/ubuntu/node/
+                    </code></pre>
+                    <p>위의 코드대로 라면, 컨테이너 내부의  <code data-backticks="1">/home/ubuntu/node/</code> 폴더의 데이터가 로컬의 <code data-backticks="1">/var/www/html/node</code> 폴더에 복사되고, 두 폴더 내의 데이터는 항상 같게 유지된다.</p>
+                    <p>해당 컨테이너를 실행하게 되면, <code data-backticks="1">/var/www/html/node</code> 내부의 데이터는 전부 사라지고 컨테이너의 <code data-backticks="1">/home/ubuntu/node/</code> 폴더의 데이터가 덮어 씌어지게 된다.</p>
+                    <p>(<strong>로컬</strong>의 데이터를 <strong>컨테이너 내부에</strong> 넣고 싶었던 거라면, <strong>도커 실행 이후</strong>에 로컬 폴더에 원하는 데이터를 복사 해주어야한다.)<br />
+                    <br data-tomark-pass="" /><br />
+                    <br data-tomark-pass="" /></p>
+                    <h3>두번째로</h3>
+                    <p>도커가 관리해주는 가상 스토리지로써의 기능이다.</p>
+                    <pre class="lang-docker"><code data-language="docker">services:
+                      mazacofo-1.1:
+                        image: mazacofo-1.1
+                        container_name: mazacofo-1.1
+                        restart: always
+                        ports:
+                          - "2021:2021"
+                        volumes:
+                          - memList:/home/ubuntu/node/memList
+                    
+                    volumes:
+                      memList:
+                    </code></pre>
+                    <p>위의 코드처럼 <strong>volumes</strong>에 memList라는 volume을 만들고,<br />
+                    <strong>mazacofo-1.1</strong> 서비스에서 <code data-backticks="1">memList:/home/ubuntu/node/memList</code>의 형식으로 해당 volume을 이용할 수 있다.<br />
+                    <br data-tomark-pass="" /><br />
+                    위의 코드에<br />
+                    아래의 <strong>test</strong> 서비스를 추가하게 된다면, <strong>test</strong> 컨테이너의 <code data-backticks="1">/var/www/html/memList</code> 내부의 데이터는 <strong>mazacofo-1.1</strong> 컨테이너의 <code data-backticks="1">/home/ubuntu/node/memList</code> 내의 데이터와 항상 같게 유지된다.</p>
+                    <pre><code>services:
+                      test:
+                        image: test
+                        restart: always
+                        volumes:
+                          - memList:/var/www/html/memList
+                    </code></pre>
+                    <p><br data-tomark-pass="" /><br />
+                    <br data-tomark-pass="" /><br />
+                    말만 가상 스토리지지, 도커가 관리해주는, <strong>도커 컨테이너 간의 데이터 전달</strong>이 편리한 스토리지이다.<br />
+                    해당 volume의 데이터는 아래의 로컬 주소에서 확인해볼 수 있다.</p>
+                    <pre class="lang-shell"><code data-language="shell">/var/lib/docker/volumes/[volume_name]/_data
+                    </code></pre>                    
+            </description>
+            <category>배움</category>
+            <category>docker</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/36</guid>
+            <comments>https://blog.soga.ng/story/36#comments</comments>
+            <pubDate>SAT, 30 JAN 2021 02:18:48 +0900</pubDate>
+        </item>
     </channel>
 </rss>

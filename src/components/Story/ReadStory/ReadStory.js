@@ -8,7 +8,7 @@ import '../../Story.css';
 import AdfitWebComponent from 'react-adfit-web-component'
 import Footer from '../../Footer/Footer'
 
-class ReadStory extends Component {
+class ReadStory extends React.PureComponent {
     constructor() {
         super();
         this.state = {
@@ -28,7 +28,7 @@ class ReadStory extends Component {
     componentDidMount() {
         // GET Story
         axios
-            .get('https://api.ipify.org?format=json')
+            .get('https://ip.leed.at')
             .then(res => {
                 axios
                     .post('/api/read/story',

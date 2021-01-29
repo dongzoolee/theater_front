@@ -12,6 +12,25 @@ class Comment extends Component {
         this.state = {
             commentCnt: 0,
             comment: [],
+            commentCng: 0
+        }
+    }
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.commentCng !== prevState.commentCng) {
+            console.log(this.state.commentCng)
+            let url = window.location.href;
+            let urlSplit = url.split('/');
+            axios
+                .post('/api/read/comment', { id: urlSplit[urlSplit.indexOf('story') + 1] })
+                .then(res => {
+                    this.setState({
+                        commentCnt: res.data.cnt,
+                        comment: res.data.comment
+                    })
+                })
+                .catch(err => {
+                    console.error(err);
+                })
         }
     }
     componentDidMount() {
@@ -28,6 +47,13 @@ class Comment extends Component {
             .catch(err => {
                 console.error(err);
             })
+    }
+    OnCommentSubmit = (data) => {
+        if (data === 'done') {
+            this.setState({
+                commentCng: this.state.commentCng + 1
+            })
+        }
     }
     render() {
         return (
@@ -47,7 +73,7 @@ class Comment extends Component {
                                         date={val.mainDate}
                                         content={val.mainContent} />
                                     <div className={styles.SubCommentWrapper}>
-                                        {elem.filter(val1 => val.commentId === val1.commentId).reverse().map((val2, idx2) => {
+                                        {elem.filter(val1 => val.commentId === val1.commentId).map((val2, idx2) => {
                                             return (
                                                 <SubComment
                                                     key={val.mainIdx + "_" + val2.subIdx}
@@ -59,6 +85,7 @@ class Comment extends Component {
                                         <WriteSubComment
                                             targetMainId={val.mainIdx}
                                             isHide={""}
+                                            OnCommentSubmit={this.OnCommentSubmit}
                                         />
                                     </div>
                                 </div>
@@ -79,6 +106,7 @@ class Comment extends Component {
                                         <WriteSubComment
                                             targetMainId={val.mainIdx}
                                             isHide={""}
+                                            OnCommentSubmit={this.OnCommentSubmit}
                                         />
                                     </div>
                                 </div>
@@ -107,6 +135,7 @@ class Comment extends Component {
                                         <WriteSubComment
                                             targetMainId={val.mainIdx}
                                             isHide={""}
+                                            OnCommentSubmit={this.OnCommentSubmit}
                                         />
                                     </div>
                                 </div>
@@ -115,7 +144,9 @@ class Comment extends Component {
                         else return (<></>);
                     })}
                 </div>
-                <WriteAnonyComment />
+                <WriteAnonyComment
+                    OnCommentSubmit={this.OnCommentSubmit}
+                />
             </div>
         )
     }

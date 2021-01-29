@@ -15,7 +15,7 @@ class WriteSubComment extends Component {
             this.setState({
                 writer: e.target.value
             })
-        else if(e.target.tagName === "TEXTAREA")
+        else if (e.target.tagName === "TEXTAREA")
             this.setState({
                 content: e.target.value
             })
@@ -42,7 +42,13 @@ class WriteSubComment extends Component {
                     axios
                         .post('/api/write/anonysubcomment', data)
                         .then((res) => {
-                            window.location.reload();
+                            this.props.OnCommentSubmit('done')
+                            e.target.closest('.' + styles.header).firstElementChild.value = "";
+                            e.target.closest('.' + styles.header).parentElement.lastElementChild.value = "";
+                            this.setState({
+                                writer: "",
+                                content: ""
+                            })
                         })
                         .catch((err) => { console.error(err) });
                 })

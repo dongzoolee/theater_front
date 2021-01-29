@@ -64,6 +64,27 @@ class WriteStory extends Component {
         nextState['input']['content'] = this.editorRef.current.getInstance().getHtml();
         this.setState(nextState)
     }
+    getTmpList = () => {
+        
+    }
+    handleTmpSubmit = () => {
+        const data = {
+            main: this.state.input.mainCategory,
+            sub: this.state.input.subCategory,
+            title: this.state.input.title,
+            location: this.state.input.location,
+            content: this.state.input.content
+        };
+        if (data.main === '-1' || data.sub === '-1')
+            return alert('카테고리를 선택해주세요');
+
+        axios
+            .post('/api/write/tmpstory', data)
+            .then((res) => {
+                ;
+            })
+            .catch((err) => { console.error(err) });
+    }
     handleSubmit = () => {
         const data = {
             main: this.state.input.mainCategory,
@@ -119,9 +140,10 @@ class WriteStory extends Component {
                         initialEditType="markdown"
                         ref={this.editorRef}
                         onChange={this.handleUpdate}
-                        
+
                     />
-                    <button >임시저장</button>
+                    <button onClick={this.getTmpList}>불러오기</button>
+                    <button onClick={this.handleTmpSubmit}>임시저장</button>
                     <button onClick={this.handleSubmit}>제출</button>
                 </div>
             </>

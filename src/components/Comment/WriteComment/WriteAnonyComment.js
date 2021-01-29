@@ -41,7 +41,14 @@ class WriteComment extends Component {
                     axios
                         .post('/api/write/anonycomment', data)
                         .then((res) => {
-                            window.location.reload();
+                            //window.location.reload();
+                            this.props.OnCommentSubmit('done')
+                            document.querySelector('.' + styles.writerAnony).value = "";
+                            document.querySelector('.' + styles.content).value = "";
+                            this.setState({
+                                writer: "",
+                                content: ""
+                            })
                         })
                         .catch((err) => { console.error(err) });
                 })
