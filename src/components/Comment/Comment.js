@@ -5,6 +5,8 @@ import SubComment from './SubComment/SubComment';
 import MainComment from './MainComment/MainComment';
 import WriteSubComment from './WriteComment/WriteSubComment';
 import axios from 'axios';
+import socketio from 'socket.io-client';
+const socket = socketio.connect('https://blogserver.soga.ng/');
 
 class Comment extends Component {
     constructor() {
@@ -17,7 +19,7 @@ class Comment extends Component {
     }
     componentDidUpdate(prevProps, prevState) {
         if (this.state.commentCng !== prevState.commentCng) {
-            console.log(this.state.commentCng)
+            socket.emit('comment-cng');
             let url = window.location.href;
             let urlSplit = url.split('/');
             axios
@@ -34,6 +36,24 @@ class Comment extends Component {
         }
     }
     componentDidMount() {
+        let url = window.location.href;
+        let urlSplit = url.split('/');
+        axios
+            .post('/api/read/comment', { id: urlSplit[urlSplit.indexOf('story') + 1] })
+            .then(res => {
+                this.setState({
+                    commentCnt: res.data.cnt,
+                    comment: res.data.comment
+                })
+            })
+            .catch(err => {
+                console.error(err);
+            })
+        socket.on('update-comment', () => {
+            this.UpdateComment();
+        })
+    }
+    UpdateComment = () => {
         let url = window.location.href;
         let urlSplit = url.split('/');
         axios

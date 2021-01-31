@@ -4,6 +4,7 @@ const port = process.env.PORT || 2501;
 const path = require('path');
 const fs = require('fs')
 const rss = require('rss');
+
 const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
@@ -42,9 +43,9 @@ app.get('/story/:id', (request, response) => {
         let cont1 = cont.window.document.querySelector('html').textContent.trim();
         cont1 = cont1.replace(/(\r\n|\n|\r)/gm, " ");
         cont1 = cont1.replace(/"/g, "");
-        data = data.replace(/this.props.url/g, 'https://blog.soga.ng' + request.url);
-        data = data.replace(/this.props.storyTitle/g, result[0].title);
-        data = data.replace(/this.props.storyContent/g, cont1);
+        data = data.replace(/https:\/\/blog.soga.ng/g, 'https://blog.soga.ng' + request.url);
+        data = data.replace(/36부작/g, result[0].title);
+        data = data.replace(/컴퓨터공학과 학부생의 낙서장/g, cont1);
         data = data.replace(/this.props.imageUrl/g, 'https://blog.soga.ng' + getImgSrc(result[0].content) === null ? "" : getImgSrc(result[0].content));
 
         response.setHeader("Access-Control-Allow-Origin", "*");
@@ -58,10 +59,6 @@ app.get('*', function (request, response) {
     if (err) {
       return console.log(err);
     }
-    data = data.replace(/this.props.storyTitle/g, '36부작');
-    data = data.replace(/this.props.url/g, 'https://blog.soga.ng' + request.url);
-    data = data.replace(/this.props.storyContent/g, '컴퓨터공학과 학부생의 낙서장');
-
     response.setHeader("Access-Control-Allow-Origin", "*");
     response.send(data);
   });

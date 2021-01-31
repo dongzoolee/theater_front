@@ -36,7 +36,7 @@ class WriteSubComment extends Component {
             return alert('내용을 입력해주세요');
         else {
             axios
-                .get('https://api.ipify.org?format=json')
+                .get('https://ip.leed.at')
                 .then(res => {
                     data.ip = res.data.ip;
                     axios
