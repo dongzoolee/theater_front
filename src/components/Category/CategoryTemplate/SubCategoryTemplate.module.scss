@@ -7,18 +7,12 @@ $grey: #979797;
     padding: 3rem 0 2.1rem 0;
     min-height: unset;
 }
-hr {
-    height: auto;
-    width: 1px;
-    background-color: rgba(151, 151, 151, 0.4);
-    margin: 0 3.3rem;
-    border: none;
-}
 .CategoryInfo {
     margin-top: 1.7rem;
 }
+
 $mainCatSize: 0.9rem;
-.MainCategory {
+.CurMainCategory {
     font-family: $def_font;
     display: inline-block;
     vertical-align: text-bottom;
@@ -30,7 +24,7 @@ $mainCatSize: 0.9rem;
         vertical-align: bottom;
     }
 }
-.SubCategory {
+.CurSubCategory {
     font-family: "kopub-dotum-bold";
     display: inline-block;
     font-size: 1.4rem;
@@ -38,6 +32,29 @@ $mainCatSize: 0.9rem;
     &:hover {
         border-bottom: 1px solid rgba(151, 151, 151, 0.7);
     }
+}
+.SubCategoryWrapper {
+    margin-top: 2.6rem;
+    text-align: right;
+}
+.SubCategoryHeader {
+    font-family: "kopub-dotum-bold";
+    color: #643900;
+}
+.SubCategory {
+    margin-top: 0.6rem;
+    font-family: "kopub-dotum-bold";
+    color: rgba(109, 109, 109, 0.557);
+    &:first-child {
+        margin-top: unset;
+    }
+}
+hr {
+    height: auto;
+    width: 1px;
+    background-color: rgba(151, 151, 151, 0.4);
+    margin: 0 3.3rem;
+    border: none;
 }
 .StoryComponentWrapper {
     width: 70%;

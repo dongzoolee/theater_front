@@ -21,7 +21,7 @@ class MainCategory extends Component {
             axios
                 .post('/api/read/searchstory', data)
                 .then(res => {
-                    console.log(res.data)
+                    // console.log(res.data)
                     this.setState({
                         content: res.data
                     })
@@ -46,7 +46,7 @@ class MainCategory extends Component {
                 <Header />
                 <div className={"storyContainer " + styles.MainCategoryWrapper}>
                     <MainCategoryTemplate
-                        subCategory={this.state.subCategory}
+                        subCategoryList={this.state.subCategory}
                         mainCategory={this.props.match.params.mainCategory}
                         content={this.state.content}
                     />

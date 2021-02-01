@@ -22,7 +22,7 @@ class Location extends Component {
                     content: res.data.content,
                     contentCnt: res.data.cnt
                 })
-                console.log(res)
+                // console.log(res)
             })
             .catch(err => {
                 console.log(err)

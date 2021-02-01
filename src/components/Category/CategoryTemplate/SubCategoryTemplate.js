@@ -11,25 +11,28 @@ class SubCategoryTemplate extends Component {
     state = {
         content: []
     }
-    componentDidMount() {
-        const URLParams = new URLSearchParams(window.location.href.substring(window.location.href.indexOf('?')));
-        const data = {
-            mainCategory: this.props.mainCategory,
-            subCategory: this.props.subCategory,
-            page: URLParams.get('page')
-        }
-        axios
-            .post('/api/read/categorycontents', data)
-            .then(res => {
-                this.setState({
-                    content: res.data.content,
-                    contentCnt: res.data.cnt
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps !== this.props) {
+            const URLParams = new URLSearchParams(window.location.href.substring(window.location.href.indexOf('?')));
+            const data = {
+                mainCategory: this.props.mainCategory,
+                subCategory: this.props.subCategory,
+                page: URLParams.get('page')
+            }
+            axios
+                .post('/api/read/categorycontents', data)
+                .then(res => {
+                    this.setState({
+                        content: res.data.content,
+                        contentCnt: res.data.cnt
+                    })
                 })
-            })
-            .catch(err => {
+                .catch(err => {
 
-            })
+                })
+        }
     }
+
     getTextElement = (s) => {
         let span = document.createElement('span');
         span.innerHTML = s;
@@ -47,8 +50,16 @@ class SubCategoryTemplate extends Component {
         return (
             <div className={styles.Container}>
                 <div className={styles.CategoryInfo}>
-                    <div className={styles.MainCategory + " non--draggable"}>{this.props.mainCategory === "장소" ? <Link to='/장소'><img alt="LocationIcon" src={storyLocationIcon} /></Link> : <Link to={'/' + this.props.mainCategory}>{this.props.mainCategory}</Link>}&nbsp;&nbsp;/&nbsp;</div>
-                    <a href='?page=1'><div className={styles.SubCategory + " non--draggable"}>{this.props.subCategory}</div></a>
+                    <div className={styles.CurMainCategory + " non--draggable"}>{this.props.mainCategory === "장소" ? <Link to='/장소'><img alt="LocationIcon" src={storyLocationIcon} /></Link> : <Link to={'/' + this.props.mainCategory}>{this.props.mainCategory}</Link>}&nbsp;&nbsp;/&nbsp;</div>
+                    <a href='?page=1'><div className={styles.CurSubCategory + " non--draggable"}>{this.props.subCategory}</div></a>
+                    <div className={styles.SubCategoryWrapper}>
+                        <div className={styles.SubCategoryHeader + " non--draggable"}>서브 스토리라인</div>
+                        {this.props.subCategoryList.map((val, idx) => {
+                            return (
+                                <Link to={'/' + this.props.mainCategory + '/' + val.subCategory} key={idx}><div className={styles.SubCategory + " non--draggable"}>{val.subCategory}</div></Link>
+                            )
+                        })}
+                    </div>
                 </div>
                 <hr />
                 <div className={styles.MobileCategoryInfo}>
@@ -58,9 +69,9 @@ class SubCategoryTemplate extends Component {
                     />
                 </div>
                 <div className={styles.StoryComponentWrapper}>
-                    {this.props.content.map(val => {
+                    {this.state.content.map(val => {
                         return (
-                            <Link to={'/story/' + val.idx}>
+                            <Link to={'/story/' + val.idx} key={val.title}>
                                 <StoryComponent
                                     title={val.title}
                                     date={val.date}

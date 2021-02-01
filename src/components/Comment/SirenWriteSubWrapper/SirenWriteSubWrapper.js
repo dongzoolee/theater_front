@@ -10,7 +10,7 @@ class SirenWriteSubWrapper extends Component {
     }
     openSubCommentWindow = (e) => {
         this.setState({ toggle: !this.state.toggle })
-        console.log(e.target.closest("." + this.props.parentClass))
+        // console.log(e.target.closest("." + this.props.parentClass))
         if (e.target.closest("." + this.props.parentClass))
             e.target.closest("." + this.props.parentClass).lastElementChild.classList.toggle('hide')
     }

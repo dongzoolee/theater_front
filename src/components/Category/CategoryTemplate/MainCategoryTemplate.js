@@ -22,11 +22,11 @@ class MainCategoryTemplate extends Component {
         return (
             <div className={styles.Container}>
                 <div className={styles.CategoryInfo}>
-                    <a href='?page=1'><div className={styles.MainCategory + " non--draggable"}>{this.props.mainCategory}</div></a>
+                    <a href='?page=1'><div className={styles.CurMainCategory + " non--draggable"}>{this.props.mainCategory}</div></a>
                     <div className={styles.SlashCategory + " non--draggable"}>&nbsp;&nbsp;/&nbsp;</div>
                     <div className={styles.SubCategoryWrapper}>
                         <div className={styles.SubCategoryHeader + " non--draggable"}>서브 스토리라인</div>
-                        {this.props.subCategory.map((val, idx) => {
+                        {this.props.subCategoryList.map((val, idx) => {
                             return (
                                 <Link to={'/' + this.props.mainCategory + '/' + val.subCategory}><div className={styles.SubCategory + " non--draggable"}>{val.subCategory}</div></Link>
                             )

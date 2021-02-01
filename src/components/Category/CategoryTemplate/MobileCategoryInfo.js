@@ -4,7 +4,7 @@ import styles from './MobileCategoryInfo.module.scss';
 
 class MobileCategoryInfo extends Component {
     componentDidMount() {
-        console.log(typeof (this.props.subCategory))
+        // console.log(typeof (this.props.subCategory))
     }
     toggleSubCategoryBox = () => {
         document.querySelector('.' + styles.SubCategoryContent).classList.toggle(styles.hide)
@@ -23,7 +23,7 @@ class MobileCategoryInfo extends Component {
                         <div className={styles.SubCategoryContent + " " + styles.hide}>
                             {typeof (this.props.subCategory) === "object" ? this.props.subCategory.map((val, idx) => {
                                 return (
-                                    <Link to={'/' + this.props.mainCategory + '/' + val.subCategory}><div className={styles.SubCategory + " non--draggable"} style={{ 'color': 'rgba(109, 109, 109, ' + (this.props.subCategory.length - idx) / this.props.subCategory.length + ')' }}>{val.subCategory}</div></Link>
+                                    <Link to={'/' + this.props.mainCategory + '/' + val.subCategory}><div className={styles.SubCategory + " non--draggable"}>{val.subCategory}</div></Link>
                                 )
                             }) : ""}
                         </div>

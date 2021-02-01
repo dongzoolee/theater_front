@@ -4,7 +4,7 @@
         <link>https://blog.soga.ng</link>
         <description>컴퓨터공학과 학부생의 낙서장</description>
         <language>ko</language>
-        <pubDate>SUN, 31 JAN 2021 02:56:48 +0900</pubDate>
+        <pubDate>MON, 1 FEB 2021 14:00:48 +0900</pubDate>
         <generator>soga.ng</generator>
         <ttl>300</ttl>
         <managingEditor>dongzoolee</managingEditor>
@@ -2043,6 +2043,40 @@
             <guid isPermaLink="true">https://blog.soga.ng/story/36</guid>
             <comments>https://blog.soga.ng/story/36#comments</comments>
             <pubDate>SUN, 31 JAN 2021 02:56:48 +0900</pubDate>
+        </item>
+        <item>
+            <title>[docker] 외부에서 포트로의 접근 차단하기</title>
+            <link>https://blog.soga.ng/story/37</link>
+            <description>
+                <p>docker compose 파일은 다음과 같은 형식을 띈다.</p>
+                <pre class="lang-yaml"><code data-language="yaml">  phpmyadmin:
+                    image: phpmyadmin/phpmyadmin:latest
+                    restart: always
+                    environment:
+                      ...
+                    ports:
+                      - "8080:80"
+                      - "8081:443"
+                    volumes:
+                      ...
+                </code></pre>
+                <p><br data-tomark-pass="" /><br />
+                위의 형식을 그대로 사용하면, 외부에서도 <code data-backticks="1">{서버 아이피}:8080</code> 또는 <code data-backticks="1">{서버 아이피}:8081</code>로 해당 컨테이너에 접근할 수 있다.</p>
+                <p>하지만 포트를 다음과 같은 형식으로 수정하면, 서버 내부에서만 해당 포트로 접근할 수 있다.</p>
+                <pre class="lang-yaml"><code data-language="yaml">    ports:
+                      - "127.0.0.1:8080:80"
+                      - "127.0.0.1:8081:443"
+                </code></pre>
+                <p><br data-tomark-pass="" /><br />
+                외부에서 포트로의 직접적인 접근을 차단하기 때문에,<br />
+                서버 내부에서 <strong>리버스 프록시</strong>를 이용하여 <strong>해당 포트로 연결되는 서브 도메인</strong>을 설정해주어야 외부에서도 접근할 수 있게 된다.</p>
+            </description>
+            <category>배움</category>
+            <category>docker</category>
+            <author>dongzoolee</author>
+            <guid isPermaLink="true">https://blog.soga.ng/story/37</guid>
+            <comments>https://blog.soga.ng/story/37#comments</comments>
+            <pubDate>MON, 1 FEB 2021 14:00:48 +0900</pubDate>
         </item>
     </channel>
 </rss>

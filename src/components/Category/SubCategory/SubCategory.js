@@ -7,13 +7,15 @@ import SubCategoryTemplate from '../CategoryTemplate/SubCategoryTemplate';
 class SubCategory extends Component {
     state = {
         content: [],
-        contentCnt: ""
+        contentCnt: "",
+        subCategoryList: []
     }
     componentDidMount() {
         const URLParams = new URLSearchParams(window.location.href.substring(window.location.href.indexOf('?')));
         const data = {
             mainCategory: this.props.match.params.mainCategory,
             subCategory: this.props.match.params.subCategory,
+
             page: URLParams.get('page'),
             search: URLParams.get('search')
         }
@@ -21,24 +23,23 @@ class SubCategory extends Component {
             axios
                 .post('/api/read/searchstory', data)
                 .then(res => {
-                    console.log(res.data)
+                    // console.log(res.data)
                     this.setState({
                         content: res.data
                     })
                 })
                 .catch(err => console.log(err))
-        else
+        else {
             axios
-                .post('/api/read/categorycontents', data)
-                .then(res => {
+                .post('/api/read/subcatbymaincat', data)
+                .then(res2 => {
+                    // console.log(res)
                     this.setState({
-                        content: res.data.content,
-                        contentCnt: res.data.cnt
+                        subCategoryList: res2.data.subCategory
                     })
                 })
-                .catch(err => {
-
-                })
+                .catch(err => console.log(err))
+        }
     }
     render() {
         return (
@@ -48,7 +49,7 @@ class SubCategory extends Component {
                     <SubCategoryTemplate
                         mainCategory={this.props.match.params.mainCategory}
                         subCategory={this.props.match.params.subCategory}
-                        content={this.state.content}
+                        subCategoryList={this.state.subCategoryList}
                     />
                 </div>
             </>

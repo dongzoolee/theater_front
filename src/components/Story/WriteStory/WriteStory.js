@@ -27,7 +27,7 @@ class WriteStory extends Component {
     }
     componentDidMount() {
         // get Main Categories
-        console.log(this.state)
+        // console.log(this.state)
         axios
             .get('/api/read/categories?data=main')
             .then((res) => {
@@ -50,7 +50,7 @@ class WriteStory extends Component {
                         subCategory: res.data.subCategory
                     }
                 })
-                console.log(this.state)
+                // console.log(this.state)
             })
             .catch((err) => { console.error(err) });
     }
