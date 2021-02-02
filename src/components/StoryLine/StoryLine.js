@@ -6,6 +6,7 @@ import styles from './StoryLine.module.scss';
 import axios from 'axios';
 import AdfitWebComponent from 'react-adfit-web-component'
 import MobileContentWrapper from './MobileContentWrapper/MobileContentWrapper';
+import StoryPreview from '../StoryPreview/StoryPreview';
 
 class StoryLine extends Component {
     state = {
@@ -35,6 +36,24 @@ class StoryLine extends Component {
             .catch(err => console.log(err))
         document.querySelector('.header').style.width = "89%";
         document.querySelector('.header').style.maxWidth = "2300px";
+        let ins = document.createElement('ins');
+        let scr = document.createElement('script');
+        ins.className = 'kakao_ad_area';
+        ins.style = "display:none; width:100%;";
+        scr.async = 'true';
+        scr.type = "text/javascript";
+        scr.src = "//t1.daumcdn.net/kas/static/ba.min.js";
+        if (window.matchMedia('(min-width:728px)').matches) {
+            ins.setAttribute('data-ad-width', '728');
+            ins.setAttribute('data-ad-height', '90');
+            ins.setAttribute('data-ad-unit', 'DAN-zrThBYMLPyPfF7zx');
+        } else {
+            ins.setAttribute('data-ad-width', '320');
+            ins.setAttribute('data-ad-height', '50');
+            ins.setAttribute('data-ad-unit', 'DAN-CyjKlg2fzvV9gtXU');
+        }
+        document.querySelector('.' + styles.adfit).appendChild(ins);
+        document.querySelector('.' + styles.adfit).appendChild(scr);
     }
     componentDidUpdate() {
     }
@@ -44,11 +63,13 @@ class StoryLine extends Component {
                 <Header
                     isStoryLine={true}
                 />
+                <div className={styles.MobileContentWrapper}>
+                    <MobileContentWrapper
+                        content={this.state.content}
+                    />
+                </div>
                 <div className={"storyContainer " + styles.MainCategoryWrapper}>
                     <div className={styles.Header + " non--draggable"}>스토리 라인</div>
-                    <div className={styles.MobileContentWrapper}>
-                        <MobileContentWrapper />
-                    </div>
                     <div className={styles.ContentWrapper}>
                         <table>
                             <tbody>
@@ -74,7 +95,7 @@ class StoryLine extends Component {
                                         <div className={styles.StoryLineContentWrapper + " non--draggable"}>
                                             <Link to="/일기">
                                                 <div className={styles.StoryLineTitle}>일기</div>
-                                                <div className={styles.StoryLineContent}>정돈되지 못한 일상에 질서를 지우기 위한 최소한의 노력</div>
+                                                <div className={styles.StoryLineContent}>소중한 추억들을 되돌아 보는 시간</div>
                                             </Link>
                                         </div>
                                     </th>
@@ -89,70 +110,24 @@ class StoryLine extends Component {
                                 </tr>
                                 <tr>
                                     {this.state.content.map((val, idx) => {
-                                        if (idx === 0)
-                                            return (
-
-                                                <th className={styles.StoryLineStoryTh} key={idx}>
-                                                    <Link to={"/story/" + val.idx}>
-                                                        <div className={styles.BigContainer}>
-                                                            {this.getImgSrc(val.content) ?
-                                                                <>
-                                                                    <div className={styles.BigImg}><img src={this.getImgSrc(val.content)} alt={""} /></div>
-                                                                    <div className={styles.BigTitle}>{val.title}</div>
-                                                                    <div className={styles.BigDate}>{val.date}</div>
-                                                                    <div className={styles.BigContent}>{this.getTextElement(val.content).length >= 60 ? this.getTextElement(val.content).substring(0, 60) : this.getTextElement(val.content)}</div>
-                                                                </> :
-                                                                <>
-                                                                    <div className={styles.BigTitle}>{val.title}</div>
-                                                                    <div className={styles.BigDate}>{val.date}</div>
-                                                                    <div className={styles.BigContent}>{this.getTextElement(val.content).length >= 60 ? this.getTextElement(val.content).substring(0, 120) : this.getTextElement(val.content)}</div>
-                                                                </>
-                                                            }
-                                                        </div>
-                                                    </Link>
-                                                </th>
-                                            )
-                                        else if (idx === 1)
-                                            return (
-                                                <th className={styles.StoryLineStoryTh} key={idx}>
-                                                    <Link to={"/story/" + val.idx}>
-                                                        <div className={styles.MidContainer}>
-                                                            <div className={styles.MidImg}><img src={this.getImgSrc(val.content)} alt={""} /></div>
-                                                            <div className={styles.MidTitle}>{val.title}</div>
-                                                            <div className={styles.MidDate}>{val.date}</div>
-                                                        </div>
-                                                    </Link>
-                                                </th>
-                                            )
-                                        else if (idx === 2)
-                                            return (
-                                                <th className={styles.StoryLineStoryTh} key={idx}>
-                                                    <Link to={"/story/" + val.idx}>
-                                                        <div className={styles.ContentOnly}>{this.getTextElement(val.content).length >= 100 ? this.getTextElement(val.content).substring(0, 100) : this.getTextElement(val.content)}</div>
-                                                    </Link>
-                                                </th>
-                                            )
-                                        else if (idx === 3)
-                                            return (
-                                                <th className={styles.StoryLineStoryTh} key={idx}>
-                                                    <Link to={"/story/" + val.idx}>
-                                                        <div className={styles.SmallContainer}>
-                                                            <div className={styles.SmallTitle}>{val.title}</div>
-                                                            <div className={styles.SmallDate}>{val.date}</div>
-                                                        </div>
-                                                    </Link>
-                                                </th>
-                                            )
-                                        else return (<></>);
+                                        return (
+                                            <th className={styles.StoryLineStoryTh} key={idx}>
+                                                <StoryPreview
+                                                    idx={idx}
+                                                    storyId={val.idx}
+                                                    title={val.title}
+                                                    date={val.date}
+                                                    content={val.content}
+                                                />
+                                            </th>
+                                        )
                                     })}
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    {/* <AdfitWebComponent
-                        adUnit="DAN-zrThBYMLPyPfF7zx"
-                    /> */}
                 </div>
+                <div className={styles.adfit} />
             </>
         )
     }

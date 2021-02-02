@@ -13,23 +13,29 @@ class SubCategoryTemplate extends Component {
     }
     componentDidUpdate(prevProps, prevState) {
         if (prevProps !== this.props) {
-            const URLParams = new URLSearchParams(window.location.href.substring(window.location.href.indexOf('?')));
-            const data = {
-                mainCategory: this.props.mainCategory,
-                subCategory: this.props.subCategory,
-                page: URLParams.get('page')
-            }
-            axios
-                .post('/api/read/categorycontents', data)
-                .then(res => {
-                    this.setState({
-                        content: res.data.content,
-                        contentCnt: res.data.cnt
+            if (this.props.content) {
+                this.setState({
+                    content: this.props.content
+                })
+            } else {
+                const URLParams = new URLSearchParams(window.location.href.substring(window.location.href.indexOf('?')));
+                const data = {
+                    mainCategory: this.props.mainCategory,
+                    subCategory: this.props.subCategory,
+                    page: URLParams.get('page')
+                }
+                axios
+                    .post('/api/read/categorycontents', data)
+                    .then(res => {
+                        this.setState({
+                            content: res.data.content,
+                            contentCnt: res.data.cnt
+                        })
                     })
-                })
-                .catch(err => {
-
-                })
+                    .catch(err => {
+                        
+                    })
+            }
         }
     }
 
@@ -54,11 +60,11 @@ class SubCategoryTemplate extends Component {
                     <a href='?page=1'><div className={styles.CurSubCategory + " non--draggable"}>{this.props.subCategory}</div></a>
                     <div className={styles.SubCategoryWrapper}>
                         <div className={styles.SubCategoryHeader + " non--draggable"}>서브 스토리라인</div>
-                        {this.props.subCategoryList.map((val, idx) => {
+                        {this.props.subCategoryList ? this.props.subCategoryList.map((val, idx) => {
                             return (
                                 <Link to={'/' + this.props.mainCategory + '/' + val.subCategory} key={idx}><div className={styles.SubCategory + " non--draggable"}>{val.subCategory}</div></Link>
                             )
-                        })}
+                        }) : ""}
                     </div>
                 </div>
                 <hr />
