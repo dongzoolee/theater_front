@@ -7,6 +7,7 @@ import Comment from '../../Comment/Comment'
 import '../../Story.css';
 import AdfitWebComponent from 'react-adfit-web-component'
 import Footer from '../../Footer/Footer'
+import styles from './ReadStory.module.scss';
 
 class ReadStory extends React.PureComponent {
     constructor() {
@@ -64,12 +65,30 @@ class ReadStory extends React.PureComponent {
             .catch((err) => {
                 console.error(err);
             })
+        let ins = document.createElement('ins');
+        let scr = document.createElement('script');
+        ins.className = 'kakao_ad_area';
+        ins.style = "display:none; width:100%;";
+        scr.async = 'true';
+        scr.type = "text/javascript";
+        scr.src = "//t1.daumcdn.net/kas/static/ba.min.js";
+        if (window.matchMedia('(min-width: 875px)').matches) {
+            ins.setAttribute('data-ad-width', '728');
+            ins.setAttribute('data-ad-height', '90');
+            ins.setAttribute('data-ad-unit', 'DAN-zrThBYMLPyPfF7zx');
+        } else {
+            ins.setAttribute('data-ad-width', '320');
+            ins.setAttribute('data-ad-height', '50');
+            ins.setAttribute('data-ad-unit', 'DAN-CyjKlg2fzvV9gtXU');
+        }
+        document.querySelector('.' + styles.adfit).appendChild(ins);
+        document.querySelector('.' + styles.adfit).appendChild(scr);
+
         window.onload = () => {
             document.querySelectorAll('img').forEach(ele => {
                 ele.setAttribute('draggable', 'false')
                 ele.style.maxWidth = "100%";
             })
-
         }
     }
     componentDidUpdate() {
@@ -100,9 +119,7 @@ class ReadStory extends React.PureComponent {
                         storyLocation={this.state.location}
                         storyContent={[this.state.content]}
                     />
-                    {/* {this.state.toShowAd ? <AdfitWebComponent
-                        adUnit="DAN-zrThBYMLPyPfF7zx"
-                    /> : ""} */}
+                    <div className={styles.adfit} />
                     <Comment
                         commentCnt={this.state.commentCnt}
                         comment={this.state.comment}

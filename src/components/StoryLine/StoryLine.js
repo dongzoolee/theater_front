@@ -36,6 +36,7 @@ class StoryLine extends Component {
             .catch(err => console.log(err))
         document.querySelector('.header').style.width = "89%";
         document.querySelector('.header').style.maxWidth = "2300px";
+
         let ins = document.createElement('ins');
         let scr = document.createElement('script');
         ins.className = 'kakao_ad_area';
