@@ -37,7 +37,7 @@ class MainCategoryTemplate extends Component {
                 <div className={styles.MobileCategoryInfo}>
                     <MobileCategoryInfo
                         mainCategory={this.props.mainCategory}
-                        subCategory={this.props.subCategory}
+                        subCategoryList={this.props.subCategoryList}
                     />
                 </div>
                 <div className={styles.StoryComponentWrapper}>
