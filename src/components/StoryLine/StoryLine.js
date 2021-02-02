@@ -43,7 +43,7 @@ class StoryLine extends Component {
         scr.async = 'true';
         scr.type = "text/javascript";
         scr.src = "//t1.daumcdn.net/kas/static/ba.min.js";
-        if (window.matchMedia('(min-width:728px)').matches) {
+        if (window.matchMedia('(min-width: 875px)').matches) {
             ins.setAttribute('data-ad-width', '728');
             ins.setAttribute('data-ad-height', '90');
             ins.setAttribute('data-ad-unit', 'DAN-zrThBYMLPyPfF7zx');
