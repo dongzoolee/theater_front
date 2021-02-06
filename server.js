@@ -43,7 +43,8 @@ app.get('/story/:id', (request, response) => {
         let cont1 = cont.window.document.querySelector('html').textContent.trim();
         cont1 = cont1.replace(/(\r\n|\n|\r)/gm, " ");
         cont1 = cont1.replace(/"/g, "");
-        data = data.replace(/https:\/\/blog.soga.ng/g, 'https://blog.soga.ng' + request.url);
+        data = data.replace(/href="https:\/\/blog.soga.ng"/g, 'href="https://blog.soga.ng' + request.url.split('?')[0] + '"');
+        data = data.replace(/content="https:\/\/blog.soga.ng"/g, 'content="https://blog.soga.ng' + request.url + '"');
         data = data.replace(/36부작/g, result[0].title);
         data = data.replace(/컴퓨터공학과 학부생의 낙서장/g, cont1);
         data = data.replace(/this.props.imageUrl/g, 'https://blog.soga.ng' + getImgSrc(result[0].content) === null ? "" : getImgSrc(result[0].content));

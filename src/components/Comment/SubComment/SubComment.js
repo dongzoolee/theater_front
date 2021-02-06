@@ -20,32 +20,41 @@ class SubComment extends Component {
                 .then(alert('신고가 정상적으로 처리되었습니다'))
                 .catch(console.error)
     }
+    componentDidMount() {
+        document.querySelectorAll('.replyTo').forEach(ele => {
+            ele.addEventListener('click', () => {
+
+            })
+        })
+    }
     render() {
         return (
             <>
-                <div className={styles.commentContainer}>
+                <div className={styles.commentContainer} id={this._reactInternals.key}>
                     <div className={"profileImgWrapper " + styles.profileImgWrapper}><img alt="user profile" style={{ width: '100%', height: '100%' }} src={process.env.PUBLIC_URL + '/icons/userIcon-' + this.state.userIcon + '.jpg'} /></div>
                     <div className={styles.commentContentWrapper}>
                         <div className="WriterDateWrapper">
-                            <div className="commentWriter">{this.props.writer.length >= 18 ? this.props.writer.substring(0, 10) + "..." : this.props.writer}</div>
+                            <div className="commentWriter"><span>{this.props.writer.length >= 18 ? this.props.writer.substring(0, 10) + "..." : this.props.writer}</span>{this.props.report != '0' ? <span className="reportedComment">&lt;신고된 댓글&gt;&nbsp;+{this.props.report}</span> : ""}</div>
                             <div className={styles.SirenWriteSubWrapper}>
                                 <SirenWriteSubWrapper
                                     hasSubComment={this.props.hasSubComment}
-                                    parentClass={this.props.parentClass}
+                                    parentClass={styles.commentContainer}
                                     key={this._reactInternals.key}
                                     date={this.props.date}
                                 />
                             </div>
                         </div>
-                        <div className="commentContent">{this.props.content}</div>
+                        <div className="commentContent"><span dangerouslySetInnerHTML={{ __html: this.props.content }} /></div>
                     </div>
                     <div className={styles.SirenWriteSubWrapperForMobile}>
-                        <SirenWriteSubWrapper
-                            hasSubComment={this.props.hasSubComment}
-                            parentClass={this.props.parentClass}
-                            key={this._reactInternals.key}
-                            date={this.props.date}
-                        />
+                        <div><div>
+                            <SirenWriteSubWrapper
+                                hasSubComment={this.props.hasSubComment}
+                                parentClass={styles.commentContainer}
+                                key={this._reactInternals.key}
+                                date={this.props.date}
+                            />
+                        </div></div>
                     </div>
                 </div>
                 {this.state.toggle && (

@@ -12,7 +12,7 @@ a {
     padding: 6.1rem 0 4rem 0;
 }
 
-.pace--loader {
+/* .pace--loader {
     background: #0076c0;
     position: fixed;
     z-index: 2000;
@@ -21,12 +21,24 @@ a {
     width: 100%;
     height: 2px;
     transform: translate3d(50%, 0, 0);
-}
+} */
 .slick-dots {
     bottom: -1.4rem !important;
 }
 .slick-dots li button:before {
     font-size: 8px !important;
+}
+.commentWriteContainer{
+    border: none;
+    display: block;
+    max-width: 99%;
+    min-width: 99%;
+    min-height: 2.6rem;
+    margin: 0.5rem auto 0 auto;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 0.8rem;
+    font-family: "kopub-dotum-light";
 }
 @media (max-width: 1353px) {
     .storyContainer {

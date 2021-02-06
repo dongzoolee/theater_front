@@ -1,14 +1,14 @@
 @font-face{
     font-family: 'kopub-dotum-bold';
-    src: url('./KoPubWorld-Dotum-Bold.woff') format('woff');
+    src: url('./KoPubWorld-Dotum-Bold.woff2') format('woff');
 }
 @font-face{
     font-family: 'kopub-dotum-light';
-    src: url('./KoPubWorld-Dotum-Light.woff') format('woff');
+    src: url('./KoPubWorld-Dotum-Light.woff2') format('woff');
 }
 @font-face{
     font-family: 'kopub-dotum-medium';
-    src: url('./KoPubWorld-Dotum-Medium.woff') format('woff');
+    src: url('./KoPubWorld-Dotum-Medium.woff2') format('woff');
 }
 @font-face{
     font-family: 'firacode-reg';

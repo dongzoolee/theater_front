@@ -8,6 +8,20 @@ import '../../Story.css';
 import AdfitWebComponent from 'react-adfit-web-component'
 import Footer from '../../Footer/Footer'
 import styles from './ReadStory.module.scss';
+import hljs from 'highlight.js/lib/highlight';
+import 'highlight.js/styles/a11y-dark.css'
+import js_hljs from 'highlight.js/lib/languages/javascript';
+import yaml_hljs from 'highlight.js/lib/languages/yaml';
+import docker_hljs from 'highlight.js/lib/languages/dockerfile';
+import shell_hljs from 'highlight.js/lib/languages/shell';
+import sql_hljs from 'highlight.js/lib/languages/sql';
+
+hljs.registerLanguage('sql', sql_hljs);
+hljs.registerLanguage('lang-js', js_hljs);
+hljs.registerLanguage('lang-yaml', yaml_hljs);
+hljs.registerLanguage('lang-docker', docker_hljs);
+hljs.registerLanguage('shell', shell_hljs);
+hljs.registerLanguage('git', shell_hljs);
 
 class ReadStory extends React.PureComponent {
     constructor() {
@@ -90,6 +104,7 @@ class ReadStory extends React.PureComponent {
                 ele.style.maxWidth = "100%";
             })
         }
+        this.highlight();
     }
     componentDidUpdate() {
         document.querySelectorAll('img').forEach(ele => {
@@ -102,8 +117,14 @@ class ReadStory extends React.PureComponent {
                     toShowAd: true
                 })
         }, 2000)
+        this.highlight();
     }
-
+    highlight = () => {
+        document.querySelectorAll('pre').forEach(ele => {
+            console.log(ele)
+            hljs.highlightBlock(ele);
+        })
+    }
     render() {
         return (
             <>

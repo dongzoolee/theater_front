@@ -91,7 +91,8 @@ class Comment extends Component {
                                         key={val.mainIdx}
                                         writer={val.mainWriter === '-1' ? '익명' : val.mainWriter}
                                         date={val.mainDate}
-                                        content={val.mainContent} />
+                                        content={val.mainContent}
+                                        report={val.mainReport} />
                                     <div className={styles.SubCommentWrapper}>
                                         {elem.filter(val1 => val.commentId === val1.commentId).map((val2, idx2) => {
                                             return (
@@ -99,7 +100,8 @@ class Comment extends Component {
                                                     key={val.mainIdx + "_" + val2.subIdx}
                                                     writer={val2.subWriter}
                                                     date={val2.subDate}
-                                                    content={val2.subContent} />
+                                                    content={val2.subContent}
+                                                    report={val2.subReport} />
                                             );
                                         })}
                                         <WriteSubComment
@@ -121,7 +123,8 @@ class Comment extends Component {
                                         key={val.mainIdx}
                                         writer={val.mainWriter === '-1' ? '익명' : val.mainWriter}
                                         date={val.mainDate}
-                                        content={val.mainContent} />
+                                        content={val.mainContent}
+                                        report={val.mainReport} />
                                     <div className={styles.SubCommentWrapper + " hide"}>
                                         <WriteSubComment
                                             targetMainId={val.mainIdx}
@@ -141,7 +144,8 @@ class Comment extends Component {
                                         key={val.mainIdx}
                                         writer={val.mainWriter === '-1' ? '익명' : val.mainWriter}
                                         date={val.mainDate}
-                                        content={val.mainContent} />
+                                        content={val.mainContent}
+                                        report={val.mainReport} />
                                     <div className={styles.SubCommentWrapper}>
                                         {elem.filter(val1 => val.commentId === val1.commentId).map((val2, idx2) => {
                                             return (
@@ -149,7 +153,8 @@ class Comment extends Component {
                                                     key={val.mainIdx + "_" + val2.subIdx}
                                                     writer={val2.subWriter}
                                                     date={val2.subDate}
-                                                    content={val2.subContent} />
+                                                    content={val2.subContent}
+                                                    report={val2.subReport} />
                                             );
                                         })}
                                         <WriteSubComment

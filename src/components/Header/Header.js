@@ -2,18 +2,18 @@ import React, { Component, Fragment } from 'react';
 import styles from './Header.module.scss';
 import HeaderRouter from './HeaderRouter/HeaderRouter';
 import './Header.scss';
-import 'pace-progressbar';
-import 'pace-progressbar/themes/yellow/pace-theme-minimal.css';
+// import 'pace-progressbar';
+// import 'pace-progressbar/themes/yellow/pace-theme-minimal.css';
 
 class Header extends Component {
-    paceOptions = {
-        ajax: false, // disabled
-        document: false, // disabled
-        eventLag: false, // disabled
-        elements: {
-            selectors: ['.pace--loader']
-        }
-    };
+    // paceOptions = {
+    //     ajax: false, // disabled
+    //     document: false, // disabled
+    //     eventLag: false, // disabled
+    //     elements: {
+    //         selectors: ['.pace--loader']
+    //     }
+    // };
     state = {
         menuBarOn: false
     }

@@ -15,23 +15,24 @@ class WriteComment extends Component {
             this.setState({
                 writer: e.target.value
             })
-        else if(e.target.tagName === "TEXTAREA")
+        else {
             this.setState({
-                content: e.target.value
+                content: e.target.innerHTML
             })
+        }
     }
-    handleSubmit = () => {
+    handleSubmit = (e) => {
         let url = window.location.href;
         let urlSplit = url.split('/');
         const data = {
             storyId: urlSplit[urlSplit.indexOf('story') + 1],
             writer: this.state.writer,
-            content: this.state.content,
+            content: this.state.content || e.target.parentElement.parentElement.querySelector('.commentWriteContainer').innerHTML
         };
 
         if (data.writer === "")
             return alert('이름을 입력해주세요');
-        else if (data.content === "")
+        else if (data.content.trim().replace(/&nbsp;/g, '') === "")
             return alert('내용을 입력해주세요');
         else {
             axios
@@ -43,8 +44,9 @@ class WriteComment extends Component {
                         .then((res) => {
                             //window.location.reload();
                             this.props.OnCommentSubmit('done')
-                            document.querySelector('.' + styles.writerAnony).value = "";
-                            document.querySelector('.' + styles.content).value = "";
+                            console.log(e.target.closest('.' + styles.header))
+                            e.target.closest('.' + styles.header).firstElementChild.value = "";
+                            e.target.closest('.' + styles.header).parentElement.lastElementChild.innerHTML = "";
                             this.setState({
                                 writer: "",
                                 content: ""
@@ -56,6 +58,24 @@ class WriteComment extends Component {
 
         }
     }
+    componentDidMount() {
+        document.querySelectorAll('.' + styles.writerAnony).forEach(ele => {
+            ele.addEventListener('keydown', e => {
+                if (e.key === 'Tab') {
+                    e.preventDefault();
+                    ele.closest('.' + styles.container).querySelector('.commentWriteContainer').focus()
+                }
+            })
+        })
+        document.querySelectorAll('.commentWriteContainer').forEach(ele => {
+            ele.addEventListener('keydown', e => {
+                if (e.key === 'Tab') {
+                    e.preventDefault();
+                    ele.closest('.' + styles.container).querySelector('.' + styles.commitBtn).focus()
+                }
+            })
+        })
+    }
     render() {
         return (
             <div className={styles.colorContainer}>
@@ -65,9 +85,9 @@ class WriteComment extends Component {
                         <div className={styles.date}>{[new Date().getFullYear(), "년 ", new Date().getMonth() + 1, "월 ", new Date().getDate(), "일"]}</div>
                         <div className={styles.flexGrow} />
                         <div className={styles.emoji}></div>
-                        <div className={styles.commitBtn + " non--draggable"} onClick={this.handleSubmit}>커밋</div>
+                        <button className={styles.commitBtn + " non--draggable"} onClick={this.handleSubmit}>커밋</button>
                     </div>
-                    <textarea className={styles.content} onChange={this.onChangeEvent} />
+                    <div className="commentWriteContainer" contentEditable="true" onKeyUp={e => this.onChangeEvent(e)} />
                 </div>
             </div>
         )

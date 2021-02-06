@@ -17,7 +17,8 @@ function App() {
         <Route exact path='/' component={StoryLine} />
         <Route exact path='/hot' component={HotStory} />
         <Route exact path='/storyline' component={StoryLine} />
-        <Route exact path='/dongzoolee' component={WriteStory} />
+        <Route exact path='/dongzoolee/' component={WriteStory} />
+        <Route exact path='/dongzoolee/:id' component={WriteStory} />
         <Route exact path='/장소' component={LocationList} />
         <Route exact path='/장소/:location' component={Location} />
         <Route exact path='/story/:id' component={ReadStory} />

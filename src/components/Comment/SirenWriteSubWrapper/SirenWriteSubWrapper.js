@@ -8,11 +8,16 @@ class SirenWriteSubWrapper extends Component {
     state = {
         toggle: this.props.hasSubComment
     }
-    openSubCommentWindow = (e) => {
-        this.setState({ toggle: !this.state.toggle })
-        // console.log(e.target.closest("." + this.props.parentClass))
-        if (e.target.closest("." + this.props.parentClass))
-            e.target.closest("." + this.props.parentClass).lastElementChild.classList.toggle('hide')
+    replyTo = (e) => {
+        if (!this.props.hasSubComment && this.props.isMainComment) {
+            e.target.closest('.'+this.props.parentClass).parentElement.lastElementChild.classList.toggle('hide')
+        }
+        let trget = e.target.closest('.'+this.props.parentClass).parentElement.lastElementChild.querySelector('.commentWriteContainer')
+        let replyTrget = e.target.closest('.'+this.props.parentClass).querySelector('.commentWriter').firstElementChild.textContent;
+        console.log(trget.innerText)
+        if (trget.innerText.trim() === "") trget.innerHTML = "";
+        trget.innerHTML = trget.innerHTML.replace(new RegExp(`<span class="replyTo">@${replyTrget}</span>`, 'g'), '')
+        trget.innerHTML = trget.innerHTML + '<span class="replyTo">@' + replyTrget + '</span><span>&nbsp;</span>';
     }
     reportComment = (e) => {
         if (window.confirm('댓글을 신고하시겠습니까?'))
@@ -26,7 +31,7 @@ class SirenWriteSubWrapper extends Component {
             <>
                 <div className="commentDate">{this.props.date}</div>
                 <div className="sirenImgWrapper" onClick={this.reportComment}><img alt="report comment" src={sirenImg} /></div>
-                <div className="writeSubComment non--draggable" onClick={(e) => this.openSubCommentWindow(e)}>{!this.state.toggle ? "답글" : "답글 닫기"}</div>
+                <div className="writeSubComment non--draggable" onClick={(e) => this.replyTo(e)}>답글</div>
             </>
         )
     }

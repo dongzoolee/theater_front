@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import axios from 'axios';
+import React, { lazy, Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Header from '../../Header/Header';
 import styles from './WriteStory.module.css';
 import 'codemirror/lib/codemirror.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import { Editor } from '@toast-ui/react-editor';
-import axios from 'axios';
 
 class WriteStory extends Component {
     editorRef = React.createRef();
@@ -39,6 +39,43 @@ class WriteStory extends Component {
                 })
             })
             .catch((err) => { console.error(err) });
+
+        // Get current Story Idx
+        let curStoryIdx = -1;
+        axios
+            .get('/api/getinfo/nextstoryidx')
+            .then(res => {
+                curStoryIdx = res.data.idx;
+            })
+            .catch(err => console.log(err))
+        document.querySelector('.CodeMirror').addEventListener('keyup', e => {
+            if (e.ctrlKey && e.altKey) {
+                if (curStoryIdx === -1)
+                    return alert('try again later')
+                if (e.key === 'i') {
+                    this.editorRef.current.getInstance().insertText('<img src="/story/' + curStoryIdx + '/1.jpg" width=800 />');
+                } else if (e.key === 'g') {
+                    this.editorRef.current.getInstance().insertText('<figure><img src="/story/' + curStoryIdx + '/1.jpg" width=800 /><figcaption></figcaption></figure>');
+                }
+            } else if (e.ctrlKey && e.key === 'v') {
+                e.preventDefault();
+                console.log('hi')
+            }
+        })
+        // check tmpStory
+        if (this.props.match.params.id) {
+            axios
+                .post("/api/read/tmpstory", { id: this.props.match.params.id })
+                .then(res => {
+                    console.log(res.data)
+                    this.editorRef.current.getInstance().setHtml(res.data[0].content, true)
+                    document.querySelector('.mainCategory').value = res.data[0].mainCatIdx;
+                    document.querySelector('.subCategory').value = res.data[0].subCatIdx;
+                    document.querySelector('.' + styles.storyTitle).value = res.data[0].title
+                    document.querySelector('.' + styles.storyLocation).value = res.data[0].location
+                })
+                .catch(err => console.log(err))
+        }
     }
     getSubCategory = (e) => {
         axios
@@ -65,10 +102,11 @@ class WriteStory extends Component {
         this.setState(nextState)
     }
     getTmpList = () => {
-        
+
     }
     handleTmpSubmit = () => {
         const data = {
+            idx: this.props.match.params.id ? this.props.match.params.id : -1,
             main: this.state.input.mainCategory,
             sub: this.state.input.subCategory,
             title: this.state.input.title,
@@ -81,7 +119,7 @@ class WriteStory extends Component {
         axios
             .post('/api/write/tmpstory', data)
             .then((res) => {
-                ;
+                window.location.reload();
             })
             .catch((err) => { console.error(err) });
     }
@@ -116,7 +154,7 @@ class WriteStory extends Component {
                             )
                         })}
                     </select>
-                    <select name='subCategory' className='subCategory'>
+                    <select name='subCategory' className='subCategory' onChange={this.handleUpdate}>
                         <option value="-1">선택</option>
                         {this.state.preload.subCategory.map((val, idx) => {
                             return (
@@ -140,7 +178,7 @@ class WriteStory extends Component {
                         initialEditType="markdown"
                         ref={this.editorRef}
                         onChange={this.handleUpdate}
-
+                        useCommandShortcut={true}
                     />
                     <button onClick={this.getTmpList}>불러오기</button>
                     <button onClick={this.handleTmpSubmit}>임시저장</button>
