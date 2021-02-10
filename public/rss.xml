@@ -4,7 +4,7 @@
         <link>https://blog.soga.ng</link>
         <description>컴퓨터공학과 학부생의 낙서장</description>
         <language>ko</language>
-        <pubDate>Fri, 05 Feb 2021 18:47:42+0900</pubDate>
+        <pubDate>Thu, 11 Feb 2021 00:32:46+0900</pubDate>
         <generator>soga.ng</generator>
         <ttl>300</ttl>
         <managingEditor>dongzoolee</managingEditor>
@@ -2575,6 +2575,83 @@ ICPC Sinchon은 지난 7월부터 시작된 동아리 연합으로 신촌 지역
 <figure data-tomark-pass=""><img src="/story/41/7.jpg" width="800" data-tomark-pass="" />
 <figcaption data-tomark-pass=""></figcaption></figure>
 <h4>다음 글에서는 진짜로 이번 대회의 후원사에 대해 알아본다 . .</h4>
-</description><category>일기</category><category>ICPC Sinchon</category><author>dongzoolee</author><guid isPermaLink="true">https://blog.soga.ng/story/41</guid><comments>https://blog.soga.ng/story/41#comments</comments><pubDate>Fri, 05 Feb 2021 18:47:42+0900</pubDate></item>
+</description><category>일기</category><category>ICPC Sinchon</category><author>dongzoolee</author><guid isPermaLink="true">https://blog.soga.ng/story/41</guid><comments>https://blog.soga.ng/story/41#comments</comments><pubDate>Fri, 05 Feb 2021 18:47:42+0900</pubDate></item><item>
+<title>서강대학교 컴퓨터공학과 공지 알리미</title><link>https://blog.soga.ng/story/42</link><description><p>생각보다 학과 홈페이지에 유익한 정보들이 많이 올라온다.<br />
+작년 3월쯤에 에타에서 선배들이 학교 홈페이지를 잘 챙겨보라는 이유를 알아가고 있다.</p>
+<p><br data-tomark-pass="" /><br />
+아무튼 타과는 잘 모르지만, 컴퓨터공학과 홈페이지에는 인턴 모집글이나 해커톤, 조교 모집글이 많이 올라온다.<br />
+(컴공에 유리한 모집글이 많다!)</p>
+<p>인스타도 바빠서 자주 못하는 내가 학과 홈페이지를 매일 들어가 볼 정성은 없다.<br />
+<br data-tomark-pass="" /></p>
+<blockquote>
+<p>근데 또 유익한 정보들이 많으니 자주 섭취해줘야 하는데,,,</p>
+</blockquote>
+<p>라는 고민 끝에 그냥 <strong>자동으로 게시글 업데이트를 알려주는 슬랙 봇</strong>을 만들기로 했다.</p>
+<p><br data-tomark-pass="" /><br />
+목표는 하루 안에 만들기 였는데 이틀이 걸렸고,<br />
+편한 길을 놔두고(Node) 먼 길로 돌아왔다(Go).</p>
+<hr />
+<h2>사용법</h2>
+<p><a href="https://csnotice.soga.ng">https://csnotice.soga.ng</a> 에서 다운 받을 수 있다.</p>
+<p>공개 채널에서는 자유롭게 사용할 수 있지만,<br />
+<strong>프라이빗 채널</strong>에서는 해당 채널에 <strong>앱 추가를 수동으로</strong> 해주어야 사용할 수 있다.</p>
+<p><code data-backticks="1">/on main</code> 명령어로 주요 공지 업데이트를 알림 받을 수 있고<br />
+<code data-backticks="1">/off main</code> 명령어로 주요 공지 업데이트 알림을 끌 수 있다.</p>
+<p><code data-backticks="1">main</code><strong>(주요 공지사항)</strong> 말고도</p>
+<ul>
+<li><code data-backticks="1">underg</code> 학부 공지사항</li>
+<li><code data-backticks="1">grad</code> 대학원 공지사항</li>
+<li><code data-backticks="1">general</code> 일반 공지사항</li>
+<li><code data-backticks="1">job</code> 취업/인턴십 공지사항</li>
+<li><code data-backticks="1">sgcs</code> 학과 소식</li>
+</ul>
+<p>을 선택할 수 있으니 원하는 소식만 받아볼 수 있다.</p>
+<p>언제든지 <a href="https://github.com/nant0313/Notify-SGCS/issues">깃헙으로 이슈</a> 남겨주시면 반영하겠습니다 꾸벅</p>
+<p><br data-tomark-pass="" /><br />
+<br data-tomark-pass="" /></p>
+<h2>전체적인 구조</h2>
+<figure data-tomark-pass=""><img src="/story/42/1.jpg" width="500" data-tomark-pass="" />
+<figcaption data-tomark-pass="">대충 그림</figcaption></figure>
+<ol>
+<li>Go에서 주기적으로 홈페이지 공지사항의 업데이트 여부를 확인한다.<br />
+(게시판 종류가 6가지이기 때문에, 6개의 게시판 형식을 모두 고려해야 하며,<br />
+상단에 항상 고정되는 공지와 고정되지 않는 공지의 업데이트 각각에 대한 경우도 고려해야 한다.)</li>
+<li>알림 설정한 고객의 정보를 슬랙으로부터 받아온다.</li>
+<li>슬랙으로부터 받아온 고객의 채널 정보 및 워크스페이스 정보를 DB에 저장한다</li>
+<li>(공지가 업데이트 되었을 때) 메세지를 보내기 위해, 해당 게시판에 대한 알림을 설정한 고객의 채널 정보 및 워크스페이스 정보를 DB로부터 가져온다.</li>
+<li>워크스페이스 정보, 채널 정보 및 메세지를 슬랙 api 서버에 전달하면<br />
+슬랙 api 서버가 해당 정보가 정확한 정보인지 확인 후 슬랙 채널에 메세지를 전달한다.</li>
+</ol>
+<p><br data-tomark-pass="" /><br />
+<br data-tomark-pass="" /><br />
+<br data-tomark-pass="" /></p>
+<h2>후기</h2>
+<figure data-tomark-pass=""><img src="/story/42/2.jpg" width="500" data-tomark-pass="" />
+<figcaption data-tomark-pass=""></figcaption></figure>
+<h3>Node ? Go ?</h3>
+<p>노드가 손에 익어서가 아니라, 확실히 노드가 사용자를 배려한 프레임워크 같다.<br />
+Go는 거칠다. 이 언어를 사용하면 뇌가 굴러가는 소리가 들린다. 확실히 거친 언어다.</p>
+<p>개발자가 날 것을 다룰 수 있도록 하는 언어고, 엄격한 언어다.<br />
+개발자가 에러처리를 수동으로 해주지 않으면 에러가 뭔지를 알 수가 없고,<br />
+임포트한 패키지를 한 번도 사용하지 않거나, 선언한 변수를 한 번도 사용하지 않으면 컴파일 조차 되지 않는다.</p>
+<p>노드를 이용해서 개발했다면 <code data-backticks="1">Promise.all</code>을 떡칠한 개발이 될 수도 있었겠지만,<br />
+Go는 동기 언어이기 때문에 <code data-backticks="1">map</code>을 전부 다 기다려줬다 ㅎ<br />
+이런 점에서는 디버깅도 편했고, (C++처럼) 직관적으로 코드 전개에 대한 이해가 가능했다.</p>
+<p><br data-tomark-pass="" /></p>
+<h3>Slack API</h3>
+<p>슬랙 api를 전에 이미 다뤄봐서 어려운 점은 없었지만,<br />
+다른 워크스페이스에서도 사용할 수 있도록 배포하는 과정은 어려웠다.</p>
+<p>그냥 메세지를 보낼 채널의 아이디만 알면 되는 줄 알았는데 그게 아니였다.</p>
+<p>봇의 워크스페이스 접근 권한을 제공 받기 위해<br />
+워크스페이스 <strong>각각의 액세스 키를 별도로 저장</strong>해야 한다는 점을 이해하기까지 꽤 많은 시간이 걸렸다.</p>
+<p>저 액세스 키는 어떤 유저가 자신의 워크스페이스에 내 봇을 설치할 때<br />
+슬랙 api 서버에서 내 서버로 전송해주는 키인데,<br />
+그 키를 DB에 저장해놓고 메세지를 해당 워크스페이스로 보낼 때마다 사용한다는 이야기다.</p>
+<p><br data-tomark-pass="" /></p>
+<h3>다들</h3>
+<p>잘 사용해주세요<br />
+버그 리포트는 여러분들의 몫입니다.</p>
+<p>부족한 필력 죄송합니다</p>
+</description><category>일기</category><category>개발낙서</category><author>dongzoolee</author><guid isPermaLink="true">https://blog.soga.ng/story/42</guid><comments>https://blog.soga.ng/story/42#comments</comments><pubDate>Thu, 11 Feb 2021 00:32:46+0900</pubDate></item>
 </channel>
 </rss>

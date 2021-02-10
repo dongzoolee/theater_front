@@ -1,46 +1,44 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styles from './MainComment.module.scss';
 import '../Comment.scss';
 import SirenWriteSubWrapper from '../SirenWriteSubWrapper/SirenWriteSubWrapper';
 
-class MainComment extends Component {
-    state = {
-        userIcon: (Math.floor(Math.random() * 4) + 1)
-    }
-    render() {
-        return (
-            <>
-                <div className={styles.commentContainer} id={this._reactInternals.key}>
-                    <div className="profileImgWrapper"><img alt="user profile" style={{ width: '100%', height: '100%' }} src={'/icons/userIcon-' + this.state.userIcon + '.jpg'} draggable="false" /></div>
-                    <div className={styles.commentContentWrapper}>
-                        <div className="WriterDateWrapper">
-                            <div className="commentWriter"><span>{this.props.writer.length >= 18 ? this.props.writer.substring(0, 10) + "..." : this.props.writer}</span>{this.props.report != '0' ? <span className="reportedComment">&lt;신고된 댓글&gt;&nbsp;+{this.props.report}</span> : ""}</div>
-                            <div className={styles.SirenWriteSubWrapper}>
-                                <SirenWriteSubWrapper
-                                    isMainComment={true}
-                                    hasSubComment={this.props.hasSubComment}
-                                    parentClass={styles.commentContainer}
-                                    key={this._reactInternals.key}
-                                    date={this.props.date}
-                                />
-                            </div>
+function MainComment(props) {
+    const [userIcon] = useState(Math.floor(Math.random() * 4) + 1)
+    return (
+        <>
+            <div className={styles.commentContainer} id={props.commentId}>
+                <div className="profileImgWrapper"><img alt="user profile" style={{ width: '100%', height: '100%' }} src={'/icons/userIcon-' + userIcon + '.jpg'} draggable="false" /></div>
+                <div className={styles.commentContentWrapper}>
+                    <div className="WriterDateWrapper">
+                        <div className="commentWriter"><span>{props.writer.length >= 18 ? props.writer.substring(0, 10) + "..." : props.writer}</span>{props.report !== 0 ? <span className="reportedComment">&lt;신고된 댓글&gt;&nbsp;+{props.report}</span> : ""}</div>
+                        <div className={styles.SirenWriteSubWrapper}>
+                            <SirenWriteSubWrapper
+                                isMainComment={true}
+                                hasSubComment={props.hasSubComment}
+                                parentClass={styles.commentContainer}
+                                key={props.commentId}
+                                commentId={props.commentId}
+                                date={props.date}
+                            />
                         </div>
-                        <div className="commentContent">{this.props.content}</div>
                     </div>
-                    <div className={styles.SirenWriteSubWrapperForMobile}>
+                    <div className="commentContent">{props.content}</div>
+                </div>
+                <div className={styles.SirenWriteSubWrapperForMobile}>
                     <div><div>
                         <SirenWriteSubWrapper
                             isMainComment={true}
-                            hasSubComment={this.props.hasSubComment}
+                            hasSubComment={props.hasSubComment}
                             parentClass={styles.commentContainer}
-                            key={this._reactInternals.key}
-                            date={this.props.date}
+                            key={props.commentId}
+                            commentId={props.commentId}
+                            date={props.date}
                         />
-                        </div></div>
-                    </div>
+                    </div></div>
                 </div>
-            </>
-        )
-    }
+            </div>
+        </>
+    )
 }
 export default MainComment;

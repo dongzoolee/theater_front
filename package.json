@@ -19,7 +19,6 @@
     "pace-progressbar": "^1.0.9",
     "path": "^0.12.7",
     "react": "^17.0.1",
-    "react-adfit-web-component": "^1.0.2",
     "react-dom": "^17.0.1",
     "react-dom-factories": "^1.0.2",
     "react-helmet": "^6.1.0",

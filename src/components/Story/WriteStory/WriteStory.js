@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { lazy, Component } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import Header from '../../Header/Header';
 import styles from './WriteStory.module.css';
@@ -7,34 +7,21 @@ import 'codemirror/lib/codemirror.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import { Editor } from '@toast-ui/react-editor';
 
-class WriteStory extends Component {
-    editorRef = React.createRef();
-    constructor() {
-        super();
-        this.state = {
-            preload: {
-                mainCategory: [],
-                subCategory: []
-            },
-            input: {
-                mainCategory: "",
-                subCategory: "",
-                title: "",
-                location: "",
-                content: "",
-            }
-        }
-    }
-    componentDidMount() {
+function WriteStory(props) {
+    const storyTitle = useRef();
+    const storyLocation = useRef();
+    const editorRef = useRef();
+    const [preload, setPreload] = useState({ mainCategory: [], subCategory: [] })
+    const [input, setInput] = useState({ mainCategory: "", subCategory: "", title: "", location: "", content: "" })
+    useEffect(() => {
         // get Main Categories
-        // console.log(this.state)
         axios
             .get('/api/read/categories?data=main')
             .then((res) => {
-                this.setState({
-                    preload: {
+                setPreload(prevPreload => {
+                    return {
                         mainCategory: res.data.mainCategory,
-                        subCategory: this.state.preload.subCategory
+                        subCategory: prevPreload.subCategory
                     }
                 })
             })
@@ -53,37 +40,35 @@ class WriteStory extends Component {
                 if (curStoryIdx === -1)
                     return alert('try again later')
                 if (e.key === 'i') {
-                    this.editorRef.current.getInstance().insertText('<img src="/story/' + curStoryIdx + '/1.jpg" width=800 />');
+                    editorRef.current.getInstance().insertText('<img src="/story/' + curStoryIdx + '/1.jpg" width=800 ></img>');
                 } else if (e.key === 'g') {
-                    this.editorRef.current.getInstance().insertText('<figure><img src="/story/' + curStoryIdx + '/1.jpg" width=800 /><figcaption></figcaption></figure>');
+                    editorRef.current.getInstance().insertText('<figure><img src="/story/' + curStoryIdx + '/1.jpg" width=800 ></img><figcaption></figcaption></figure>');
                 }
             } else if (e.ctrlKey && e.key === 'v') {
                 e.preventDefault();
-                console.log('hi')
             }
         })
         // check tmpStory
-        if (this.props.match.params.id) {
+        if (props.match.params.id) {
             axios
-                .post("/api/read/tmpstory", { id: this.props.match.params.id })
+                .post("/api/read/tmpstory", { id: props.match.params.id })
                 .then(res => {
-                    console.log(res.data)
-                    this.editorRef.current.getInstance().setHtml(res.data[0].content, true)
+                    editorRef.current.getInstance().setHtml(res.data[0].content, true)
                     document.querySelector('.mainCategory').value = res.data[0].mainCatIdx;
                     document.querySelector('.subCategory').value = res.data[0].subCatIdx;
-                    document.querySelector('.' + styles.storyTitle).value = res.data[0].title
-                    document.querySelector('.' + styles.storyLocation).value = res.data[0].location
+                    storyTitle.current.value = res.data[0].title
+                    storyLocation.current.value = res.data[0].location
                 })
                 .catch(err => console.log(err))
         }
-    }
-    getSubCategory = (e) => {
+    }, [])
+    const getSubCategory = (e) => {
         axios
             .get('/api/read/categories?data=sub&mainId=' + e.target.value)
             .then((res) => {
-                this.setState({
-                    preload: {
-                        mainCategory: this.state.preload.mainCategory,
+                setPreload(prevPreload => {
+                    return {
+                        mainCategory: prevPreload.mainCategory,
                         subCategory: res.data.subCategory
                     }
                 })
@@ -91,27 +76,24 @@ class WriteStory extends Component {
             })
             .catch((err) => { console.error(err) });
     }
-    handleUpdate = () => {
+    const handleUpdate = () => {
         let nextState = {};
-        nextState['input'] = {};
-        nextState['input']['mainCategory'] = document.getElementsByClassName('mainCategory')[0].value;
-        nextState['input']['subCategory'] = document.getElementsByClassName('subCategory')[0].value;
-        nextState['input']['title'] = document.getElementsByTagName('input')[0].value;
-        nextState['input']['location'] = document.getElementsByTagName('input')[1].value;
-        nextState['input']['content'] = this.editorRef.current.getInstance().getHtml();
-        this.setState(nextState)
+        nextState = {};
+        nextState['mainCategory'] = document.getElementsByClassName('mainCategory')[0].value;
+        nextState['subCategory'] = document.getElementsByClassName('subCategory')[0].value;
+        nextState['title'] = document.getElementsByTagName('input')[0].value;
+        nextState['location'] = document.getElementsByTagName('input')[1].value;
+        nextState['content'] = editorRef.current.getInstance().getHtml();
+        setInput(nextState)
     }
-    getTmpList = () => {
-
-    }
-    handleTmpSubmit = () => {
+    const handleTmpSubmit = () => {
         const data = {
-            idx: this.props.match.params.id ? this.props.match.params.id : -1,
-            main: this.state.input.mainCategory,
-            sub: this.state.input.subCategory,
-            title: this.state.input.title,
-            location: this.state.input.location,
-            content: this.state.input.content
+            idx: props.match.params.id ? props.match.params.id : -1,
+            main: input.mainCategory,
+            sub: input.subCategory,
+            title: input.title,
+            location: input.location,
+            content: input.content
         };
         if (data.main === '-1' || data.sub === '-1')
             return alert('카테고리를 선택해주세요');
@@ -123,13 +105,13 @@ class WriteStory extends Component {
             })
             .catch((err) => { console.error(err) });
     }
-    handleSubmit = () => {
+    const handleSubmit = () => {
         const data = {
-            main: this.state.input.mainCategory,
-            sub: this.state.input.subCategory,
-            title: this.state.input.title,
-            location: this.state.input.location,
-            content: this.state.input.content
+            main: input.mainCategory,
+            sub: input.subCategory,
+            title: input.title,
+            location: input.location,
+            content: input.content
         };
         if (data.main === '-1' || data.sub === '-1')
             return alert('카테고리를 선택해주세요');
@@ -141,51 +123,50 @@ class WriteStory extends Component {
             })
             .catch((err) => { console.error(err) });
     }
-    render() {
-        return (
-            <>
-                <Header />
-                <div className="storyContainer">
-                    <select name='mainCategory' className='mainCategory' onChange={e => { this.getSubCategory(e) }}>
-                        <option value="-1">선택</option>
-                        {this.state.preload.mainCategory.map((val, idx) => {
-                            return (
-                                <option value={val.mainIdx}>{val.mainCategory}</option>
-                            )
-                        })}
-                    </select>
-                    <select name='subCategory' className='subCategory' onChange={this.handleUpdate}>
-                        <option value="-1">선택</option>
-                        {this.state.preload.subCategory.map((val, idx) => {
-                            return (
-                                <option value={val.subIdx}>{val.subCategory}</option>
-                            )
-                        })}
-                    </select>
-                    <input
-                        className={styles.storyTitle}
-                        placeholder="제목을 입력하세요"
-                        onChange={this.handleUpdate}
-                    />
-                    <input
-                        className={styles.storyLocation}
-                        placeholder="장소를 입력하세요"
-                        onChange={this.handleUpdate}
-                    />
-                    <Editor
-                        previewStyle="vertical"
-                        height="600px"
-                        initialEditType="markdown"
-                        ref={this.editorRef}
-                        onChange={this.handleUpdate}
-                        useCommandShortcut={true}
-                    />
-                    <button onClick={this.getTmpList}>불러오기</button>
-                    <button onClick={this.handleTmpSubmit}>임시저장</button>
-                    <button onClick={this.handleSubmit}>제출</button>
-                </div>
-            </>
-        )
-    }
+    return (
+        <>
+            <Header />
+            <div className="storyContainer">
+                <select name='mainCategory' className='mainCategory' onChange={getSubCategory}>
+                    <option value="-1">선택</option>
+                    {preload.mainCategory.map((val, idx) => {
+                        return (
+                            <option value={val.mainIdx}>{val.mainCategory}</option>
+                        )
+                    })}
+                </select>
+                <select name='subCategory' className='subCategory' onChange={handleUpdate}>
+                    <option value="-1">선택</option>
+                    {preload.subCategory.map((val, idx) => {
+                        return (
+                            <option value={val.subIdx}>{val.subCategory}</option>
+                        )
+                    })}
+                </select>
+                <input
+                    ref={storyTitle}
+                    className={styles.storyTitle}
+                    placeholder="제목을 입력하세요"
+                    onChange={handleUpdate}
+                />
+                <input
+                    ref={storyLocation}
+                    className={styles.storyLocation}
+                    placeholder="장소를 입력하세요"
+                    onChange={handleUpdate}
+                />
+                <Editor
+                    previewStyle="vertical"
+                    height="600px"
+                    initialEditType="markdown"
+                    ref={editorRef}
+                    onChange={handleUpdate}
+                    useCommandShortcut={true}
+                />
+                <button onClick={handleTmpSubmit}>임시저장</button>
+                <button onClick={handleSubmit}>제출</button>
+            </div>
+        </>
+    )
 }
 export default withRouter(WriteStory);

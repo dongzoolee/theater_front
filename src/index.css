@@ -74,10 +74,11 @@ figure {
   max-width: 100%;
 }
 figcaption {
-  font-size: 13px;
+  font-size: 11.9px;
   word-break: break-word;
   padding-top: 3px;
   min-height: 20px;
+  font-family: 'kopub-dotum-bold';
   caption-side: bottom;
   text-align: center;
 }

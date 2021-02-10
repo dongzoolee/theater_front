@@ -1,11 +1,13 @@
-import React, { Component, Fragment } from 'react';
+import React, { useState, useRef, memo } from 'react';
 import styles from './Header.module.scss';
 import HeaderRouter from './HeaderRouter/HeaderRouter';
 import './Header.scss';
 // import 'pace-progressbar';
 // import 'pace-progressbar/themes/yellow/pace-theme-minimal.css';
 
-class Header extends Component {
+function Header() {
+    const menuBar = useRef();
+    const [menuBarOn, setMenuBarOn] = useState(false);
     // paceOptions = {
     //     ajax: false, // disabled
     //     document: false, // disabled
@@ -14,41 +16,31 @@ class Header extends Component {
     //         selectors: ['.pace--loader']
     //     }
     // };
-    state = {
-        menuBarOn: false
-    }
-    OpenMenuBar = () => {
-        if (this.state.menuBarOn)
-            this.setState({
-                menuBarOn: false
-            })
+    const OpenMenuBar = () => {
+        if (menuBarOn)
+            setMenuBarOn(false)
         else {
-            document.querySelector("." + styles.menuBar).classList.toggle('hide');
-            this.setState({
-                menuBarOn: true
-            })
+            menuBar.current.classList.toggle('hide');
+            setMenuBarOn(true)
         }
     }
-    render() {
-        return (
-            <>
-                <div className={"header"}>
-                    {this.state.menuBarOn ? "" :
-                        <>
-                            <div className={styles.menuBar} onClick={this.OpenMenuBar}>
-                                <img src="/icons/menuBar-1.png" alt="mobile-menu-bar"/>
-                            </div>
-                        </>
-                    }
-                    {this.state.menuBarOn ? <div className={styles.MenuBarHeaderRouter}><HeaderRouter /></div> : ""}
-                    <div className={styles.ResponsiveHeaderRouter}>
-                        <HeaderRouter />
-                    </div>
-                    {this.state.menuBarOn ? "" : <span className={styles.thsixIcon + " non--draggable "}><a href="/">36부작</a></span>}
-
+    return (
+        <>
+            <div className={"header"}>
+                {menuBarOn ? "" :
+                    <>
+                        <div ref={menuBar} className={styles.menuBar} onClick={OpenMenuBar}>
+                            <img src="/icons/menuBar-1.png" alt="mobile-menu-bar" />
+                        </div>
+                    </>
+                }
+                {menuBarOn ? <div className={styles.MenuBarHeaderRouter}><HeaderRouter /></div> : ""}
+                <div className={styles.ResponsiveHeaderRouter}>
+                    <HeaderRouter />
                 </div>
-            </>
-        )
-    }
+                {menuBarOn ? "" : <span className={styles.thsixIcon + " non--draggable "}><a href="/">36부작</a></span>}
+            </div>
+        </>
+    )
 }
-export default Header;
+export default memo(Header);

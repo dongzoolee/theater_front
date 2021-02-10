@@ -5,12 +5,14 @@ import styles from './Main.module.css';
 import './Story.css';
 
 class Main extends Component {
+    storyContainerWrapper;
+    
     componentDidMount() {
         // document.querySelector('.storyontainer').style = "padding: 3.6rem 0 4rem 0;";
         window.onload = () => {
-            document.querySelector("." + styles.storyContainerWrapper).style = "max-height: 86%; transition: max-height 2s ease-in 1s;";
+            storyContainerWrapper.style = "max-height: 86%; transition: max-height 2s ease-in 1s;";
             setTimeout(() => {
-                document.querySelector("." + styles.storyContainerWrapper).style = "max-height: 86%; transition: max-height 1s ease-in;";
+                storyContainerWrapper.style = "max-height: 86%; transition: max-height 1s ease-in;";
             }, 3000)
         }
     }
@@ -18,7 +20,7 @@ class Main extends Component {
         return (
             <>
                 <Header />
-                <div className={styles.storyContainerWrapper}>
+                <div ref={c => { this.storyContainerWrapper = c; }} className={styles.storyContainerWrapper}>
                     <br></br>
                     <br></br>
                     <br></br>
