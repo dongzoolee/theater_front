@@ -52,8 +52,20 @@ function WriteStory(props) {
         if (props.match.params.id) {
             axios
                 .post("/api/read/tmpstory", { id: props.match.params.id })
-                .then(res => {
+                .then(async (res) => {
                     editorRef.current.getInstance().setHtml(res.data[0].content, true)
+                    await axios
+                        .get('/api/read/categories?data=sub&mainId=' + res.data[0].mainCatIdx)
+                        .then((res) => {
+                            setPreload(prevPreload => {
+                                return {
+                                    mainCategory: prevPreload.mainCategory,
+                                    subCategory: res.data.subCategory
+                                }
+                            })
+                            // console.log(this.state)
+                        })
+                        .catch((err) => { console.error(err) });
                     document.querySelector('.mainCategory').value = res.data[0].mainCatIdx;
                     document.querySelector('.subCategory').value = res.data[0].subCatIdx;
                     storyTitle.current.value = res.data[0].title
