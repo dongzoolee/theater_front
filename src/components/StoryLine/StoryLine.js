@@ -15,30 +15,31 @@ function StoryLine() {
         axios
             .get('/api/read/storylinecontents')
             .then(res => {
+                // console.log(res.data)
                 setContent(res.data)
             })
             .catch(err => console.log(err))
         document.querySelector('.header').style.width = "89%";
         document.querySelector('.header').style.maxWidth = "2300px";
 
-        let ins = document.createElement('ins');
-        let scr = document.createElement('script');
-        ins.className = 'kakao_ad_area';
-        ins.style = "display:none; width:100%;";
-        scr.async = 'true';
-        scr.type = "text/javascript";
-        scr.src = "//t1.daumcdn.net/kas/static/ba.min.js";
-        if (window.matchMedia('(min-width: 875px)').matches) {
-            ins.setAttribute('data-ad-width', '728');
-            ins.setAttribute('data-ad-height', '90');
-            ins.setAttribute('data-ad-unit', 'DAN-zrThBYMLPyPfF7zx');
-        } else {
-            ins.setAttribute('data-ad-width', '320');
-            ins.setAttribute('data-ad-height', '50');
-            ins.setAttribute('data-ad-unit', 'DAN-CyjKlg2fzvV9gtXU');
-        }
-        adfit.current.appendChild(ins);
-        adfit.current.appendChild(scr);
+        // let ins = document.createElement('ins');
+        // let scr = document.createElement('script');
+        // ins.className = 'kakao_ad_area';
+        // ins.style = "display:none; width:100%;";
+        // scr.async = 'true';
+        // scr.type = "text/javascript";
+        // scr.src = "//t1.daumcdn.net/kas/static/ba.min.js";
+        // if (window.matchMedia('(min-width: 875px)').matches) {
+        //     ins.setAttribute('data-ad-width', '728');
+        //     ins.setAttribute('data-ad-height', '90');
+        //     ins.setAttribute('data-ad-unit', 'DAN-zrThBYMLPyPfF7zx');
+        // } else {
+        //     ins.setAttribute('data-ad-width', '320');
+        //     ins.setAttribute('data-ad-height', '50');
+        //     ins.setAttribute('data-ad-unit', 'DAN-CyjKlg2fzvV9gtXU');
+        // }
+        // adfit.current.appendChild(ins);
+        // adfit.current.appendChild(scr);
     }, [])
     return (
         <>
@@ -93,7 +94,7 @@ function StoryLine() {
                                     return (
                                         <th className={styles.StoryLineStoryTh} key={idx}>
                                             <StoryPreview
-                                                key={idx}
+                                                key={"storypreview_" + idx}
                                                 idx={idx}
                                                 storyId={val.idx}
                                                 title={val.title}
