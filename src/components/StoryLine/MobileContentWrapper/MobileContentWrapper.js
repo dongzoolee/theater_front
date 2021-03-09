@@ -24,12 +24,34 @@ function MobileContentWrapper(props) {
             </div>
             <div className={styles.StorySlideWrapper}>
                 <div className={styles.StorySlide}>
-                    <Slider {...settings}>
+                    <>
+                        {props.content.map((val, idx) => {
+                            {
+                                if (idx == 2) {
+                                    return (
+                                        <>
+                                            <div className={styles.StorySlideHeader} key={"slider_" + idx}><Link to={'/' + val.mainCategory}>{val.mainCategory}</Link></div>
+                                            <StoryPreview
+                                                key={"preview_" + idx}
+                                                idx={0}
+                                                storyId={val.idx}
+                                                title={val.title}
+                                                date={val.date}
+                                                content={val.content}
+                                            />
+                                        </>
+                                    )
+                                }
+                            }
+                        })}
+                    </>
+                    {/* <Slider {...settings}>
                         {props.content.map((val, idx) => {
                             return (
                                 <>
-                                    <div className={styles.StorySlideHeader}><Link to={'/' + val.mainCategory}>{val.mainCategory}</Link></div>
+                                    <div className={styles.StorySlideHeader} key={"slider_" + idx}><Link to={'/' + val.mainCategory}>{val.mainCategory}</Link></div>
                                     <StoryPreview
+                                        key={"preview_" + idx}
                                         idx={0}
                                         storyId={val.idx}
                                         title={val.title}
@@ -39,7 +61,7 @@ function MobileContentWrapper(props) {
                                 </>
                             )
                         })}
-                    </Slider>
+                    </Slider> */}
                 </div>
             </div>
             <div className={styles.StoryLineWrapper}>
