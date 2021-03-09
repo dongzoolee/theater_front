@@ -67,7 +67,8 @@
 @media (max-width: 730px) {
     .container {
         width: calc(96% - 2.9rem);
-        margin-left: 1.6rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 @media (max-width: 530px) {
