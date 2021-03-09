@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './StoryPreview.module.scss';
 
 function StoryPreview(props) {
+    const [imgSrc, setImgSrc] = useState("")
+    const [textElement, setTextElement] = useState("")
+
     const getTextElement = (s) => {
         let span = document.createElement('span');
         span.innerHTML = s;
@@ -16,22 +19,28 @@ function StoryPreview(props) {
         else
             return null;
     }
+    useEffect(() => {
+        setImgSrc(getImgSrc(props.content))
+        setTextElement(getTextElement(props.content))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        console.log('hiii')
+    }, [])
     return (
         <>
             {props.idx === 0 ?
                 <Link to={"/story/" + props.storyId}>
                     <div className={styles.BigContainer}>
-                        {getImgSrc(props.content) ?
+                        {imgSrc ?
                             <>
-                                <div className={styles.BigImg}><img src={getImgSrc(props.content)} alt={""} /></div>
+                                <div className={styles.BigImg}><img src={imgSrc} alt={""} /></div>
                                 <div className={styles.BigTitle}>{props.title}</div>
                                 <div className={styles.BigDate}>{props.date}</div>
-                                <div className={styles.BigContent}>{getTextElement(props.content).length >= 60 ? getTextElement(props.content).substring(0, 60) : getTextElement(props.content)}</div>
+                                <div className={styles.BigContent}>{textElement.length >= 60 ? textElement.substring(0, 60) : textElement}</div>
                             </> :
                             <>
                                 <div className={styles.BigTitle}>{props.title}</div>
                                 <div className={styles.BigDate}>{props.date}</div>
-                                <div className={styles.BigContent}>{getTextElement(props.content).length >= 60 ? getTextElement(props.content).substring(0, 120) : getTextElement(props.content)}</div>
+                                <div className={styles.BigContent}>{textElement.length >= 60 ? textElement.substring(0, 120) : textElement}</div>
                             </>
                         }
                     </div>
@@ -40,7 +49,7 @@ function StoryPreview(props) {
                 props.idx === 1 ?
                     <Link to={"/story/" + props.storyId}>
                         <div className={styles.MidContainer}>
-                            <div className={styles.MidImg}><img src={getImgSrc(props.content)} alt={""} /></div>
+                            <div className={styles.MidImg}><img src={imgSrc} alt={""} /></div>
                             <div className={styles.MidTitle}>{props.title}</div>
                             <div className={styles.MidDate}>{props.date}</div>
                         </div>
@@ -48,7 +57,7 @@ function StoryPreview(props) {
                     :
                     props.idx === 2 ?
                         <Link to={"/story/" + props.storyId}>
-                            <div className={styles.ContentOnly}>{getTextElement(props.content).length >= 100 ? getTextElement(props.content).substring(0, 100) : getTextElement(props.content)}</div>
+                            <div className={styles.ContentOnly}>{textElement.length >= 100 ? textElement.substring(0, 100) : textElement}</div>
                         </Link>
                         :
                         props.idx === 3 ?
@@ -58,7 +67,7 @@ function StoryPreview(props) {
                                     <div className={styles.SmallDate}>{props.date}</div>
                                 </div>
                             </Link>
-                            : <></>
+                            : ""
             }
         </>
     )
