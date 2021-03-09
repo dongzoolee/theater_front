@@ -87,6 +87,7 @@ function ReadStory(props) {
         }
         adfit.current.appendChild(ins)
         adfit.current.appendChild(scr)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     useEffect(() => {
         document.querySelectorAll('img').forEach(ele => {
