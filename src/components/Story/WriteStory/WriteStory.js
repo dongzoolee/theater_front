@@ -35,7 +35,8 @@ function WriteStory(props) {
                 curStoryIdx = res.data.idx;
             })
             .catch(err => console.log(err))
-        document.querySelector('.CodeMirror').addEventListener('keyup', e => {
+
+            document.querySelector('.CodeMirror').addEventListener('keyup', e => {
             if (e.ctrlKey && e.altKey) {
                 if (curStoryIdx === -1)
                     return alert('try again later')
@@ -73,6 +74,7 @@ function WriteStory(props) {
                 })
                 .catch(err => console.log(err))
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     const getSubCategory = (e) => {
         axios
