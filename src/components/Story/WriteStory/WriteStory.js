@@ -1,11 +1,11 @@
 import axios from 'axios';
 import React, { useRef, useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
-import Header from '../../Header/Header';
 import styles from './WriteStory.module.css';
 import 'codemirror/lib/codemirror.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import { Editor } from '@toast-ui/react-editor';
+import Layout from '../../Layout';
 
 function WriteStory(props) {
     const storyTitle = useRef();
@@ -138,8 +138,7 @@ function WriteStory(props) {
             .catch((err) => { console.error(err) });
     }
     return (
-        <>
-            <Header />
+        <Layout>
             <div className="storyContainer">
                 <select name='mainCategory' className='mainCategory' onChange={getSubCategory}>
                     <option value="-1">선택</option>
@@ -180,7 +179,7 @@ function WriteStory(props) {
                 <button onClick={handleTmpSubmit}>임시저장</button>
                 <button onClick={handleSubmit}>제출</button>
             </div>
-        </>
+        </Layout>
     )
 }
 export default withRouter(WriteStory);

@@ -1,8 +1,0 @@
-.storyContainerWrapper{
-    background-color: white;
-    margin: 0 auto 0 auto;
-    width: 84%;
-    max-height: 0;
-    transition: max-height 30s ease-out;
-    overflow: hidden;
-}

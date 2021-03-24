@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './HotStory.module.scss';
 import { Link } from 'react-router-dom';
-import Header from '../Header/Header';
+import Layout from '../Layout'
 import StoryComponent from '../Category/CategoryTemplate/StoryComponent';
 import PaginationFooter from '../PaginationFooter/PaginationFooter';
 import axios from 'axios';
@@ -34,28 +34,29 @@ class HotStory extends Component {
     }
     render() {
         return (
-            <>
-                <Header />
-                <div className={"storyContainer " + styles.MainCategoryWrapper}>
-                    <div className={styles.Header + " non--draggable"}>story by hits</div>
-                    <div className={styles.StoryComponentWrapper}>
-                        {this.state.content.map(val => {
-                            return (
-                                <Link to={'/story/' + val.idx}>
-                                    <StoryComponent
-                                        title={val.title}
-                                        date={val.date}
-                                        content={this.getTextElement(val.content)}
-                                        imgUrl={this.getImgSrc(val.content)}
-                                    />
-                                </Link>
-                            )
-                        })}
-                        <PaginationFooter />
-                    </div>
-                </div>
-            </>
-        )
+          <Layout>
+            <div className={"storyContainer " + styles.MainCategoryWrapper}>
+              <div className={styles.Header + " non--draggable"}>
+                story by hits
+              </div>
+              <div className={styles.StoryComponentWrapper}>
+                {this.state.content.map((val) => {
+                  return (
+                    <Link to={"/story/" + val.idx}>
+                      <StoryComponent
+                        title={val.title}
+                        date={val.date}
+                        content={this.getTextElement(val.content)}
+                        imgUrl={this.getImgSrc(val.content)}
+                      />
+                    </Link>
+                  );
+                })}
+                <PaginationFooter />
+              </div>
+            </div>
+          </Layout>
+        );
     }
 }
 export default HotStory;

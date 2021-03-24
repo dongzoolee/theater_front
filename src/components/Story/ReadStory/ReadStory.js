@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
-import Header from '../../Header/Header'
 import Story from '../Story'
 import Comment from '../../Comment/Comment'
 import '../../Story.css';
@@ -14,6 +13,7 @@ import yaml_hljs from 'highlight.js/lib/languages/yaml';
 import docker_hljs from 'highlight.js/lib/languages/dockerfile';
 import shell_hljs from 'highlight.js/lib/languages/shell';
 import sql_hljs from 'highlight.js/lib/languages/sql';
+import Layout from '../../Layout';
 
 hljs.registerLanguage('sql', sql_hljs);
 hljs.registerLanguage('lang-js', js_hljs);
@@ -103,8 +103,7 @@ function ReadStory(props) {
         })
     }
     return (
-        <>
-            <Header />
+        <Layout>
             <div className="storyContainer">
                 <Story
                     outerColor={outerColor}
@@ -126,7 +125,7 @@ function ReadStory(props) {
                 />
             </div>
             <Footer />
-        </>
+        </Layout>
     );
 }
 export default withRouter(ReadStory);

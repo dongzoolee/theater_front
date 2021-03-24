@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import Header from '../../Header/Header'
+import Layout from '../../Layout';
 import styles from './Location.module.scss';
 
 function LocationList() {
@@ -17,8 +18,7 @@ function LocationList() {
             })
     }, [])
     return (
-        <>
-            <Header />
+        <Layout>
             <div className={"storyContainer " + styles.MainCategoryWrapper}>
                 {locationList.map(val => {
                     return (
@@ -31,7 +31,7 @@ function LocationList() {
                         content={this.state.content}
                     /> */}
             </div>
-        </>
+        </Layout>
     )
 }
 export default LocationList;

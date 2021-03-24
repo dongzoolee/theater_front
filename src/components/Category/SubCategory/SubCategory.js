@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import Header from '../../Header/Header'
 import styles from './SubCategory.module.scss';
 import SubCategoryTemplate from '../CategoryTemplate/SubCategoryTemplate';
+import Layout from '../../Layout';
 
 class SubCategory extends Component {
     state = {
@@ -43,8 +43,7 @@ class SubCategory extends Component {
     }
     render() {
         return (
-            <>
-                <Header />
+            <Layout>
                 <div className={"storyContainer " + styles.MainCategoryWrapper}>
                     <SubCategoryTemplate
                         mainCategory={this.props.match.params.mainCategory}
@@ -52,7 +51,7 @@ class SubCategory extends Component {
                         subCategoryList={this.state.subCategoryList}
                     />
                 </div>
-            </>
+            </Layout>
         )
     }
 }
