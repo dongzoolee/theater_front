@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import Header from '../../Header/Header'
 import styles from './Location.module.scss';
 import SubCategoryTemplate from '../CategoryTemplate/SubCategoryTemplate';
 import Layout from '../../Layout';
