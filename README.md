@@ -6,25 +6,7 @@
 
 This is the front-side of my Blog Application.
 You can check out the [Backend-side](https://github.com/nant0313/theater_back) also.
-
-Design for this project is done with Adobe XD.
-
-![StoryLine](https://leed.at/blog/react/design/storyline.jpg)
- 
- 
-![StoryLine Content](https://leed.at/blog/react/design/storylinecontent.jpg)
-
-
-![SubStoryLine](https://leed.at/blog/react/design/substoryline.jpg)
-
-
-![Story Page](https://leed.at/blog/react/design/story.jpg)
-
-
-![Comment Box](https://leed.at/blog/react/design/comment.jpg)
-
-
-
+  
 ## Development
 
 ### Built With
