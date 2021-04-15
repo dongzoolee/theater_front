@@ -9,19 +9,19 @@ You can check out the [Backend-side](https://github.com/nant0313/theater_back) a
 
 Design for this project is done with Adobe XD.
 
-![StoryLine](https://raw.githubusercontent.com/nant0313/theater_front/main/design/storyline.png)
+![StoryLine](https://raw.githubusercontent.com/nant0313/theater_front/main/design/storyline.jpg)
  
  
-![StoryLine Content](https://raw.githubusercontent.com/nant0313/theater_front/main/design/storylinecontent.png)
+![StoryLine Content](https://raw.githubusercontent.com/nant0313/theater_front/main/design/storylinecontent.jpg)
 
 
-![SubStoryLine](https://raw.githubusercontent.com/nant0313/theater_front/main/design/substoryline.png)
+![SubStoryLine](https://raw.githubusercontent.com/nant0313/theater_front/main/design/substoryline.jpg)
 
 
-![Story Page](https://raw.githubusercontent.com/nant0313/theater_front/main/design/story.png)
+![Story Page](https://raw.githubusercontent.com/nant0313/theater_front/main/design/story.jpg)
 
 
-![Comment Box](https://raw.githubusercontent.com/nant0313/theater_front/main/design/comment.png)
+![Comment Box](https://raw.githubusercontent.com/nant0313/theater_front/main/design/comment.jpg)
 
 
 
