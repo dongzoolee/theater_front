@@ -10,20 +10,16 @@ You can check out the [Backend-side](https://github.com/nant0313/theater_back) a
 Design for this project is done with Adobe XD.
 
 ![StoryLine](https://raw.githubusercontent.com/nant0313/theater_front/main/design/storyline.png)
-
-
-
+ 
+ 
 ![StoryLine Content](https://raw.githubusercontent.com/nant0313/theater_front/main/design/storylinecontent.png)
-
 
 
 ![SubStoryLine](https://raw.githubusercontent.com/nant0313/theater_front/main/design/substoryline.png)
 
 
-
 ![Story Page](https://raw.githubusercontent.com/nant0313/theater_front/main/design/story.png)
 
-![Comment Box](https://raw.githubusercontent.com/nant0313/theater_front/main/design/substoryline.png)
 
 ![Comment Box](https://raw.githubusercontent.com/nant0313/theater_front/main/design/comment.png)
 
