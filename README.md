@@ -5,7 +5,7 @@
 ## Introduction
 
 This is the front-side of my Blog Application.
-You can check out the [Backend-side](https://github.com/nant0313/theater_back) also.
+You can check out the [Backend-side](https://github.com/nant0313/theater_back) also. 
   
 ## Development
 
@@ -71,4 +71,5 @@ MYSQL2_DB=
 
 ## Todo
 
-- Fix Manual Server-Side-Rendering -> Next.js
+- Fix Manual Server-Side-Rendering -> Next.js  
+- Add Like Button to Posts, Comments.
