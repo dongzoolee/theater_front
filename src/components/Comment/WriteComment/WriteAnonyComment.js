@@ -17,7 +17,7 @@ class WriteComment extends Component {
             })
         else {
             this.setState({
-                content: e.target.innerHTML
+                content: e.target.textContent
             })
         }
     }
@@ -27,7 +27,7 @@ class WriteComment extends Component {
         const data = {
             storyId: urlSplit[urlSplit.indexOf('story') + 1],
             writer: this.state.writer,
-            content: this.state.content || e.target.parentElement.parentElement.querySelector('.commentWriteContainer').innerHTML
+            content: this.state.content
         };
 
         if (data.writer === "")
