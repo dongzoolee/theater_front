@@ -71,6 +71,7 @@ li {
 }
 figure {
   display: table;
+  margin: 0 auto;
   max-width: 100%;
 }
 figcaption {
